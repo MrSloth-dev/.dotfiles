@@ -1,11 +1,18 @@
+#Zshrc with 2 places
+#
+#Common Settings
 export ZSH="$HOME/.oh-my-zsh"
-
 ZSH_THEME="crunch" # set by `omz`
+source $ZSH/oh-my-zsh.sh
+alias zmux="~/.dotfiles/zmux.sh"
+export TERM="xterm-256color"
+export EDITOR="vim"
+
+#WorkSettings
 if [[ $USER == "joao-pol" ]]; then
 	export PATH="$PATH:/home/joao-pol/.local/share/homebrew/bin"
 	export PATH="$PATH:/home/joao-pol/"
 	plugins=(git)
-	source $ZSH/oh-my-zsh.sh
 	export MAIL=joao-pol@students.42porto.com
 	export USER=joao-pol
 	alias nvim="flatpak run io.neovim.nvim"
@@ -17,8 +24,9 @@ if [[ $USER == "joao-pol" ]]; then
 	compdef nvim=vim
 	setopt complete_aliases
 	source <(fzf --zsh)
-	export TERM="xterm-256color"
-	export EDITOR="vim"
 	export HOMEBREW_NO_AUTO_UPDATE=1
-	alias zmux="~/.dotfiles/tmux.sh"
+fi
+#Home Settings
+if [[ $USER == "mrsloth" ]]; then
+	cowsay "Hello Sloth"
 fi
