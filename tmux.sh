@@ -31,7 +31,10 @@ for SESSION_NAME in "$@"; do
 				tmux send-keys -t config_session:2 'nvim ~/.var/app/io.neovim.nvim/config/nvim/init.lua' C-m
 
 				tmux new-window -t config_session:3 -n Zmux_Script
-				tmux send-keys -t config_session:3 'nvim ~/tmux.sh' C-m
+				tmux send-keys -t config_session:3 'nvim ~/.dotfiles/tmux.sh' C-m
+
+				tmux new-window -t config_session:4 -n Symlink_Script
+				tmux send-keys -t config_session:4 'nvim ~/.dotfiles/symlink.sh' C-m
 			fi
 			;;
 		philo)
@@ -44,7 +47,7 @@ for SESSION_NAME in "$@"; do
 				tmux send-keys -t philo_session:1 'nvim -O ~/CommonCore/3.philo/philo/src/main.c ~/CommonCore/3.philo/philo/includes/philo.h' C-m
 
 				tmux new-window -t philo_session:2 -n Testing
-				tmux send-keys -t philo_session:2 '~/CommonCore/3.philo/philo/'
+				tmux send-keys -t philo_session:2 '~/CommonCore/3.philo/philo/' C-m
 
 				tmux attach-session -t philo_session
 			fi
