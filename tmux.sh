@@ -1,9 +1,9 @@
-!/bin/zsh
+#!/bin/zsh
 
 # Check number of args
 if [ $# -eq 0 ]; then
 	echo "Usage ./zmux <session_name>"
-	echo "Sessions Possible :\nconfig\nphilo\npush\npipex"
+	echo "Sessions Possible :\n config\n philo\n push\n pipex"
 	exit 1
 fi
 
@@ -22,32 +22,46 @@ for SESSION_NAME in "$@"; do
 				# First tmux session: editing configuration files
 				tmux new-session -d -s config_session
 
+				INDEX=1
+
 				# Create Windows
-				tmux new-window -t config_session:1
-				tmux rename-window -t config_session:1 'Tmux_Config_Local'
-				tmux send-keys -t config_session:1 'nvim ~/.tmux.conf.local' C-m
+				tmux new-window -t config_session:$INDEX
+				tmux rename-window -t config_session:$INDEX 'Tmux_Config_Local'
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.tmux.conf.local' C-m
+				(( INDEX++ ))
 
-				tmux new-window -t config_session:2 -n Nvim_init_lua
-				tmux send-keys -t config_session:2 'nvim ~/.var/app/io.neovim.nvim/config/nvim/init.lua' C-m
+				tmux new-window -t config_session:$INDEX -n Nvim_init_lua
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.var/app/io.neovim.nvim/config/nvim/init.lua' C-m
+				(( INDEX++ ))
 
-				tmux new-window -t config_session:3 -n Zmux_Script
-				tmux send-keys -t config_session:3 'nvim ~/.dotfiles/tmux.sh' C-m
+				tmux new-window -t config_session:$INDEX -n Zmux_Script
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/tmux.sh' C-m Escape
+				(( INDEX++ ))
 
-				tmux new-window -t config_session:4 -n Symlink_Script
-				tmux send-keys -t config_session:4 'nvim ~/.dotfiles/symlink.sh' C-m
+				tmux new-window -t config_session:$INDEX -n Symlink_Script
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/symlink.sh' C-m
+				tmux split-window -h -t config_session:$INDEX
+				tmux send-keys -t config_session:$INDEX.2 'cd ~/.dotfiles/' C-m
+				tmux send-keys -t config_session:$INDEX.2 'clear' C-m
+				(( INDEX++ ))
 			fi
 			;;
 		philo)
 			if ! session_exists "philo_session"; then
 				# Create Session for Project Philosophers
 				tmux new-session -d -s philo_session -c ~/CommonCore/2.philo/philo
+				
+				INDEX=1
 
-				tmux new-window -t philo_session:1 -n MainCode
-				tmux rename-window -t philo_session:1 'MainCode'
-				tmux send-keys -t philo_session:1 'nvim -O ~/CommonCore/3.philo/philo/src/main.c ~/CommonCore/3.philo/philo/includes/philo.h' C-m
+				tmux new-window -t philo_session:$INDEX -n MainCode
+				tmux rename-window -t philo_session:$INDEX 'MainCode'
+				tmux send-keys -t philo_session:$INDEX 'nvim -O ~/CommonCore/3.philo/philo/src/main.c ~/CommonCore/3.philo/philo/includes/philo.h' C-m
+				(( INDEX++ ))
 
-				tmux new-window -t philo_session:2 -n Testing
-				tmux send-keys -t philo_session:2 '~/CommonCore/3.philo/philo/' C-m
+				tmux new-window -t philo_session:$INDEX -n Testing
+				tmux send-keys -t philo_session:$INDEX 'cd ~/CommonCore/3.philo/philo/' C-m
+				tmux send-keys -t config_session:$INDEX 'clear' C-m
+				(( INDEX++ ))
 
 				tmux attach-session -t philo_session
 			fi
@@ -57,12 +71,17 @@ for SESSION_NAME in "$@"; do
 				# Create Session for Project Philosophers
 				tmux new-session -d -s pipex_session -c ~/CommonCore/2.pipex/
 
-				tmux new-window -t pipex_session:1 -n MainCode
-				tmux rename-window -t pipex_session:1 'MainCode'
-				tmux send-keys -t pipex_session:1 'nvim -O ~/CommonCore/2.pipex/src/main.c ~/CommonCore/2.pipex/includes/pipex.h' C-m
+				INDEX=1
 
-				tmux new-window -t pipex_session:2 -n Testing
-				tmux send-keys -t pipex_session:2 '~/CommonCore/2.pipex/'
+				tmux new-window -t pipex_session:$INDEX -n MainCode
+				tmux rename-window -t pipex_session:$INDEX 'MainCode'
+				tmux send-keys -t pipex_session:$INDEX 'nvim -O ~/CommonCore/2.pipex/src/main.c ~/CommonCore/2.pipex/includes/pipex.h' C-m
+				(( INDEX++ ))
+
+				tmux new-window -t pipex_session:$INDEX -n Testing
+				tmux send-keys -t pipex_session:$INDEX '~/CommonCore/2.pipex/' C-m
+				tmux send-keys -t philo_session:$INDEX 'clear' C-m
+				(( INDEX++ ))
 
 				tmux attach-session -t pipex_session
 			fi
@@ -71,13 +90,17 @@ for SESSION_NAME in "$@"; do
 			if ! session_exists "push_session"; then
 				# Create Session for Project Philosophers
 				tmux new-session -d -s push_session -c ~/CommonCore/2.push_swap/
+				INDEX=1
 
-				tmux new-window -t push_session:1 -n MainCode
-				tmux rename-window -t push_session:1 'MainCode'
-				tmux send-keys -t push_session:1 'nvim -O ~/CommonCore/2.push_swap/src/main.c ~/CommonCore/2.push_swap/src/push_swap.h' C-m
+				tmux new-window -t push_session:$INDEX -n MainCode
+				tmux rename-window -t push_session:$INDEX 'MainCode'
+				tmux send-keys -t push_session:$INDEX 'nvim -O ~/CommonCore/2.push_swap/src/main.c ~/CommonCore/2.push_swap/src/push_swap.h' C-m
+				(( INDEX++ ))
 
-				tmux new-window -t push_session:2 -n Testing
-				tmux send-keys -t push_session:2 '~/CommonCore/2.push_swap/'
+				tmux new-window -t push_session:$INDEX -n Testing
+				tmux send-keys -t push_session:$INDEX '~/CommonCore/2.push_swap/' C-m
+				tmux send-keys -t philo_session:$INDEX 'clear' C-m
+				(( INDEX++ ))
 
 				tmux attach-session -t push_session
 			fi

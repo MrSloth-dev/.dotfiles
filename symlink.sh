@@ -16,7 +16,6 @@ function symlink {
   name="$1"
   dotfile_path="$2"
   link_path="$3"
-
 	echo -e "${CYAN}Symlink $name?[Y/n]${ENDCOLOR}"
 	read answer
 	if [[ $answer =~ ^(Y|y|yes|Yes|YES)$ ]]; then
@@ -27,6 +26,8 @@ function symlink {
 		echo -e "${RED}Skipping $name${ENDCOLOR}"
   fi
 }
+
+
 
 if [[ $PC =~ ^(Work|work|WORK)$ ]]; then
 	echo -e "${GREEN}Syslinking @ Work${ENDCOLOR}\n" 
