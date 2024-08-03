@@ -27,15 +27,15 @@ for SESSION_NAME in "$@"; do
 				# Create Windows
 				tmux new-window -t config_session:$INDEX
 				tmux rename-window -t config_session:$INDEX 'Tmux_Config_Local'
-				tmux send-keys -t config_session:$INDEX 'nvim ~/.tmux.conf.local' C-m
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/.tmux.conf.local' C-m
 				(( INDEX++ ))
 
 				tmux new-window -t config_session:$INDEX -n Nvim_init_lua
-				tmux send-keys -t config_session:$INDEX 'nvim ~/.var/app/io.neovim.nvim/config/nvim/init.lua' C-m
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/nvim/init.lua' C-m
 				(( INDEX++ ))
 
 				tmux new-window -t config_session:$INDEX -n Zmux_Script
-				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/tmux.sh' C-m Escape
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/zmux.sh' C-m Escape
 				(( INDEX++ ))
 
 				tmux new-window -t config_session:$INDEX -n Symlink_Script
@@ -47,7 +47,7 @@ for SESSION_NAME in "$@"; do
 			fi
 			;;
 		philo)
-			if ! session_exists "philo_session"; then
+			if [[ $USER == "joao-pol" ]] && ! session_exists "philo_session"; then
 				# Create Session for Project Philosophers
 				tmux new-session -d -s philo_session -c ~/CommonCore/2.philo/philo
 				
@@ -67,7 +67,7 @@ for SESSION_NAME in "$@"; do
 			fi
 			;;
 		pipex)
-			if ! session_exists "pipex_session"; then
+			if  [$USER == "joao-pol"] && ! session_exists "pipex_session"; then
 				# Create Session for Project Philosophers
 				tmux new-session -d -s pipex_session -c ~/CommonCore/2.pipex/
 
@@ -87,7 +87,7 @@ for SESSION_NAME in "$@"; do
 			fi
 			;;
 		push)
-			if ! session_exists "push_session"; then
+			if  [$USER == "joao-pol"] && ! session_exists "push_session"; then
 				# Create Session for Project Philosophers
 				tmux new-session -d -s push_session -c ~/CommonCore/2.push_swap/
 				INDEX=1

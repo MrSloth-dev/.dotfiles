@@ -84,7 +84,12 @@ tmux_conf_24b_colour=auto
 
 tmux_conf_theme=disabled
 
-set-option -g @tmux-weather-format "%c+%t+%w"
+set -g @plugin 'xamut/tmux-spotify'
+set -g @plugin 'z3z1ma/tmux-gruvbox'
+set -g @plugin 'xamut/tmux-weather'
+set-option -g @tmux-weather-location "Porto"
+
+# set-option -g @tmux-weather-format "%t"
 set-option -g @tmux-weather-interval 1
 
 set -g @gruvbox_flavour 'dark'
@@ -99,7 +104,7 @@ set -g @gruvbox_window_default_text "#W"
 set -g @gruvbox_window_current_fill "number"
 set -g @gruvbox_window_current_text "#W"
 
-set -g @gruvbox_status_modules_right "session date_time weather"
+set -g @gruvbox_status_modules_right "spotify session date_time weather"
 set -g @gruvbox_status_left_separator  ""
 set -g @gruvbox_status_right_separator " "
 set -g @gruvbox_status_right_separator_inverse "yes"
@@ -165,7 +170,7 @@ set -g status-position top
 # by default, launching tmux will update tpm and all plugins
 #   - true (default)
 #   - false
-tmux_conf_update_plugins_on_launch=true
+tmux_conf_update_plugins_on_launch=false
 
 # by default, reloading the configuration will update tpm and all plugins
 #   - true (default)
@@ -194,9 +199,6 @@ tmux_conf_uninstall_plugins_on_reload=true
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
 
-set -g @plugin 'xamut/tmux-weather'
-set -g @plugin 'xamut/tmux-spotify'
-set -g @plugin 'z3z1ma/tmux-gruvbox'
 
 # Smart pane switching with awareness of Vim splits.
 # See: https://github.com/christoomey/vim-tmux-navigator
