@@ -21,7 +21,7 @@ sudo -v
 sudo apt update
 
 # Install list of packages
-sudo apt install -y git zsh neovim python3 i3 rofi tmux neofetch gimp btop libreoffice-suite-gnome virtualbox picom redshift unrarunzip wget xwallpaper
+sudo apt install -y curl wget cmake git zsh neovim python3 i3 i3-wm rofi tmux neofetch gimp btop libreoffice-suite-gnome virtualbox picom redshift unrarunzip wget xwallpaper
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -38,9 +38,11 @@ sudo make install
 cd ../..
 
 # Install Wezterm
-curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Ubuntu20.04.deb
-sudo apt install -y ./wezterm-nightly.Ubuntu20.04.deb
-rm wezterm-nightly.Ubuntu20.04.deb
+curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+sudo apt update
+sudo apt install wezterm
+
 
 # Install Oh My Tmux
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
@@ -55,14 +57,9 @@ sudo install lazygit /usr/local/bin
 rm lazygit lazygit.tar.gz
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
-unzip JetBrainsMono.zip -d ~/.local/share/fonts/
+unzip JetBrainsMono.zip -d ~/.fonts/
 fc-cache -fv
 rm JetBrainsMono.zip
-
-# Set up wallpaper (you'll need to provide the path to your wallpaper)
-# mkdir -p ~/Pictures/Wallpapers
-# cp /path/to/your/wallpaper.jpg ~/Pictures/Wallpapers/
-# gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/Wallpapers/wallpaper.jpg
 
 echo "Installation complete! Please reboot your system to apply all changes."
 kill $KEEP_SUDO_PID

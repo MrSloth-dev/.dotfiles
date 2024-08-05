@@ -7,7 +7,6 @@ source $ZSH/oh-my-zsh.sh
 alias zmux="~/.dotfiles/zmux.sh"
 export TERM="xterm-256color"
 export EDITOR="vim"
-
 #WorkSettings
 if [[ $USER == "joao-pol" ]]; then
 	export PATH="$PATH:/home/joao-pol/.local/share/homebrew/bin"
@@ -21,6 +20,7 @@ if [[ $USER == "joao-pol" ]]; then
 	alias pi="cd ~/CommonCore/2.pipex/"
 	alias fr="cd ~/CommonCore/2.1fract-ol/"
 	alias ph="cd ~/CommonCore/3.philo/philo"
+	alias zmux="~/.dotfiles/zmux.sh"
 	compdef nvim=vim
 	setopt complete_aliases
 	source <(fzf --zsh)
@@ -28,5 +28,7 @@ if [[ $USER == "joao-pol" ]]; then
 fi
 #Home Settings
 if [[ $USER == "mrsloth" ]]; then
+	export PATH="$PATH:/home/mrsloth/.cargo/bin"
+	alias zmux="~/.dotfiles/zmux_home.sh"
 	cowsay "Hello Sloth"
 fi

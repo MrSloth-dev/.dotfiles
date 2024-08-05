@@ -192,7 +192,7 @@ bindsym $mod+r mode "resize"
 # }
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec_always --no-startup-id redshift -c ~/.config/redshift/redshift.sh
+exec_always --no-startup-id redshift -c ~/.config/redshift/redshift.conf
 exec_always --no-startup-id xwallpaper --stretch ~/Downloads/ginko.jpg
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
