@@ -84,7 +84,7 @@ tmux_conf_24b_colour=auto
 
 tmux_conf_theme=disabled
 
-set -g @plugin 'xamut/tmux-spotify'
+# set -g @plugin 'xamut/tmux-spotify'
 set -g @plugin 'z3z1ma/tmux-gruvbox'
 set -g @plugin 'xamut/tmux-weather'
 set-option -g @tmux-weather-location "Porto"
@@ -104,7 +104,7 @@ set -g @gruvbox_window_default_text "#W"
 set -g @gruvbox_window_current_fill "number"
 set -g @gruvbox_window_current_text "#W"
 
-set -g @gruvbox_status_modules_right "spotify session date_time weather"
+set -g @gruvbox_status_modules_right "session date_time weather"
 set -g @gruvbox_status_left_separator  ""
 set -g @gruvbox_status_right_separator " "
 set -g @gruvbox_status_right_separator_inverse "yes"
@@ -155,8 +155,8 @@ tmux_conf_urlscan_options="--compact --dedupe"
 # bind c new-window -c '#{pane_current_path}' #!important
 
 # move status line to top
-set -g status-position bottom
-# set -g status-position top
+# set -g status-position bottom
+set -g status-position top
 
 
 # -- tpm -----------------------------------------------------------------------

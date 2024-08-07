@@ -5,12 +5,14 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="crunch" # set by `omz`
 source $ZSH/oh-my-zsh.sh
 alias zmux="~/.dotfiles/zmux.sh"
+alias tk="tmux kill-server"
 export TERM="xterm-256color"
 export EDITOR="vim"
 #WorkSettings
 if [[ $USER == "joao-pol" ]]; then
 	export PATH="$PATH:/home/joao-pol/.local/share/homebrew/bin"
 	export PATH="$PATH:/home/joao-pol/"
+	export PATH="$PATH:/home/joao-pol/.local/bin"
 	plugins=(git)
 	export MAIL=joao-pol@students.42porto.com
 	export USER=joao-pol
@@ -23,7 +25,6 @@ if [[ $USER == "joao-pol" ]]; then
 	alias zmux="~/.dotfiles/zmux.sh"
 	compdef nvim=vim
 	setopt complete_aliases
-	source <(fzf --zsh)
 	export HOMEBREW_NO_AUTO_UPDATE=1
 fi
 #Home Settings

@@ -7,10 +7,9 @@ GREEN='\e[32m'
 ENDCOLOR='\e[0m'
 
 
-
-
 echo -e "${GREEN}Work or Home?${ENDCOLOR}"
 read PC
+
 # Generic Function to symlink
 function symlink {
   name="$1"
