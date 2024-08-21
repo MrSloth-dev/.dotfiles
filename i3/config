@@ -35,12 +35,15 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
+# Increase volume
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ unmute && $refresh_i3status
+# Decrease volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%- unmute && $refresh_i3status
+# Mute/Unmute volume
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle && $refresh_i3status
+# Mute/Unmute microphone
+bindsym XF86AudioMicMute exec amixer set Capture toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -50,7 +53,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+q kill
@@ -190,11 +193,23 @@ bindsym $mod+r mode "resize"
 #         status_command i3status
 #         position top
 # }
+
+# Increase brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.dotfiles/scripts/brightness.sh up
+
+# Decrease brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.dotfiles/scripts/brightness.sh down
+
+
+
+
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec_always --no-startup-id redshift -c ~/.config/redshift/redshift.conf
-exec_always --no-startup-id xwallpaper --stretch ~/Downloads/ginko.jpg
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec --no-startup-id redshift -l 0:0 -t 6500:3500 -b 1.0:0.6
+
+exec_always --no-startup-id xwallpaper --stretch ~/.dotfiles/ginko.jpg
+# exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id compton -b
 
 
 exec_always --no-startup-id setxkbmap -model pc105 -layout us,pt -option grp:alt_caps_toggle

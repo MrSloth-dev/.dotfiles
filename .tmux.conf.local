@@ -155,8 +155,8 @@ tmux_conf_urlscan_options="--compact --dedupe"
 # bind c new-window -c '#{pane_current_path}' #!important
 
 # move status line to top
-# set -g status-position bottom
-set -g status-position top
+# Conditional logic to bind keys or execute commands based on the user
+run-shell 'if [ "$(whoami)" = "joao-pol" ]; then set -g status-position top; else set -g status-position bottom; fi'
 
 
 # -- tpm -----------------------------------------------------------------------

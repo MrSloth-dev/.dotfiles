@@ -21,8 +21,6 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move DOWN" })
 vim.keymap.set("n", "<Tab>", ":tabNext<CR>", { desc = "Next Tab" })
 vim.keymap.set("n", "-", ":Oil<CR>", { desc = "Open Oil" })
 
-vim.keymap.set("n", "<leader>sg", ":vimgrep /<C-r><C-w>/ %:p:h/*.c | copen<CR>", { desc = "[S]earch by [G]rep" })
-
 vim.env.PATH = vim.env.PATH .. ":/home/joao-pol/.local/share/homebrew/bin"
 vim.env.PATH = vim.env.PATH .. ":/snap/bin/"
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
