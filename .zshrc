@@ -35,3 +35,4 @@ if [[ $USER == "mrsloth" ]]; then
 	alias zmux="~/.dotfiles/scripts/zmux_home.sh"
 	cowsay "Hello Sloth"
 fi
+alias hihi="echo 'hihi'"

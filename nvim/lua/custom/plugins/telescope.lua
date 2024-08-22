@@ -92,7 +92,6 @@ return {
 				":vimgrep <cword> %:p:h/**/*.c | :copen<CR><C-k>",
 				{ desc = "[S]earch [C]urrentWord" }
 			)
-
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()
 				-- You can pass additional configuration to Telescope to change the theme, layout, etc.
@@ -113,8 +112,11 @@ return {
 
 			-- Shortcut for searching your Neovim configuration files
 			vim.keymap.set("n", "<leader>sn", function()
-				builtin.find_files({ cwd = vim.fn.stdpath("config") })
+				builtin.find_files({
+					cwd = vim.fn.stdpath("config"),
+				})
 			end, { desc = "[S]earch [N]eovim files" })
 		end,
 	},
 }
+--, "~/.var/app/io.neovim.nvim/config/nvim/lua/custom/plugins/"

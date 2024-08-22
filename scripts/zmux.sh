@@ -47,19 +47,17 @@ for SESSION_NAME in "$@"; do
 		philo)
 			if [[ $USER == "joao-pol" ]] && ! session_exists "philo_session"; then
 				# Create Session for Project Philosophers
-				tmux new-session -d -s philo_session -c ~/CommonCore/2.philo/philo
+				tmux new-session -d -s philo_session -c ~/CommonCore/3.philo/philo/
 				
 				INDEX=1
 
 				tmux new-window -t philo_session:$INDEX -n MainCode
 				tmux rename-window -t philo_session:$INDEX 'MainCode'
 				tmux send-keys -t philo_session:$INDEX 'nvim -O ~/CommonCore/3.philo/philo/src/main.c ~/CommonCore/3.philo/philo/includes/philo.h' C-m
-				tmux send-keys -t philo_session:$INDEX C-w '50>'
 				(( INDEX++ ))
 
 				tmux new-window -t philo_session:$INDEX -n Testing
 				tmux send-keys -t philo_session:$INDEX 'cd ~/CommonCore/3.philo/philo/' C-m
-				tmux send-keys -t philo_session:$INDEX 'clear' C-m
 				(( INDEX++ ))
 
 				tmux attach-session -t philo_session:1
@@ -75,12 +73,10 @@ for SESSION_NAME in "$@"; do
 				tmux new-window -t pipex_session:$INDEX -n MainCode
 				tmux rename-window -t pipex_session:$INDEX 'MainCode'
 				tmux send-keys -t pipex_session:$INDEX 'nvim -O ~/CommonCore/2.pipex/src/main.c ~/CommonCore/2.pipex/includes/pipex.h' C-m
-				tmux send-keys -t pipex:$INDEX C-w '50>'
 				(( INDEX++ ))
 
 				tmux new-window -t pipex_session:$INDEX -n Testing
 				tmux send-keys -t pipex_session:$INDEX '~/CommonCore/2.pipex/' C-m
-				tmux send-keys -t pipex:$INDEX 'clear' C-m
 				(( INDEX++ ))
 
 				tmux attach-session -t pipex_session:1
@@ -95,12 +91,10 @@ for SESSION_NAME in "$@"; do
 				tmux new-window -t push_session:$INDEX -n MainCode
 				tmux rename-window -t push_session:$INDEX 'MainCode'
 				tmux send-keys -t push_session:$INDEX 'nvim -O ~/CommonCore/2.push_swap/src/main.c ~/CommonCore/2.push_swap/src/push_swap.h' C-m
-				tmux send-keys -t push_session:$INDEX C-w '50>'
 				(( INDEX++ ))
 
 				tmux new-window -t push_session:$INDEX -n Testing
 				tmux send-keys -t push_session:$INDEX '~/CommonCore/2.push_swap/' C-m
-				tmux send-keys -t push_session:$INDEX 'clear' C-m
 				(( INDEX++ ))
 
 				tmux attach-session -t push_session:1
