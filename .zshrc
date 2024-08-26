@@ -6,7 +6,7 @@ ZSH_THEME="crunch" # set by `omz`
 source $ZSH/oh-my-zsh.sh
 alias tk="tmux kill-server"
 alias sym="~/.dotfiles/scripts/symlink.sh"
-alias obs="nvim ~/.dotfiles/Obsidian/"
+alias obs="nvim ~/ObsidianNotes/"
 export TERM="xterm-256color"
 export EDITOR="vim"
 #WorkSettings
@@ -35,4 +35,3 @@ if [[ $USER == "mrsloth" ]]; then
 	alias zmux="~/.dotfiles/scripts/zmux_home.sh"
 	cowsay "Hello Sloth"
 fi
-alias hihi="echo 'hihi'"

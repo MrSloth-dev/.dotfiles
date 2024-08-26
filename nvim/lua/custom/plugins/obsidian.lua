@@ -21,7 +21,7 @@ return {
 		workspaces = {
 			{
 				name = "Projects",
-				path = "~/.dotfiles/Obsidian",
+				path = "~/ObsidianNotes",
 			},
 			-- {
 			-- 	name = "2.Areas",

@@ -84,17 +84,15 @@ tmux_conf_24b_colour=auto
 
 tmux_conf_theme=disabled
 
-# set -g @plugin 'xamut/tmux-spotify'
-set -g @plugin 'z3z1ma/tmux-gruvbox'
 set -g @plugin 'xamut/tmux-weather'
 set-option -g @tmux-weather-location "Porto"
 
-# set-option -g @tmux-weather-format "%t"
 set-option -g @tmux-weather-interval 1
 
+set -g @plugin 'z3z1ma/tmux-gruvbox'
 set -g @gruvbox_flavour 'dark'
 set -g @gruvbox_window_left_separator "█"
-set -g @gruvbox_window_right_separator "█"
+set -g @gruvbox_window_right_separator ""
 set -g @gruvbox_window_number_position "right"
 set -g @gruvbox_window_middle_separator ""
 
@@ -103,14 +101,34 @@ set -g @gruvbox_window_default_text "#W"
 
 set -g @gruvbox_window_current_fill "number"
 set -g @gruvbox_window_current_text "#W"
-
 set -g @gruvbox_status_modules_right "session date_time weather"
 set -g @gruvbox_status_left_separator  ""
-set -g @gruvbox_status_right_separator " "
-set -g @gruvbox_status_right_separator_inverse "yes"
+set -g @gruvbox_status_right_separator ""
+set -g @gruvbox_status_right_separator_inverse "no"
 set -g @gruvbox_status_fill "all"
 set -g @gruvbox_date_time_text "%d-%m-%Y %H:%M"
-set -g @gruvbox_status_connect_separator "no"
+set -g @gruvbox_status_connect_separator "yes"
+
+# Catpuccin
+# set -g @plugin 'catppuccin/tmux#latest'
+# set -g @catppuccin_flavour 'mocha'
+# set -g @catppuccin_window_left_separator "█"
+# set -g @catppuccin_window_right_separator ""
+# set -g @catppuccin_window_number_position "right"
+# set -g @catppuccin_window_middle_separator ""
+#
+# set -g @catppuccin_window_default_fill "number"
+# set -g @catppuccin_window_default_text "#W"
+#
+# set -g @catppuccin_window_current_fill "number"
+# set -g @catppuccin_window_current_text "#W"
+# set -g @catppuccin_status_modules_right "pomodoro_status session date_time weather"
+# set -g @catppuccin_status_left_separator  ""
+# set -g @catppuccin_status_right_separator ""
+# set -g @catppuccin_status_right_separator_inverse "no"
+# set -g @catppuccin_status_fill "all"
+# set -g @catppuccin_date_time_text "%d-%m-%Y %H:%M"
+# set -g @catppuccin_status_connect_separator "yes"
 
 # ##theming_end
 # -- clipboard -----------------------------------------------------------------
@@ -154,9 +172,10 @@ tmux_conf_urlscan_options="--compact --dedupe"
 # if you don't want Oh my tmux! to alter a binding, use #!important
 # bind c new-window -c '#{pane_current_path}' #!important
 
-# move status line to top
+# Move status line to top if in Work
+#  run-shell 'if [ "$(whoami)" = "joao-pol" ]; then set -g status-position top; else set -g status-position bottom; fi'
+set -g status-position top
 # Conditional logic to bind keys or execute commands based on the user
-run-shell 'if [ "$(whoami)" = "joao-pol" ]; then set -g status-position top; else set -g status-position bottom; fi'
 
 
 # -- tpm -----------------------------------------------------------------------
