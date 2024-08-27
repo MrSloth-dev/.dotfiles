@@ -27,6 +27,8 @@ if [[ $USER == "joao-pol" ]]; then
 	compdef nvim=vim
 	setopt complete_aliases
 	export HOMEBREW_NO_AUTO_UPDATE=1
+	# Raylib
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/sgoinfre/raylib-master/
 fi
 #Home Settings
 if [[ $USER == "mrsloth" ]]; then
