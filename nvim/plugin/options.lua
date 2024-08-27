@@ -64,3 +64,6 @@ vim.opt.hlsearch = true
 
 -- For Obsidian
 vim.opt.conceallevel = 2
+
+-- Because we have Telescope Undo
+vim.opt.swapfile = true

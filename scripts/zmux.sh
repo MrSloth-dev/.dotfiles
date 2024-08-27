@@ -40,21 +40,19 @@ for SESSION_NAME in "$@"; do
 
 				tmux new-window -t config_session:$INDEX -n Symlink_Script
 				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/scripts/symlink.sh' C-m
-				tmux split-window -h -t config_session:$INDEX
 				(( INDEX++ ))
 			fi
 			;;
 		philo)
 			if [[ $USER == "joao-pol" ]] && ! session_exists "philo_session"; then
 				# Create Session for Project Philosophers
-				tmux new-session -d -s philo_session -c ~/CommonCore/2.philo/philo
+				tmux new-session -d -s philo_session -c ~/CommonCore/3.philo/philo/
 				
 				INDEX=1
 
 				tmux new-window -t philo_session:$INDEX -n MainCode
 				tmux rename-window -t philo_session:$INDEX 'MainCode'
 				tmux send-keys -t philo_session:$INDEX 'nvim -O ~/CommonCore/3.philo/philo/src/main.c ~/CommonCore/3.philo/philo/includes/philo.h' C-m
-				tmux send-keys -t philo_session:$INDEX C-w '50>'
 				(( INDEX++ ))
 
 				tmux new-window -t philo_session:$INDEX -n Testing
@@ -74,7 +72,6 @@ for SESSION_NAME in "$@"; do
 				tmux new-window -t pipex_session:$INDEX -n MainCode
 				tmux rename-window -t pipex_session:$INDEX 'MainCode'
 				tmux send-keys -t pipex_session:$INDEX 'nvim -O ~/CommonCore/2.pipex/src/main.c ~/CommonCore/2.pipex/includes/pipex.h' C-m
-				tmux send-keys -t pipex:$INDEX C-w '50>'
 				(( INDEX++ ))
 
 				tmux new-window -t pipex_session:$INDEX -n Testing
@@ -93,7 +90,6 @@ for SESSION_NAME in "$@"; do
 				tmux new-window -t push_session:$INDEX -n MainCode
 				tmux rename-window -t push_session:$INDEX 'MainCode'
 				tmux send-keys -t push_session:$INDEX 'nvim -O ~/CommonCore/2.push_swap/src/main.c ~/CommonCore/2.push_swap/src/push_swap.h' C-m
-				tmux send-keys -t push_session:$INDEX C-w '50>'
 				(( INDEX++ ))
 
 				tmux new-window -t push_session:$INDEX -n Testing
@@ -104,14 +100,15 @@ for SESSION_NAME in "$@"; do
 			fi
 			;;
 		obs)
-			if  [$USER == "joao-pol"] && ! session_exists "obsidian_session"; then
-				# Create Session for Project Push_Swap
-				tmux new-session -d -s obsidian_session -c ~/Obsidian/
+			if  ! session_exists "obsidian_session"; then
+				# Create Session for ObsidianNotes
+				tmux new-session -d -s obsidian_session -c ~/ObsidianNotes/
+
 				INDEX=1
 
-				tmux new-window -t obsidian_session:$INDEX -n MainCode
-				tmux rename-window -t obsidian_session:$INDEX 'MainCode'
-				tmux send-keys -t obsidian_session:$INDEX 'nvim ~/Obsidian/' C-m
+				tmux new-window -t obsidian_session:$INDEX -n MainNotes
+				tmux rename-window -t obsidian_session:$INDEX 'MainNotes'
+				tmux send-keys -t obsidian_session:$INDEX 'nvim -O ~/ObsidianNotes/' C-m
 				(( INDEX++ ))
 
 				tmux attach-session -t obsidian_session:1

@@ -6,7 +6,7 @@ ZSH_THEME="crunch" # set by `omz`
 source $ZSH/oh-my-zsh.sh
 alias tk="tmux kill-server"
 alias sym="~/.dotfiles/scripts/symlink.sh"
-alias obs="nvim ~/.dotfiles/Obsidian/"
+alias obs="nvim ~/ObsidianNotes/"
 export TERM="xterm-256color"
 export EDITOR="vim"
 #WorkSettings
@@ -27,6 +27,8 @@ if [[ $USER == "joao-pol" ]]; then
 	compdef nvim=vim
 	setopt complete_aliases
 	export HOMEBREW_NO_AUTO_UPDATE=1
+	# Raylib
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/sgoinfre/raylib-master/
 fi
 #Home Settings
 if [[ $USER == "mrsloth" ]]; then
