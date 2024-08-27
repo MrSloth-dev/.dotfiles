@@ -7,8 +7,13 @@ GREEN='\e[32m'
 ENDCOLOR='\e[0m'
 
 
-echo -e "${GREEN}Work or Home?${ENDCOLOR}"
-read PC
+# echo -e "${GREEN}Work or Home?${ENDCOLOR}"
+# read PC
+if [[ $USER == "joao-pol" ]]; then
+	PC="Work"
+elif [[ $USER == "mrsloth" ]]; then
+	PC="Home"
+fi
 
 # Generic Function to symlink
 function symlink {

@@ -3,7 +3,7 @@
 # Check number of args
 if [ $# -eq 0 ]; then
 	echo "Usage ./zmux <session_name>"
-	echo "Sessions Possible :\n config\n philo\n push\n pipex"
+	echo "Sessions Possible :\n config\n philo\n push\n pipex \nobs"
 	exit 1
 fi
 
@@ -35,11 +35,11 @@ for SESSION_NAME in "$@"; do
 				(( INDEX++ ))
 
 				tmux new-window -t config_session:$INDEX -n Zmux_Script
-				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/zmux.sh' C-m Escape
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/scripts/zmux.sh' C-m Escape
 				(( INDEX++ ))
 
 				tmux new-window -t config_session:$INDEX -n Symlink_Script
-				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/symlink.sh' C-m
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/scripts/symlink.sh' C-m
 				tmux split-window -h -t config_session:$INDEX
 				(( INDEX++ ))
 			fi
@@ -59,7 +59,6 @@ for SESSION_NAME in "$@"; do
 
 				tmux new-window -t philo_session:$INDEX -n Testing
 				tmux send-keys -t philo_session:$INDEX 'cd ~/CommonCore/3.philo/philo/' C-m
-				tmux send-keys -t philo_session:$INDEX 'clear' C-m
 				(( INDEX++ ))
 
 				tmux attach-session -t philo_session:1
@@ -80,7 +79,6 @@ for SESSION_NAME in "$@"; do
 
 				tmux new-window -t pipex_session:$INDEX -n Testing
 				tmux send-keys -t pipex_session:$INDEX '~/CommonCore/2.pipex/' C-m
-				tmux send-keys -t pipex:$INDEX 'clear' C-m
 				(( INDEX++ ))
 
 				tmux attach-session -t pipex_session:1
@@ -100,15 +98,28 @@ for SESSION_NAME in "$@"; do
 
 				tmux new-window -t push_session:$INDEX -n Testing
 				tmux send-keys -t push_session:$INDEX '~/CommonCore/2.push_swap/' C-m
-				tmux send-keys -t push_session:$INDEX 'clear' C-m
 				(( INDEX++ ))
 
 				tmux attach-session -t push_session:1
 			fi
 			;;
+		obs)
+			if  [$USER == "joao-pol"] && ! session_exists "obsidian_session"; then
+				# Create Session for Project Push_Swap
+				tmux new-session -d -s obsidian_session -c ~/Obsidian/
+				INDEX=1
+
+				tmux new-window -t obsidian_session:$INDEX -n MainCode
+				tmux rename-window -t obsidian_session:$INDEX 'MainCode'
+				tmux send-keys -t obsidian_session:$INDEX 'nvim ~/Obsidian/' C-m
+				(( INDEX++ ))
+
+				tmux attach-session -t obsidian_session:1
+			fi
+			;;
 		*)
 			echo "Unknown Session: $SESSION_NAME"
-			echo "Sessions Possible :\nconfig\nphilo\npush\npipex"
+			echo "Sessions Possible :\nconfig\nphilo\npush\npipex\nobs"
 			;;
 	esac
 done
