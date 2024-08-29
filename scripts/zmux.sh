@@ -3,7 +3,7 @@
 # Check number of args
 if [ $# -eq 0 ]; then
 	echo "Usage ./zmux <session_name>"
-	echo "Sessions Possible :\n config\n philo\n push\n pipex\nobs"
+	echo "Sessions Possible :\n config\n philo\n push\n pipex \nobs"
 	exit 1
 fi
 
@@ -35,7 +35,7 @@ for SESSION_NAME in "$@"; do
 				(( INDEX++ ))
 
 				tmux new-window -t config_session:$INDEX -n Zmux_Script
-				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/scripts/zmux.sh' C-m
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/scripts/zmux.sh' C-m Escape
 				(( INDEX++ ))
 
 				tmux new-window -t config_session:$INDEX -n Symlink_Script

@@ -39,3 +39,6 @@ if [[ $USER == "mrsloth" ]]; then
 	cowsay "Hello Sloth"
 	eval "$(zoxide init zsh)"
 fi
+
+# Created by `pipx` on 2024-08-28 20:48:55
+export PATH="$PATH:/home/mrsloth/.local/bin"

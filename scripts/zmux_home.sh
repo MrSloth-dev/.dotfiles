@@ -3,7 +3,7 @@
 # Check number of args
 if [ $# -eq 0 ]; then
 	echo "Usage ./zmux <session_name>"
-	echo "Sessions Possible :\n config\n particle"
+	echo "Sessions Possible :\n config\n particle\n obs"
 	exit 1
 fi
 
@@ -35,14 +35,11 @@ for SESSION_NAME in "$@"; do
 				(( INDEX++ ))
 
 				tmux new-window -t config_session:$INDEX -n Zmux_Script
-				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/zmux.sh' C-m Escape
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/scripts/zmux.sh' C-m Escape
 				(( INDEX++ ))
 
 				tmux new-window -t config_session:$INDEX -n Symlink_Script
-				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/symlink.sh' C-m
-				tmux split-window -h -t config_session:$INDEX
-				tmux send-keys -t config_session:$INDEX.2 'cd ~/.dotfiles/' C-m
-				tmux send-keys -t config_session:$INDEX.2 'clear' C-m
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/scripts/symlink.sh' C-m
 				(( INDEX++ ))
 			fi
 			;;
@@ -66,9 +63,23 @@ for SESSION_NAME in "$@"; do
 				tmux attach-session -t particle_session
 			fi
 			;;
+		obs)
+			if [[ $USER == "mrsloth" ]] && ! session_exists "obsidian_session"; then
+				# Create Session for Obsidian Notes!
+				tmux new-session -d -s obsidian_session -c ~/Obsidian/
+				INDEX=1
+
+				tmux new-window -t obsidian_session:$INDEX -n MainNotes
+				tmux rename-window -t obsidian_session:$INDEX 'MainNotes'
+				tmux send-keys -t obsidian_session:$INDEX 'nvim ~/Obsidian/' C-m
+				(( INDEX++ ))
+
+				tmux attach-session -t obsidian_session:1
+			fi
+			;;
 		*)
 			echo "Unknown Session: $SESSION_NAME"
-			echo "Sessions Possible :\nconfig\nparticle"
+			echo "Sessions Possible :\nconfig\nparticle\nobs"
 			;;
 	esac
 done

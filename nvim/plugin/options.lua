@@ -23,6 +23,15 @@ vim.opt.clipboard = "unnamedplus"
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Highlight when yanking (copying) text
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
 -- Save undo history
 vim.opt.undofile = true
 
@@ -62,8 +71,8 @@ vim.opt.scrolloff = 10
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
--- For Obsidian
+-- For Obsidian graphics
 vim.opt.conceallevel = 2
 
--- Because we have Telescope Undo
+-- Because we have Telescope Undo // must check this pos of swapfiles
 vim.opt.swapfile = true
