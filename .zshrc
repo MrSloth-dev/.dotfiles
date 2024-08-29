@@ -29,6 +29,7 @@ if [[ $USER == "joao-pol" ]]; then
 	export HOMEBREW_NO_AUTO_UPDATE=1
 	# Raylib
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/sgoinfre/raylib-master/
+	eval "$(zoxide init zsh)"
 fi
 #Home Settings
 if [[ $USER == "mrsloth" ]]; then
@@ -36,4 +37,8 @@ if [[ $USER == "mrsloth" ]]; then
 	export PATH="$PATH:/home/mrsloth/.cargo/bin"
 	alias zmux="~/.dotfiles/scripts/zmux_home.sh"
 	cowsay "Hello Sloth"
+	eval "$(zoxide init zsh)"
 fi
+
+# Created by `pipx` on 2024-08-28 20:48:55
+export PATH="$PATH:/home/mrsloth/.local/bin"
