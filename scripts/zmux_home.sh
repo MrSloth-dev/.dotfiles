@@ -66,12 +66,12 @@ for SESSION_NAME in "$@"; do
 		obs)
 			if [[ $USER == "mrsloth" ]] && ! session_exists "obsidian_session"; then
 				# Create Session for Obsidian Notes!
-				tmux new-session -d -s obsidian_session -c ~/Obsidian/
+				tmux new-session -d -s obsidian_session -c ~/ObsidianNotes/
 				INDEX=1
 
 				tmux new-window -t obsidian_session:$INDEX -n MainNotes
 				tmux rename-window -t obsidian_session:$INDEX 'MainNotes'
-				tmux send-keys -t obsidian_session:$INDEX 'nvim ~/Obsidian/' C-m
+				tmux send-keys -t obsidian_session:$INDEX 'nvim ~/ObsidianNotes/' C-m
 				(( INDEX++ ))
 
 				tmux attach-session -t obsidian_session:1
