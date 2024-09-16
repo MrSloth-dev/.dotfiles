@@ -14,14 +14,14 @@ return {
 			require("42header").setup(opts)
 		end,
 	},
-	{
-		"MrSloth-dev/42-NorminetteNvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("norminette").setup({
-				auto_run = false,
-				keybind = "<leader>n",
-			})
-		end,
-	},
+	-- {
+	-- 	"MrSloth-dev/42-NorminetteNvim",
+	-- 	dependencies = { "nvim-lua/plenary.nvim" },
+	-- 	config = function()
+	-- 		require("norminette").setup({
+	-- 			auto_run = false,
+	-- 			keybind = "<leader>n",
+	-- 		})
+	-- 	end,
+	-- },
 }

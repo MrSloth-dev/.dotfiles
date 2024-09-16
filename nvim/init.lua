@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
-
+vim.g.loaded_treesitter = false
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
@@ -25,10 +25,4 @@ if not vim.loop.fs_stat(lazypath) then
 end
 ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
-
 require("lazy").setup({ import = "custom/plugins" }, { change_detection = { notify = false } })
-<<<<<<< HEAD
--- Load the norminette plugin
-require("custom.tests.Norminette42").setup()
-=======
->>>>>>> 145ba93a2e955eb3a7eca5e39de9a31f21776eba
