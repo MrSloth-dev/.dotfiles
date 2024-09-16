@@ -1,0 +1,1 @@
+return {version=12,pkgs={{file="busted-scm-1.rockspec",dir="/home/joao-pol/.dotfiles/nvim/.tests/data/nvim/lazy/busted",source="rockspec",name="busted",spec={"busted",build="rockspec",lazy=false,},},},}

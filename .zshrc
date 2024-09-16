@@ -29,7 +29,7 @@ if [[ $USER == "joao-pol" ]]; then
 	export HOMEBREW_NO_AUTO_UPDATE=1
 	# Raylib
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/sgoinfre/raylib-master/
-	eval "$(zoxide init zsh)"
+	# eval "$(zoxide init zsh)"
 fi
 #Home Settings
 if [[ $USER == "mrsloth" ]]; then

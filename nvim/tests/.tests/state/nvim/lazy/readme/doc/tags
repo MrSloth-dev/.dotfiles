@@ -1,0 +1,7 @@
+!_TAG_FILE_ENCODING	utf-8	//
+busted-in-a-shell-or-in-your-shell-s-rc-file	busted.md	/# In a shell or in your shell's RC file:
+busted-run-on-an-entire-project	busted.md	/# Run on an entire project
+busted-run-on-one-directory	busted.md	/# Run on one directory:
+busted-thereafter-just-run	busted.md	/# Thereafter just run:
+busted-use-as-a-ci-job	busted.md	/### Use as a CI job
+starter-lazyvim	starter.md	/# 💤 LazyVim
