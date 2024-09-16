@@ -27,5 +27,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ import = "custom/plugins" }, { change_detection = { notify = false } })
+<<<<<<< HEAD
 -- Load the norminette plugin
 require("custom.tests.Norminette42").setup()
+=======
+>>>>>>> 145ba93a2e955eb3a7eca5e39de9a31f21776eba

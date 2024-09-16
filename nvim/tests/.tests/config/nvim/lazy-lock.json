@@ -1,9 +1,0 @@
-{
-  "busted": { "branch": "master", "commit": "269a34848a6b12660ca73469c980b80d7f1b540a" },
-  "hererocks": { "branch": "master", "commit": "8bd2fcfdd65cfa7535ce39ea372a63b0bdb8e528" },
-  "lazy.nvim": { "branch": "main", "commit": "077102c5bfc578693f12377846d427f49bc50076" },
-  "mason-lspconfig.nvim": { "branch": "main", "commit": "482350b050bd413931c2cdd4857443c3da7d57cb" },
-  "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
-  "nvim-treesitter": { "branch": "master", "commit": "585860a1865853d2c287c8ef534297da8115818e" },
-  "starter": { "branch": "main", "commit": "cb6349c8ae922d1c5745574f4d17b44f2731d451" }
-}

@@ -1,1 +1,0 @@
--- return { "MrSloth-dev/NorminetteDiagnostics" }
