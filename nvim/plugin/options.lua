@@ -76,3 +76,6 @@ vim.opt.conceallevel = 2
 
 -- Because we have Telescope Undo // must check this pos of swapfiles
 vim.opt.swapfile = true
+vim.opt.path = vim.opt.path + "/usr/local/bin"
+vim.o.shell = vim.fn.expand("$SHELL")
+vim.env.SHELL = "/bin/zsh"

@@ -1,5 +1,5 @@
 {
-  "42-NorminetteNvim": { "branch": "main", "commit": "9e400a891d6dd420c9f88e0838b6452177a2d8f0" },
+  "42-NorminetteNvim": { "branch": "main", "commit": "c3f03bf0e98b110a7376a458bfaa3155cc4e375b" },
   "42-header.nvim": { "branch": "main", "commit": "aa720167de6584ec21f068ffe16d7ebd391cc3e6" },
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
   "LuaSnip": { "branch": "master", "commit": "45db5addf8d0a201e1cf247cae4cdce605ad3768" },

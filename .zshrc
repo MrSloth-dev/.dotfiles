@@ -12,6 +12,7 @@ export EDITOR="vim"
 #WorkSettings
 if [[ $USER == "joao-pol" ]]; then
 	export PATH="$PATH:/home/joao-pol/sgoinfre/homebrew/bin"
+	export PATH="$PATH:/usr/local/bin"
 	export PATH="$PATH:/home/joao-pol/"
 	export PATH="$PATH:/home/joao-pol/.local/bin"
 	plugins=(git)

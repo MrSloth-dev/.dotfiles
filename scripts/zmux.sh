@@ -43,6 +43,25 @@ for SESSION_NAME in "$@"; do
 				(( INDEX++ ))
 			fi
 			;;
+		mini)
+			if  ! session_exists "mini_session"; then
+				# Create Session for Project mini
+				tmux new-session -d -s mini_session -c ~/CommonCore/3.MiniShell/
+
+				INDEX=1
+
+				tmux new-window -t mini_session:$INDEX -n MainCode
+				tmux rename-window -t mini_session:$INDEX 'MainCode'
+				tmux send-keys -t mini_session:$INDEX 'nvim -O ~/CommonCore/3.MiniShell ~/CommonCore/3.MiniSheel/src/main.c' C-m
+				(( INDEX++ ))
+
+				tmux new-window -t mini_session:$INDEX -n Testing
+				tmux send-keys -t mini_session:$INDEX '~/CommonCore/3.MiniShell/' C-m
+				(( INDEX++ ))
+
+				tmux attach-session -t mini_session:1
+			fi
+			;;
 		philo)
 			if [[ $USER == "joao-pol" ]] && ! session_exists "philo_session"; then
 				# Create Session for Project Philosophers
