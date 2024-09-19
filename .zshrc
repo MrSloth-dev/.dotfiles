@@ -7,7 +7,6 @@ source $ZSH/oh-my-zsh.sh
 alias tk="tmux kill-server"
 alias sym="~/.dotfiles/scripts/symlink.sh"
 alias obs="nvim ~/ObsidianNotes/"
-export TERM="xterm-256color"
 export EDITOR="vim"
 #WorkSettings
 if [[ $USER == "joao-pol" ]]; then
@@ -18,8 +17,8 @@ if [[ $USER == "joao-pol" ]]; then
 	plugins=(git)
 	export MAIL=joao-pol@students.42porto.com
 	export USER=joao-pol
-	alias nvim="flatpak run io.neovim.nvim"
-	alias nvim.="flatpak run io.neovim.nvim **/*"
+	##alias nvim="flatpak run io.neovim.nvim"
+	##alias nvim.="flatpak run io.neovim.nvim **/*"
 	alias pu="cd ~/CommonCore/2.push_swap/"
 	alias pi="cd ~/CommonCore/2.pipex/"
 	alias fr="cd ~/CommonCore/2.1fract-ol/"
@@ -30,7 +29,7 @@ if [[ $USER == "joao-pol" ]]; then
 	export HOMEBREW_NO_AUTO_UPDATE=1
 	# Raylib
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/sgoinfre/raylib-master/
-	# eval "$(zoxide init zsh)"
+	eval "$(zoxide init zsh)"
 fi
 #Home Settings
 if [[ $USER == "mrsloth" ]]; then

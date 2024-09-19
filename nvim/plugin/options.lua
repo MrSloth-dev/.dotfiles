@@ -78,4 +78,5 @@ vim.opt.conceallevel = 2
 vim.opt.swapfile = true
 vim.opt.path = vim.opt.path + "/usr/local/bin"
 vim.o.shell = vim.fn.expand("$SHELL")
-vim.env.SHELL = "/bin/zsh"
+vim.env.SHELL = "/usr/share/zsh"
+vim.env.PATH = vim.env.PATH .. ":/usr/local/bin/:/bin/:/usr/bin/:/usr/share/"

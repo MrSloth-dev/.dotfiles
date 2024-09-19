@@ -36,7 +36,7 @@ function symlink {
 if [[ $PC =~ ^(Work|work|WORK)$ ]]; then
 	echo -e "${GREEN}Syslinking @ Work${ENDCOLOR}\n" 
 	symlink "Tmux" "/home/joao-pol/.dotfiles/.tmux.conf.local" "/home/joao-pol/.tmux.conf.local"
-	symlink "Nvim" "/home/joao-pol/.dotfiles/nvim/" "/home/joao-pol/.var/app/io.neovim.nvim/config/"
+	symlink "Nvim" "/home/joao-pol/.dotfiles/nvim/" "/home/joao-pol/.config/"
 	symlink "Zshrc" "/home/joao-pol/.dotfiles/.zshrc" "/home/joao-pol/.zshrc"
 	symlink "Norminette" "/home/joao-pol/.local/share/homebrew/bin/" "/usr/local/bin/norminette"
 elif [[ $PC =~ ^(Home|home|HOME)$ ]]; then
