@@ -3,7 +3,7 @@
 # Check number of args
 if [ $# -eq 0 ]; then
 	echo "Usage ./zmux <session_name>"
-	echo "Sessions Possible :\n config\n particle\n obs"
+	echo "Sessions Possible :\n config\n particle\n obs\n mini"
 	exit 1
 fi
 
@@ -43,6 +43,25 @@ for SESSION_NAME in "$@"; do
 				(( INDEX++ ))
 			fi
 			;;
+		mini)
+			if  ! session_exists "mini_session"; then
+				# Create Session for Project mini
+				tmux new-session -d -s mini_session -c ~/CommonCore/3.MiniShell/
+
+				INDEX=1
+
+				tmux new-window -t mini_session:$INDEX -n MainCode
+				tmux rename-window -t mini_session:$INDEX 'MainCode'
+				tmux send-keys -t mini_session:$INDEX 'nvim -O ~/CommonCore/3.MiniShell ~/CommonCore/3.MiniSheel/src/main.c' C-m
+				(( INDEX++ ))
+
+				tmux new-window -t mini_session:$INDEX -n Testing
+				tmux send-keys -t mini_session:$INDEX '~/CommonCore/3.MiniShell/' C-m
+				(( INDEX++ ))
+
+				tmux attach-session -t mini_session:1
+			fi
+			;;
 		particle)
 			if [[ $USER == "mrsloth" ]] && ! session_exists "particle_session"; then
 				# Create Session for Project ParticleSimulator
@@ -79,7 +98,7 @@ for SESSION_NAME in "$@"; do
 			;;
 		*)
 			echo "Unknown Session: $SESSION_NAME"
-			echo "Sessions Possible :\nconfig\nparticle\nobs"
+			echo "Sessions Possible :\nconfig\nparticle\nobs\nmini"
 			;;
 	esac
 done

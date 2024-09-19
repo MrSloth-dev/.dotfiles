@@ -1,48 +1,44 @@
 #!/bin/bash
 
+set -e
+
 if [ "$EUID" -eq 0 ]; then 
-  echo "Please run this script as a normal user, not as root."
-  exit
+    echo "Please run this script as a normal user, not as root."
+    exit 1
 fi
 
 keep_sudo_alive() {
-  while true; do
-    sudo -v
-    sleep 50
-  done
+    while true; do
+        sudo -v
+        sleep 50
+    done
 }
 
 keep_sudo_alive &
 KEEP_SUDO_PID=$!
+
 echo "Please enter your password to allow the script to run sudo commands:"
 sudo -v
 
-# Update package lists
-sudo apt update
+# Update package lists and upgrade existing packages
+sudo apt update && sudo apt upgrade -y
 
-# Install list of packages
-sudo apt install -y curl wget cmake git zsh neovim python3 i3 i3-wm rofi tmux neofetch gimp btop libreoffice-suite-gnome virtualbox picom redshift unrarunzip wget xwallpaper
+# Install required dependencies
+sudo apt install -y curl wget cmake git zsh neovim python3 i3 i3-wm rofi tmux neofetch gimp btop \
+    virtualbox picom redshift unrar unzip xwallpaper \
+    build-essential libssl-dev libcurl4-openssl-dev libxml2-dev libxcb-xinerama0-dev \
+    libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xrm-dev libxcb-xkb-dev \
+    pkg-config xcb libxcb-image0-dev libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev \
+    libnl-genl-3-dev polybar
 
 # Install Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Install Polybar
-sudo apt install -y cmake pkg-config libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
-git clone https://github.com/polybar/polybar.git
-cd polybar
-mkdir build
-cd build
-cmake ..
-make -j$(nproc)
-sudo make install
-cd ../..
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Install Wezterm
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
 echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
 sudo apt update
-sudo apt install wezterm
-
+sudo apt install -y wezterm
 
 # Install Oh My Tmux
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
@@ -56,8 +52,9 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 rm lazygit lazygit.tar.gz
 
+# Install JetBrains Mono Nerd Font
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
-unzip JetBrainsMono.zip -d ~/.fonts/
+unzip JetBrainsMono.zip -d ~/.local/share/fonts/
 fc-cache -fv
 rm JetBrainsMono.zip
 
