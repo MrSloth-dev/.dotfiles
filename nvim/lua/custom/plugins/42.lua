@@ -16,6 +16,7 @@ return {
 	},
 	{
 		"MrSloth-dev/42-NorminetteNvim",
+		dir = "~/Projects/42-NorminetteNvim/",
 		dependencies = { "nvim-lua/plenary.nvim", "echasnovski/mini.icons" },
 		config = function()
 			require("norminette").setup({
@@ -25,4 +26,3 @@ return {
 		end,
 	},
 }
--- dir = "~/Projects/42-NorminetteNvim/",

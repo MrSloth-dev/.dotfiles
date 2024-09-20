@@ -8,8 +8,8 @@ if [ $# -eq 0 ]; then
 fi
 
 SESSION_NAME=$1
-
 # Simple function to check is session exists throught redirection of error output to discard return 0 if no error
+
 session_exists() 
 {
 	tmux has-session -t "$1" 2>/dev/null

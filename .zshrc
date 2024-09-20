@@ -33,7 +33,7 @@ if [[ $USER == "joao-pol" ]]; then
 fi
 #Home Settings
 if [[ $USER == "mrsloth" ]]; then
-	alias penv="source ~/PythonEnv/bin/activate"
+	alias penv="source ~/.pythonenv/bin/activate"
 	export PATH="$PATH:/home/mrsloth/.cargo/bin"
 	alias zmux="~/.dotfiles/scripts/zmux_home.sh"
 	cowsay "Hello Sloth"
