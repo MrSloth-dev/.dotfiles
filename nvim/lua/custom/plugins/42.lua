@@ -22,6 +22,7 @@ return {
 			require("norminette").setup({
 				keybind = "<leader>n",
 				diagnost_color = "#00ff00",
+				show_size = true,
 			})
 		end,
 	},

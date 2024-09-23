@@ -31,4 +31,5 @@ return {
 			--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 		end,
 	},
+	{ "nvim-treesitter/nvim-treesitter-context" },
 }
