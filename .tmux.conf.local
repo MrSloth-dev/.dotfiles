@@ -155,7 +155,7 @@ tmux_conf_urlscan_options="--compact --dedupe"
 #set -g history-limit 10000
 
 # start with mouse mode enabled
-#set -g mouse on
+set -g mouse on
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
@@ -173,8 +173,8 @@ tmux_conf_urlscan_options="--compact --dedupe"
 # bind c new-window -c '#{pane_current_path}' #!important
 
 # Move status line to top if in Work
-#  run-shell 'if [ "$(whoami)" = "joao-pol" ]; then set -g status-position top; else set -g status-position bottom; fi'
-set -g status-position top
+# run-shell 'if [ "$(whoami)" = "joao-pol" ]]; then set -g status-position top; else set -g status-position bottom; fi'
+set -g status-position bottom
 # Conditional logic to bind keys or execute commands based on the user
 
 

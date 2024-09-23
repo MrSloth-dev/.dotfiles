@@ -52,11 +52,19 @@ for SESSION_NAME in "$@"; do
 
 				tmux new-window -t mini_session:$INDEX -n MainCode
 				tmux rename-window -t mini_session:$INDEX 'MainCode'
-				tmux send-keys -t mini_session:$INDEX 'nvim -O ~/CommonCore/3.MiniShell ~/CommonCore/3.MiniSheel/src/main.c' C-m
+				tmux send-keys -t mini_session:$INDEX 'nvim ~/CommonCore/3.MiniShell/' C-m
 				(( INDEX++ ))
 
 				tmux new-window -t mini_session:$INDEX -n Testing
 				tmux send-keys -t mini_session:$INDEX '~/CommonCore/3.MiniShell/' C-m
+				(( INDEX++ ))
+
+				tmux new-window -t mini_session:$INDEX -n README
+				tmux send-keys -t mini_session:$INDEX 'nvim ~/CommonCore/3.MiniShell/README.md' C-m
+				(( INDEX++ ))
+
+				tmux new-window -t mini_session:$INDEX -n BASH
+				tmux send-keys -t mini_session:$INDEX 'bash' C-m
 				(( INDEX++ ))
 
 				tmux attach-session -t mini_session:1
