@@ -20,10 +20,6 @@ if [[ $USER == "joao-pol" ]]; then
 	export USER=joao-pol
 	##alias nvim="flatpak run io.neovim.nvim"
 	##alias nvim.="flatpak run io.neovim.nvim **/*"
-	alias pu="cd ~/CommonCore/2.push_swap/"
-	alias pi="cd ~/CommonCore/2.pipex/"
-	alias fr="cd ~/CommonCore/2.1fract-ol/"
-	alias ph="cd ~/CommonCore/3.philo/philo"
 	alias zmux="~/.dotfiles/scripts/zmux.sh"
 	compdef nvim=vim
 	setopt complete_aliases
