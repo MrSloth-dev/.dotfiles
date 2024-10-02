@@ -20,7 +20,9 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim", "echasnovski/mini.icons" },
 		config = function()
 			require("norminette").setup({
-				keybind = "<leader>n",
+				norm_keybind = "<leader>n",
+				-- format_keybind = "<leader>fn",
+				-- format_preview_keybind = "<leader>f",
 				diagnost_color = "#00ff00",
 				show_size = true,
 			})

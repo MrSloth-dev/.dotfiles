@@ -41,6 +41,10 @@ for SESSION_NAME in "$@"; do
 				tmux new-window -t config_session:$INDEX -n Symlink_Script
 				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/scripts/symlink.sh' C-m
 				(( INDEX++ ))
+
+				tmux new-window -t config_session:$INDEX -n Zshrc
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/.zshrc' C-m
+				(( INDEX++ ))
 			fi
 			;;
 		mini)

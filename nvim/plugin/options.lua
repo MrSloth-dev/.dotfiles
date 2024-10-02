@@ -43,7 +43,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 50
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
@@ -64,9 +64,10 @@ vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
+-- vim.opt.colorcolumn = "80"
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 8
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -75,8 +76,7 @@ vim.opt.hlsearch = true
 vim.opt.conceallevel = 2
 
 -- Because we have Telescope Undo // must check this pos of swapfiles
-vim.opt.swapfile = true
-vim.opt.path = vim.opt.path + "/usr/local/bin"
-vim.o.shell = vim.fn.expand("$SHELL")
-vim.env.SHELL = "/usr/share/zsh"
-vim.env.PATH = vim.env.PATH .. ":/usr/local/bin/:/bin/:/usr/bin/:/usr/share/"
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/.undo"
+vim.opt.undofile = true
