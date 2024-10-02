@@ -1,16 +1,10 @@
 #Zshrc with 2 places
 #
-#
-#
-#
-#
-#
-#
 #Common Settings
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="crunch" # set by `omz`
 source $ZSH/oh-my-zsh.sh
-alias tk="tmux kill-server"
+alias tk="~/.dotfiles/scripts/tmux_kill.sh"
 alias lg="lazygit"
 alias sym="~/.dotfiles/scripts/symlink.sh"
 alias obs="nvim ~/ObsidianNotes/"
