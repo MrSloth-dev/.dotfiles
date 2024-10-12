@@ -41,6 +41,10 @@ for SESSION_NAME in "$@"; do
 				tmux new-window -t config_session:$INDEX -n Symlink_Script
 				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/scripts/symlink.sh' C-m
 				(( INDEX++ ))
+
+				tmux new-window -t config_session:$INDEX -n Zshrc
+				tmux send-keys -t config_session:$INDEX 'nvim ~/.dotfiles/.zshrc' C-m
+				(( INDEX++ ))
 			fi
 			;;
 		mini)
@@ -152,7 +156,9 @@ done
 if [ $# -gt 0 ]; then
     FIRST_SESSION=$1
     if session_exists "$FIRST_SESSION"; then
-        tmux attach-session -t "$FIRST_SESSION"
+	    if [ -z "$TMUX" ]; then
+		    tmux attach-session -t "$FIRST_SESSION"
+	    fi
     else
         echo "Session '$FIRST_SESSION' does not exist."
     fi

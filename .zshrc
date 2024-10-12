@@ -4,11 +4,12 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="crunch" # set by `omz`
 source $ZSH/oh-my-zsh.sh
-alias tk="tmux kill-server"
+alias tk="~/.dotfiles/scripts/tmux_kill.sh"
 alias lg="lazygit"
 alias sym="~/.dotfiles/scripts/symlink.sh"
 alias obs="nvim ~/ObsidianNotes/"
-export EDITOR="vim"
+export EDITOR="nvim"
+
 #WorkSettings
 if [[ $USER == "joao-pol" ]]; then
 	export PATH="$PATH:/home/joao-pol/sgoinfre/homebrew/bin"
@@ -18,14 +19,8 @@ if [[ $USER == "joao-pol" ]]; then
 	plugins=(git)
 	export MAIL=joao-pol@students.42porto.com
 	export USER=joao-pol
-	##alias nvim="flatpak run io.neovim.nvim"
-	##alias nvim.="flatpak run io.neovim.nvim **/*"
 	alias zmux="~/.dotfiles/scripts/zmux.sh"
-	compdef nvim=vim
-	setopt complete_aliases
 	export HOMEBREW_NO_AUTO_UPDATE=1
-	# Raylib
-	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/sgoinfre/raylib-master/
 	eval "$(zoxide init zsh)"
 fi
 #Home Settings
