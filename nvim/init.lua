@@ -23,6 +23,15 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
+
+local old_notify = vim.notify
+function vim.notify(msg, level)
+	if msg:find("WARNING: vim.treesitter.get_parser") then
+		return
+	end
+	old_notify(msg, level)
+end
+
 ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({ import = "custom/plugins" }, { change_detection = { notify = false } })
