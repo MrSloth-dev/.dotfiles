@@ -71,6 +71,10 @@ for SESSION_NAME in "$@"; do
 				tmux send-keys -t mini_session:$INDEX 'bash' C-m
 				(( INDEX++ ))
 
+				tmux new-window -t mini_session:$INDEX -n Eval
+				tmux send-keys -t mini_session:$INDEX '~/evaluations/3.MiniShell/fassbinder/' C-m
+				(( INDEX++ ))
+
 				tmux attach-session -t mini_session:1
 			fi
 			;;

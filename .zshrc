@@ -3,6 +3,7 @@
 #Common Settings
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="crunch" # set by `omz`
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
 alias tk="~/.dotfiles/scripts/tmux_kill.sh"
 alias lg="lazygit"
@@ -34,3 +35,6 @@ fi
 
 # Created by `pipx` on 2024-08-28 20:48:55
 export PATH="$PATH:/home/mrsloth/.local/bin"
+
+alias mstest="bash /home/joao-pol/42_minishell_tester/tester.sh"
+
