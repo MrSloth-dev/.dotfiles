@@ -28,13 +28,11 @@ fi
 if [[ $USER == "mrsloth" ]]; then
 	alias penv="source ~/.pythonenv/bin/activate"
 	export PATH="$PATH:/home/mrsloth/.cargo/bin"
-	alias zmux="~/.dotfiles/scripts/zmux_home.sh"
+	alias zmux="~/.dotfiles/scripts/zmux.sh"
 	cowsay "Hello Sloth"
 	eval "$(zoxide init zsh)"
 fi
 
 # Created by `pipx` on 2024-08-28 20:48:55
 export PATH="$PATH:/home/mrsloth/.local/bin"
-
-alias mstest="bash /home/joao-pol/42_minishell_tester/tester.sh"
-
+alias ezmux=bash\ ~/Projects/Zmux-Sessionizer/scripts/zmux.sh
