@@ -17,9 +17,12 @@ vim.keymap.set("n", "<A-k>", ":m -2 <CR>", { desc = "Swap with line above" })
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit to Normal Mode" })
 vim.keymap.set("i", "kj", "<Esc>", { desc = "Exit to Normal Mode" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move UP" })
+vim.keymap.set("n", "j", "gj", { desc = "Move Down" })
+vim.keymap.set("n", "k", "gk", { desc = "Move Up" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move DOWN" })
 vim.keymap.set("n", "<Tab>", ":tabNext<CR>", { desc = "Next Tab" })
 vim.keymap.set("n", "-", ":Oil<CR>", { desc = "Open Oil" })
+vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Open Oil" })
 
 vim.env.PATH = vim.env.PATH .. ":/home/joao-pol/.local/share/homebrew/bin"
 vim.env.PATH = vim.env.PATH .. ":/snap/bin/"
