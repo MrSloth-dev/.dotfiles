@@ -2,6 +2,8 @@
 #
 #Common Settings
 export ZSH="$HOME/.oh-my-zsh"
+export ZSHRC="$HOME/.zshrc"
+alias so="source $ZSHRC"
 ZSH_THEME="crunch" # set by `omz`
 source $ZSH/oh-my-zsh.sh
 alias tk="~/.dotfiles/scripts/tmux_kill.sh"
@@ -27,6 +29,7 @@ fi
 if [[ $USER == "mrsloth" ]]; then
 	alias penv="source ~/.pythonenv/bin/activate"
 	export PATH="$PATH:/home/mrsloth/.cargo/bin"
+	export PATH="$PATH:/usr/local/zig"
 	alias zmux="~/.dotfiles/scripts/zmux.sh"
 	cowsay "Hello Sloth"
 	eval "$(zoxide init zsh)"
