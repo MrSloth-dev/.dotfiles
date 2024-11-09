@@ -52,6 +52,8 @@ return {
 				defaults = {
 					file_ignore_patterns = {
 						"%.o",
+						"%.so",
+						"%.a",
 					},
 					--   mappings = {
 					--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },

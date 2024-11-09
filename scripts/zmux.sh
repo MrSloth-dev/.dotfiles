@@ -47,6 +47,33 @@ for SESSION_NAME in "$@"; do
 				(( INDEX++ ))
 			fi
 			;;
+		rt)
+			if  ! session_exists "rt_session"; then
+				# Create Session for Project mini
+				tmux new-session -d -s rt_session -c ~/CommonCore/4.minirt/
+
+				INDEX=1
+
+				tmux new-window -t rt_session:$INDEX -n MainCode
+				tmux rename-window -t rt_session:$INDEX 'MainCode'
+				tmux send-keys -t rt_session:$INDEX 'nvim ~/CommonCore/4.miniRT/' C-m
+				(( INDEX++ ))
+
+				tmux new-window -t rt_session:$INDEX -n Testing
+				tmux send-keys -t rt_session:$INDEX '~/CommonCore/4.miniRT/' C-m
+				(( INDEX++ ))
+
+				tmux new-window -t rt_session:$INDEX -n README
+				tmux send-keys -t rt_session:$INDEX 'nvim ~/CommonCore/4.miniRT/README.md' C-m
+				(( INDEX++ ))
+
+				tmux new-window -t rt_session:$INDEX -n Eval
+				tmux send-keys -t rt_session:$INDEX '~/evaluations/4.miniRT/' C-m
+				(( INDEX++ ))
+
+				tmux attach-session -t rt_session:1
+			fi
+			;;
 		mini)
 			if  ! session_exists "mini_session"; then
 				# Create Session for Project mini
@@ -69,6 +96,10 @@ for SESSION_NAME in "$@"; do
 
 				tmux new-window -t mini_session:$INDEX -n BASH
 				tmux send-keys -t mini_session:$INDEX 'bash' C-m
+				(( INDEX++ ))
+
+				tmux new-window -t mini_session:$INDEX -n Eval
+				tmux send-keys -t mini_session:$INDEX '~/evaluations/3.MiniShell/fassbinder/' C-m
 				(( INDEX++ ))
 
 				tmux attach-session -t mini_session:1

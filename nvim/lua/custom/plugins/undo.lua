@@ -19,6 +19,11 @@ return {
 			-- don't use `defaults = { }` here, do this in the main telescope spec
 			extensions = {
 				undo = {
+					use_delta = true,
+					side_by_side = true,
+					vim_diff_opts = {
+						ctxlen = 25,
+					},
 					-- telescope-undo.nvim config, see below
 				},
 				-- no other extensions here, they can have their own spec too
