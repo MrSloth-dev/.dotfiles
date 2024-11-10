@@ -21,8 +21,8 @@ vim.keymap.set("n", "j", "gj", { desc = "Move Down" })
 vim.keymap.set("n", "k", "gk", { desc = "Move Up" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move DOWN" })
 vim.keymap.set("n", "<Tab>", ":tabNext<CR>", { desc = "Next Tab" })
-vim.keymap.set("n", "-", ":Oil<CR>", { desc = "Open Oil" })
-vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Open Oil" })
+vim.keymap.set("n", "-", ":Oil --float<CR>", { desc = "Open Oil" })
+vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Git Blame" })
 
 vim.env.PATH = vim.env.PATH .. ":/home/joao-pol/.local/share/homebrew/bin"
 vim.env.PATH = vim.env.PATH .. ":/snap/bin/"
@@ -42,3 +42,7 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+vim.api.nvim_create_user_command("NvimColorize", function()
+	require("nvim-colorize").show_picker()
+end, {})
