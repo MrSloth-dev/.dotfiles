@@ -56,6 +56,7 @@ for SESSION_NAME in "$@"; do
 
 				tmux new-window -t rt_session:$INDEX -n MainCode
 				tmux rename-window -t rt_session:$INDEX 'MainCode'
+				tmux send-keys -t rt_session:$INDEX '~/CommonCore/4.miniRT/' C-m
 				tmux send-keys -t rt_session:$INDEX 'nvim ~/CommonCore/4.miniRT/' C-m
 				(( INDEX++ ))
 
