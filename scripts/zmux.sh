@@ -162,6 +162,21 @@ for SESSION_NAME in "$@"; do
 				tmux attach-session -t push_session:1
 			fi
 			;;
+		plug)
+			if  ! session_exists "plugin_session"; then
+				# Create Session for Plugin
+				tmux new-session -d -s plugin_session -c ~/Projects/Switcheroo/
+
+				INDEX=1
+
+				tmux new-window -t plugin_session:$INDEX -n MainNotes
+				tmux rename-window -t plugin_session:$INDEX 'MainNotes'
+				tmux send-keys -t plugin_session:$INDEX 'nvim -O ~/Projects/Switcheroo/' C-m
+				(( INDEX++ ))
+
+				tmux attach-session -t plugin_session:1
+			fi
+			;;
 		obs)
 			if  ! session_exists "obsidian_session"; then
 				# Create Session for ObsidianNotes
