@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 save_neovim() {
     local session=$1
     local window=$2
@@ -20,17 +21,22 @@ is_neovim_running() {
     fi
 }
 
-for session in $(tmux list-sessions -F "#{session_name}"); do
-    for window in $(tmux list-windows -t "$session" -F "#{window_index}"); do
-        for pane in $(tmux list-panes -t "$session:$window" -F "#{pane_index}"); do
-            # Check if Neovim is running in this pane
-            if is_neovim_running "$session" "$window" "$pane"; then
-                echo "Neovim instance found in session $session, window $window, pane $pane. Saving..."
-                save_neovim "$session" "$window" "$pane"
-            fi
+if tmux info &> /dev/null; then
+    for session in $(tmux list-sessions -F "#{session_name}"); do
+        for window in $(tmux list-windows -t "$session" -F "#{window_index}"); do
+            for pane in $(tmux list-panes -t "$session:$window" -F "#{pane_index}"); do
+                # Check if Neovim is running in this pane
+                if is_neovim_running "$session" "$window" "$pane"; then
+                    echo "Neovim instance found in session $session, window $window, pane $pane. Saving..."
+                    save_neovim "$session" "$window" "$pane"
+                fi
+            done
         done
     done
-done
 
-echo "All Neovim instances saved. Killing tmux server..."
-tmux kill-server
+    echo "All Neovim instances saved. Killing tmux server..."
+    tmux kill-server
+else
+  echo Tmux is not running.
+  exit
+fi

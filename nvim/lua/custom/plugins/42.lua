@@ -16,11 +16,12 @@ return {
 	},
 	{
 		"MrSloth-dev/42-NorminetteNvim",
-		-- dir = "~/Projects/42-NorminetteNvim/",
+		dir = "~/Projects/42-NorminetteNvim/",
 		dependencies = { "nvim-lua/plenary.nvim", "echasnovski/mini.icons" },
 		config = function()
 			require("norminette").setup({
 				norm_keybind = "<leader>n",
+				size_keybind = "<leader>ns",
 				-- format_keybind = "<leader>fn",
 				-- format_preview_keybind = "<leader>f",
 				diagnost_color = "#00ff00",

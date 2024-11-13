@@ -15,6 +15,6 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-config.cursor_blink_rate = 800
+config.cursor_blink_rate = 80
 
 return config
