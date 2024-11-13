@@ -212,4 +212,4 @@ exec_always --no-startup-id xwallpaper --stretch ~/.dotfiles/ginko.jpg
 exec_always --no-startup-id compton -b
 
 
-exec_always --no-startup-id setxkbmap -layout us,pt -option grp:alt_caps_toggle
+exec --no-startup-id setxkbmap -layout us,pt -option grp:alt_caps_toggle
