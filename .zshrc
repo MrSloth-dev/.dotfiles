@@ -31,6 +31,7 @@ if [[ $USER == "mrsloth" ]]; then
 	alias penv="source ~/.pythonenv/bin/activate"
 	export PATH="$PATH:/home/mrsloth/.cargo/bin"
 	export PATH="$PATH:/usr/local/zig"
+	export PATH="$PATH:$HOME/go/bin"
 	alias zmux="~/.dotfiles/scripts/zmux.sh"
 	cowsay "Hello Sloth"
 	eval "$(zoxide init zsh)"

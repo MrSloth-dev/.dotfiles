@@ -46,7 +46,7 @@ elif [[ $PC =~ ^(Home|home|HOME)$ ]]; then
 	symlink "Polybar" "/home/mrsloth/.dotfiles/polybar/" "/home/mrsloth/.config/"
 	symlink "i3" "/home/mrsloth/.dotfiles/i3/" "/home/mrsloth/.config/"
 	symlink "Rofi" "/home/mrsloth/.dotfiles/rofi/" "/home/mrsloth/.config/"
-	symlink "Wezterm" "/home/mrsloth/.dotfiles/.wezterm.lua" "/home/mrsloth/.wezterm.lua"
+	symlink "Kitty" "/home/mrsloth/.dotfiles/kitty/" "/home/mrsloth/.config/"
 else
 	echo -e"${RED}Choose Work or Home${ENDCOLOR}\n"
 fi
