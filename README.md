@@ -27,10 +27,6 @@ NVIM_APPNAME=MrSloth-dev/.dotfiles/nvim nvim
 
 + [rebelot/kanagawa.nvim](https://dotfyle.com/plugins/rebelot/kanagawa.nvim)
 + [catppuccin/nvim](https://dotfyle.com/plugins/catppuccin/nvim)
-### colorscheme-switchers
-
-+ [vague2k/huez.nvim](https://dotfyle.com/plugins/vague2k/huez.nvim)
-+ [zaldih/themery.nvim](https://dotfyle.com/plugins/zaldih/themery.nvim)
 ### comment
 
 + [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
