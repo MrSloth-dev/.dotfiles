@@ -37,6 +37,7 @@ if [[ $PC =~ ^(Work|work|WORK)$ ]]; then
 	echo -e "${GREEN}Syslinking @ Work${ENDCOLOR}\n" 
 	symlink "Tmux" "/home/joao-pol/.dotfiles/.tmux.conf.local" "/home/joao-pol/.tmux.conf.local"
 	symlink "Nvim" "/home/joao-pol/.dotfiles/nvim/" "/home/joao-pol/.config/"
+	symlink "Kitty" "/home/mrsloth/.dotfiles/kitty/" "/home/mrsloth/.config/"
 	symlink "Zshrc" "/home/joao-pol/.dotfiles/.zshrc" "/home/joao-pol/.zshrc"
 elif [[ $PC =~ ^(Home|home|HOME)$ ]]; then
 	echo -e "${GREEN}Syslinking @ Home${ENDCOLOR}\n" 
@@ -47,6 +48,4 @@ elif [[ $PC =~ ^(Home|home|HOME)$ ]]; then
 	symlink "i3" "/home/mrsloth/.dotfiles/i3/" "/home/mrsloth/.config/"
 	symlink "Rofi" "/home/mrsloth/.dotfiles/rofi/" "/home/mrsloth/.config/"
 	symlink "Wezterm" "/home/mrsloth/.dotfiles/.wezterm.lua" "/home/mrsloth/.wezterm.lua"
-else
-	echo -e"${RED}Choose Work or Home${ENDCOLOR}\n"
 fi
