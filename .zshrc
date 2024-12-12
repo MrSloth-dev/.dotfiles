@@ -32,11 +32,11 @@ if [[ $USER == "mrsloth" ]]; then
 	export PATH="$PATH:/home/mrsloth/.cargo/bin"
 	export PATH="$PATH:/usr/local/zig"
 	export PATH="$PATH:$HOME/go/bin"
+	export PATH="$PATH:/home/mrsloth/.local/bin"
 	alias zmux="~/.dotfiles/scripts/zmux.sh"
 	cowsay "Hello Sloth"
 	eval "$(zoxide init zsh)"
 fi
 
 # Created by `pipx` on 2024-08-28 20:48:55
-export PATH="$PATH:/home/mrsloth/.local/bin"
 alias ezmux=bash\ ~/Projects/Zmux-Sessionizer/scripts/zmux.sh

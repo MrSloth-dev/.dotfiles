@@ -3,7 +3,7 @@
 # Check number of args
 if [ $# -eq 0 ]; then
 	echo "Usage ./zmux <session_name>"
-	echo "Sessions Possible :\n config\n philo\n push\n pipex \nobs"
+	echo "Sessions Possible :\n config\n philo\n push\n pipex \nobs \nmini \nrt"
 	exit 1
 fi
 
