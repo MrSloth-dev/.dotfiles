@@ -21,8 +21,8 @@ vim.keymap.set("n", "j", "gj", { desc = "Move Down" })
 vim.keymap.set("n", "k", "gk", { desc = "Move Up" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move DOWN" })
 vim.keymap.set("n", "<Tab>", ":tabNext<CR>", { desc = "Next Tab" })
-vim.keymap.set("n", "-", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0)) <CR>", { silent = true, desc = "Open Oil" })
-vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Open Oil" })
+vim.keymap.set("n", "-", ":Oil <CR>", { silent = true, desc = "Open Oil" })
+vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Git Blame Toggle" })
 vim.keymap.set("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", { desc = "Neogen" })
 
 vim.env.PATH = vim.env.PATH .. ":/home/joao-pol/.local/share/homebrew/bin"
