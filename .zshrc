@@ -22,7 +22,6 @@ if [[ $USER == "joao-pol" ]]; then
 	plugins=(git)
 	export MAIL=joao-pol@students.42porto.com
 	export USER=joao-pol
-	alias zmux="~/.dotfiles/scripts/zmux.sh"
 	export HOMEBREW_NO_AUTO_UPDATE=1
 	eval "$(zoxide init zsh)"
 fi
@@ -33,10 +32,7 @@ if [[ $USER == "mrsloth" ]]; then
 	export PATH="$PATH:/usr/local/zig"
 	export PATH="$PATH:$HOME/go/bin"
 	export PATH="$PATH:/home/mrsloth/.local/bin"
-	alias zmux="~/.dotfiles/scripts/zmux.sh"
 	cowsay "Hello Sloth"
 	eval "$(zoxide init zsh)"
 fi
 
-# Created by `pipx` on 2024-08-28 20:48:55
-alias ezmux=bash\ ~/Projects/Zmux-Sessionizer/scripts/zmux.sh
