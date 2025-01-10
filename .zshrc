@@ -13,7 +13,7 @@ alias zig="~/.local/bin/zig/zig"
 alias sym="~/.dotfiles/scripts/symlink.sh"
 alias obs="nvim ~/ObsidianNotes/"
 export EDITOR="nvim"
-alias upup="git add . && git commit -m 'update' && git push"
+alias upup=" cd ~/.dotfiles/ && git add . && git commit -m 'update' && git push && cd -"
 
 #WorkSettings
 if [[ $USER == "joao-pol" ]]; then
