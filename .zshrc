@@ -9,9 +9,11 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
 alias tk="~/.dotfiles/scripts/tmux_kill.sh"
 alias lg="lazygit"
+alias zig="~/.local/bin/zig/zig"
 alias sym="~/.dotfiles/scripts/symlink.sh"
 alias obs="nvim ~/ObsidianNotes/"
 export EDITOR="nvim"
+alias upup="git add . && git commit -m 'update' && git push"
 
 #WorkSettings
 if [[ $USER == "joao-pol" ]]; then
