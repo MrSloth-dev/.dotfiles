@@ -216,8 +216,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id ~/.dotfiles/scripts/brightnes
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec --no-startup-id redshift -l 0:0 -t 6500:3500 -b 1.0:0.6
-
 exec_always --no-startup-id xwallpaper --stretch ~/.dotfiles/ginko.jpg
 # exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id compton -b

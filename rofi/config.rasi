@@ -1,2 +1,10 @@
-//@theme "/usr/share/rofi/themes/fancy.rasi"
-@theme "/usr/share/rofi/themes/arthur.rasi"
+configuration {
+    display-ssh:    "";
+    display-run:    "";
+    display-drun:   "";
+    display-window: "";
+    display-combi:  "";
+    show-icons:     true;
+}
+
+@theme "~/.config/rofi/gruvbox-material.rasi"

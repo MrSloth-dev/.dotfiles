@@ -1,0 +1,25 @@
+sessions:
+  rt:
+    root: ~/CommonCore/4.miniRT/
+    start_index: 1
+    windows:
+      - name: Editor
+        command: nvim ~/CommonCore/4.miniRT/src/main.c
+      - name: Terminal
+        command: ""
+      - name: Eval
+        command: nvim ~/CommonCore/4.miniRT/references/ataboada/
+  minishell:
+    root: ~/CommonCore/3.MiniShell/
+    start_index: 1
+    windows:
+      - name: Editor
+        command: nvim ~/CommonCore/3.MiniShell/src/main.c
+      - name: compiling
+        command: ""
+      - name: "README.md"
+        command: nvim ~/CommonCore/3.MiniShell/README.md
+  philo:
+  fractol:
+  cpp:
+  pipex:

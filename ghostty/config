@@ -1,0 +1,6 @@
+theme = GruvboxDark
+gtk-titlebar = false
+shell-integration = zsh
+shell-integration-features = no-sudo,title
+font-family = JetBrainsMono Nerd Font
+adjust-cursor-height = 5

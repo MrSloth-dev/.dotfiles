@@ -1,0 +1,13 @@
+sessions:
+  config:
+    root: ~/.dotfiles/
+    start_index: 1
+    windows:
+      - name: Zsh
+        command: nvim ~/.dotfiles/.zshrc
+      - name: Tmux
+        command: nvim ~/.dotfiles/.tmux.conf.local
+      - name: symlink
+        command: nvim ~/.dotfiles/scripts/symlink.sh
+      - name: Zmux
+        command: nvim ~/Projects/eZmux-Sessionizer/zmux
