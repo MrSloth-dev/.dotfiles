@@ -86,7 +86,6 @@ tmux_conf_theme=disabled
 
 set -g @plugin 'xamut/tmux-weather'
 set-option -g @tmux-weather-location "Porto"
-
 set-option -g @tmux-weather-interval 1
 
 set -g @plugin 'z3z1ma/tmux-gruvbox'

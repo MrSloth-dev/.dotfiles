@@ -3,4 +3,7 @@ gtk-titlebar = false
 shell-integration = zsh
 shell-integration-features = no-sudo,title
 font-family = JetBrainsMono Nerd Font
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
 adjust-cursor-height = 5

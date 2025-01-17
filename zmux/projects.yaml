@@ -1,13 +1,14 @@
+---
 sessions:
   zmux:
     root: /home/mrsloth/Projects/eZmux-Sessionizer
     start_index: 1
     windows:
-        - name: Code
-          command: nvim ~/Projects/eZmux-Sessionizer/zmux
-        - name: Testing
-          command: ""
-        - name: README
-          command: nvim ~/Projects/eZmux-Sessionizer/README.md
+      - name: Code
+        command: nvim ~/Projects/eZmux-Sessionizer/zmux
+      - name: Testing
+        command: ""
+      - name: README
+        command: nvim ~/Projects/eZmux-Sessionizer/README.md
   switcheroo:
   norminette:

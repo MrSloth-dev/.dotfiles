@@ -84,7 +84,7 @@ return {
 			-- "Yazeed1s/oh-lucy.nvim",
 			-- "embark-theme/vim",
 			-- "nyngwang/nvimgelion",
-			"maxmx03/fluoromachine.nvim",
+			-- "maxmx03/fluoromachine.nvim",
 			-- "dasupradyumna/midnight.nvim",
 			-- "uncleTen276/dark_flat.nvim",
 			-- "zootedb0t/citruszest.nvim",

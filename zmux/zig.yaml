@@ -1,0 +1,11 @@
+sessions:
+  zig:
+    root: /home/mrsloth/Projects/ziglings.org
+    start_index: 1
+    windows:
+        - name: Exercises
+          command: ""
+        - name: Build
+          command: ""
+        - name: Zsh
+          command: ""

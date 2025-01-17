@@ -55,9 +55,12 @@ return {
 						"%.so",
 						"%.a",
 					},
-					--   mappings = {
-					--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-					--   },
+					mappings = {
+						i = {
+							["<c-enter>"] = "to_fuzzy_refine",
+							["<c-q>"] = require("telescope.actions").delete_buffer,
+						},
+					},
 				},
 				pickers = {
 					find_files = {
