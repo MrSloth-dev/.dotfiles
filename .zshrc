@@ -5,6 +5,13 @@
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
 #Zshrc with 2 places
 #
 #Common Settings
@@ -16,7 +23,6 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
 alias tk="~/.dotfiles/scripts/tmux_kill.sh"
 alias lg="lazygit"
-alias zig="~/.local/bin/zig/zig"
 alias sym="~/.dotfiles/scripts/symlink.sh"
 alias obs="nvim ~/ObsidianNotes/"
 export EDITOR="nvim"
@@ -38,10 +44,14 @@ fi
 if [[ $USER == "mrsloth" ]]; then
 	alias penv="source ~/.pythonenv/bin/activate"
 	export PATH="$PATH:/home/mrsloth/.cargo/bin"
-	export PATH="$PATH:/usr/local/zig"
+	export PATH="$PATH:$HOME/.zig"
 	export PATH="$PATH:$HOME/go/bin"
 	export PATH="$PATH:/home/mrsloth/.local/bin"
 	cowsay "Hello Sloth"
 	eval "$(zoxide init zsh)"
 fi
 
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
