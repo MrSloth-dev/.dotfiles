@@ -60,6 +60,9 @@ return {
 							["<c-enter>"] = "to_fuzzy_refine",
 							["<c-q>"] = require("telescope.actions").delete_buffer,
 						},
+						n = {
+							["<c-q>"] = require("telescope.actions").delete_buffer,
+						},
 					},
 				},
 				pickers = {
