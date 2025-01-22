@@ -26,7 +26,8 @@ if [[ $USER == "joao-pol" ]]; then
 	export MAIL=joao-pol@students.42porto.com
 	export USER=joao-pol
 	export HOMEBREW_NO_AUTO_UPDATE=1
-else if [[ $USER == "mrsloth" ]]; then
+fi
+if [[ $USER == "mrsloth" ]]; then
 	alias penv="source ~/.pythonenv/bin/activate"
 	addpath $HOME/.cargo/bin
 	addpath $HOME/.zig
@@ -56,4 +57,5 @@ eval "$(zoxide init zsh)"
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
