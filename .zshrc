@@ -18,7 +18,9 @@ addpath () {
 	if [[ ! "${PATH}"  =~ "${1}" ]]; then
 		export PATH=$PATH:$1;
 	fi
+
 }
+
 #WorkSettings
 if [[ $USER == "joao-pol" ]]; then
 	addpath $HOME/sgoinfre/homebrew/bin
@@ -26,14 +28,14 @@ if [[ $USER == "joao-pol" ]]; then
 	export MAIL=joao-pol@students.42porto.com
 	export USER=joao-pol
 	export HOMEBREW_NO_AUTO_UPDATE=1
-fi
-if [[ $USER == "mrsloth" ]]; then
+elif [[ $USER == "mrsloth" ]]; then
 	alias penv="source ~/.pythonenv/bin/activate"
 	addpath $HOME/.cargo/bin
 	addpath $HOME/.zig
 	addpath $HOME/go/bin
 	cowsay "Hello Sloth"
 fi
+
 #Common Settings
 #
 export ZSH="$HOME/.oh-my-zsh"

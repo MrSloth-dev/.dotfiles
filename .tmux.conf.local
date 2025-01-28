@@ -152,7 +152,7 @@ tmux_conf_urlscan_options="--compact --dedupe"
 
 # increase history size
 #set -g history-limit 10000
-
+set -g detach-on-destroy off
 # start with mouse mode enabled
 set -g mouse on
 

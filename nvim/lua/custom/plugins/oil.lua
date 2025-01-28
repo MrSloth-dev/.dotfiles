@@ -7,6 +7,9 @@ return {
 		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
 		view_options = {
 			show_hidden = false,
+			win_options = {
+				winbar = "%#@attribute.builtin#%{substitute(v:lua.require('oil').get_current_dir(), '^' . $HOME, '~', '')}",
+			},
 			-- is_hidden_file = function(name, bufnr)
 			-- 	return vim.startswith(name, ".") or vim.startswith(name, "e")
 			-- end,
