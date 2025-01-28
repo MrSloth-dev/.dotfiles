@@ -15,13 +15,14 @@ is_neovim_running() {
     local pane=$3
     local pane_pid=$(tmux list-panes -t "$session:$window.$pane" -F "#{pane_pid}")
     if pgrep -P "$pane_pid" -f "[n]vim" > /dev/null; then
+        ((count++))
         return 0  # Neovim is running
     else
         return 1  # Neovim is not running
     fi
 }
-
-if tmux info &> /dev/null; then
+count=0
+if [[ $(pgrep tmux) ]] &> /dev/null; then
     for session in $(tmux list-sessions -F "#{session_name}"); do
         for window in $(tmux list-windows -t "$session" -F "#{window_index}"); do
             for pane in $(tmux list-panes -t "$session:$window" -F "#{pane_index}"); do
@@ -34,9 +35,14 @@ if tmux info &> /dev/null; then
         done
     done
 
-    echo "All Neovim instances saved. Killing tmux server..."
+    if [[ count -ne 0 ]]; then 
+        echo "All Neovim instances saved. Killing tmux server..."
+    else
+        echo "No Neovim instances Found. Killing tmux server..."
+    fi
+
     tmux kill-server
 else
-  echo Tmux is not running.
-  exit
+  echo "Tmux is not running."
+  exit 1;
 fi
