@@ -33,7 +33,7 @@ elif [[ $USER == "mrsloth" ]]; then
 	addpath $HOME/.cargo/bin
 	addpath $HOME/.zig
 	addpath $HOME/go/bin
-	cowsay "Hello Sloth"
+	cowsay "Welcome to Zmux"
 fi
 
 #Common Settings
