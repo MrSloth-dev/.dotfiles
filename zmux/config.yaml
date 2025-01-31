@@ -11,4 +11,16 @@ sessions:
       - name: symlink
         command: nvim ~/.dotfiles/scripts/symlink.sh
       - name: Zmux
-        command: nvim ~/Projects/eZmux-Sessionizer/zmux
+        layout: main-vertical
+        panes:
+          - command: nvim ~/.config/zmux/config.yaml
+          - command: nvim ~/.config/zmux/projects.yaml
+          - command: nvim ~/.config/zmux/zig.yaml
+        command: nvim ~/.config/42.yaml
+      - name: Nvim
+        layout: even-horizontal
+        panes:
+          - command: nvim ~/.dotfiles/nvim/init.lua
+          - command: nvim ~/.dotfiles/nvim/lua/custom/plugins/
+      - name: Dotfiles
+        command: ls
