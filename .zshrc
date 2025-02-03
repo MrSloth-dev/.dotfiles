@@ -49,6 +49,11 @@ alias lg="lazygit"
 alias sym="~/.dotfiles/scripts/symlink.sh"
 alias obs="nvim ~/ObsidianNotes/"
 alias upup=" cd ~/.dotfiles/ && git add . && git commit -m 'update' && git push && cd -"
+
+#similar to arrow keys
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
+
 plugins=(git)
 
 addpath $HOME/.local/bin
