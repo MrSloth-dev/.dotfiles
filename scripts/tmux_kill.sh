@@ -21,8 +21,8 @@ is_neovim_running() {
         return 1  # Neovim is not running
     fi
 }
-count=0
-if [[ $(pgrep tmux &>/dev/null) ]]; then
+echo $SHLVL
+if [[ $(pgrep tmux) ]] &>/dev/null ;   then
     for session in $(tmux list-sessions -F "#{session_name}"); do
         for window in $(tmux list-windows -t "$session" -F "#{window_index}"); do
             for pane in $(tmux list-panes -t "$session:$window" -F "#{pane_index}"); do

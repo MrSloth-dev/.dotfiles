@@ -1,0 +1,4 @@
+~/.dotfiles/
+~/CommonCore/CPP/
+~/CommonCore/
+~/Projects/ZigLand/ZigLib/
