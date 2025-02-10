@@ -23,7 +23,7 @@ sessions:
   philo:
   fractol:
   cpp:
-    root: ~/CommonCore/CPP/CPP00/
+    root: ~/CommonCore/CPP/
     start_index: 1
     windows:
       - name: Editor

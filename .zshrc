@@ -68,3 +68,4 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias zbr='zig build run'
 alias zbt='zig build test'
+alias lzd=lazydocker
