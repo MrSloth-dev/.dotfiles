@@ -1,10 +1,15 @@
-[INFO] 2025-02-06-16:01:00 - Starting repository update
-[INFO] 2025-02-06-16:01:00 - Starting Process for repository: CPP
-[INFO] 2025-02-06-16:01:46 - Starting repository update
-[INFO] 2025-02-06-16:01:46 - Starting Process for repository: CPP
-[INFO] 2025-02-06-16:02:25 - Starting repository update
-[INFO] 2025-02-06-16:02:25 - Starting Process for repository: CPP
-[INFO] 2025-02-06-16:03:39 - Starting repository update
-[INFO] 2025-02-06-16:03:39 - Starting Process for repository: CPP
-[INFO] 2025-02-06-16:04:03 - Starting repository update
-[INFO] 2025-02-06-16:04:03 - Starting Process for repository: CPP
+[INFO] 2025-02-06-17:03:36 - ======= Starting repository update =======
+[INFO] 2025-02-06-17:03:36 - Starting Process for repository: CPP
+[INFO] 2025-02-06-17:03:38 - Changes found, add and commit everything
+[INFO] 2025-02-06-17:04:56 - ======= Starting repository update =======
+[INFO] 2025-02-06-17:04:56 - Starting Process for repository: CPP
+[INFO] 2025-02-06-17:04:58 - Changes found, add and commit everything
+[INFO] 2025-02-06-17:10:30 - ======= Starting repository update =======
+[INFO] 2025-02-06-17:10:30 - Starting Process for repository: CPP
+[INFO] 2025-02-06-17:10:32 - Changes found, add and commit everything
+[INFO] 2025-02-06-17:14:54 - ======= Starting repository update =======
+[INFO] 2025-02-06-17:14:54 - Starting Process for repository: CPP
+[INFO] 2025-02-06-17:14:56 - Already
+[INFO] 2025-02-06-17:14:56 - Changes found, add and commit everything
+[INFO] 2025-02-06-17:16:45 - ======= Starting repository update =======
+[INFO] 2025-02-06-17:16:45 - Starting Process for repository: .dotfiles

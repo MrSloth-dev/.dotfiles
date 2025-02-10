@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail 
 
 REPO_FILE="gitupdate.txt"
-LOG_DIR="logs"
+LOG_DIR="${PWD}/logs"
 LOG_FILE="${LOG_DIR}"/repo_updates.log
 ERROR_LOG="${LOG_DIR}"/error.log
 
@@ -17,13 +17,13 @@ setup_loggin
 
 log_info() {
     local message="[INFO] $(date '+%Y-%m-%d-%H:%M:%S' ) - $1"
-    echo "$message" >> ${LOG_FILE}
+    echo -e "$message" >> ${LOG_FILE}
 }
 
 log_error() {
     local message="[ERROR] $(date '+%Y-%m-%d-%H:%M:%S' ) - $1"
-    echo "${message}" >> -a ${ERROR_LOG}
-    echo "${message}" >> ${LOG_FILE}
+    echo -e "${message}" >> ${ERROR_LOG}
+    echo -e "${message}" >> ${LOG_FILE}
 }
 
 log_warning() {
@@ -57,6 +57,20 @@ if [[ ! -f "${REPO_FILE}" ]]; then
     exit 1
 fi
 
+git_log() {
+    git_cmd=$1
+    output=$(eval "${git_cmd}" 2>&1)
+    exit_code=$?
+    if [[ exit_code -ne 0 ]]; then
+        if [[ -n $output ]]; then
+            log_error $output
+        fi
+    else
+        if [[ -n $output ]]; then
+            log_info $output
+        fi
+    fi
+}
 
 update_repo() {
     local REPO_PATH="${1/#\~/$HOME}"
@@ -64,6 +78,7 @@ update_repo() {
     log_info "Starting Process for repository: "${REPO_NAME};
     output=$(git status)
     if [[ "${output}" =~ "fatal"  ]]; then
+        log_error "$REPO_PATH is not a repository" ;
         log_error "$REPO_PATH is not a repository" ;
         return 1;
     fi
@@ -76,20 +91,20 @@ update_repo() {
         return 1
     fi
 
-    git pull
+    git_log "git pull"
     if [[ -n $(git status) ]]; then
         log_info "Changes found, add and commit everything";
-        git add -A
-        git commit -m "Automatic Update"
-        git push
+        git_log "git add -A"
+        git_log "git commit -m 'Automatic Update'"
+        git_log "git push"
         log_info "Repository ${REPO_PATH} updated"
     else
         log_warning "Changes not found, skipping to the next";
     fi
-    cd - >/dev/null/
+    cd - || return 0;
 }
 
-log_info "Starting repository update"
+log_info "======= Starting repository update ======="
 while IFS= read -r repo_path; do
     [[ -z "${repo_path}" || "${repo_path}" =~ ^#.*$ ]] && continue;
     update_repo "${repo_path}"

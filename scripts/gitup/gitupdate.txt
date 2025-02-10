@@ -1,2 +1,6 @@
+~/.dotfiles/
+~/ObsidianNotes/
+~/Projects/ZigLib/
+~/
 ~/CommonCore/CPP/
 ~/Projects/ZigLand/ZigLib/
