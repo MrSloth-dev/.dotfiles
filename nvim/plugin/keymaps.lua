@@ -20,12 +20,12 @@ vim.keymap.set("n", "j", "gj", { desc = "Move Down" })
 vim.keymap.set("n", "k", "gk", { desc = "Move Up" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move UP" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move DOWN" })
-vim.keymap.set("n", "<Tab>", ":tabNext<CR>", { desc = "Next Tab" })
 vim.keymap.set("n", "-", ":Oil <CR>", { silent = true, desc = "Open Oil" })
 vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Git Blame Toggle" })
 vim.keymap.set("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", { desc = "Neogen" })
 vim.keymap.set("n", "<Leader>j", "zo", { desc = "fold open" })
 vim.keymap.set("n", "<Leader>k", "zc", { desc = "fold close" })
+vim.keymap.set("n", "<Enter>", "o<Esc>", { desc = "Paragraph Below" })
 
 vim.env.PATH = vim.env.PATH .. ":/home/joao-pol/.local/share/homebrew/bin"
 vim.env.PATH = vim.env.PATH .. ":/snap/bin/"

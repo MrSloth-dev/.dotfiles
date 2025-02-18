@@ -12,13 +12,16 @@
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
-#Zshrc with 2 places
-#
+## Functions
 addpath () {
 	if [[ ! "${PATH}"  =~ "${1}" ]]; then
 		export PATH=$PATH:$1;
 	fi
 
+}
+mkcdir() {
+	mkdir -p $1 && 
+	cd -P $1
 }
 
 #WorkSettings
@@ -29,7 +32,7 @@ if [[ $USER == "joao-pol" ]]; then
 	export USER=joao-pol
 	export HOMEBREW_NO_AUTO_UPDATE=1
 elif [[ $USER == "mrsloth" ]]; then
-	alias penv="source ~/.pythonenv/bin/activate"
+	alias penv="source .venv/bin/activate"
 	addpath $HOME/.cargo/bin
 	addpath $HOME/.zig
 	addpath $HOME/go/bin
@@ -69,3 +72,5 @@ source $ZSH/oh-my-zsh.sh
 alias zbr='zig build run'
 alias zbt='zig build test'
 alias lzd=lazydocker
+# include ~/.local/bin in PATH
+[[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
