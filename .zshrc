@@ -1,17 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 ## Functions
 addpath () {
 	if [[ ! "${PATH}"  =~ "${1}" ]]; then
@@ -24,7 +10,7 @@ mkcdir() {
 	cd -P $1
 }
 
-#WorkSettings
+#Settings based on user
 if [[ $USER == "joao-pol" ]]; then
 	addpath $HOME/sgoinfre/homebrew/bin
 	addpath /usr/local/bin
@@ -34,7 +20,7 @@ if [[ $USER == "joao-pol" ]]; then
 elif [[ $USER == "mrsloth" ]]; then
 	alias penv="source .venv/bin/activate"
 	addpath $HOME/.cargo/bin
-	addpath $HOME/.zig
+	addpath $HOME/.zig/build/stage3/bin/
 	addpath $HOME/go/bin
 	cowsay "Welcome to Zmux"
 fi
@@ -74,3 +60,4 @@ alias zbt='zig build test'
 alias lzd=lazydocker
 # include ~/.local/bin in PATH
 [[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
+export LD_LIBRARY_PATH=/usr/lib:/usr/lib:
