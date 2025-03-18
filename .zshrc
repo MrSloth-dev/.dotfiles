@@ -32,7 +32,7 @@ export ZSHRC="$HOME/.zshrc"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export EDITOR="nvim"
 alias so="source $ZSHRC"
-ZSH_THEME="crunch" # set by `omz`
+ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 alias tk="~/.dotfiles/scripts/tmux_kill.sh"
 alias lg="lazygit"
 alias sym="~/.dotfiles/scripts/symlink.sh"
@@ -50,7 +50,6 @@ addpath $HOME/.local/bin
 eval "$(zoxide init zsh)"
 
 
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #
