@@ -39,13 +39,9 @@ alias sym="~/.dotfiles/scripts/symlink.sh"
 alias obs="nvim ~/ObsidianNotes/"
 alias upup=" cd ~/.dotfiles/ && git add . && git commit -m 'update' && git push && cd -"
 
-#similar to arrow keys
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search
-
 plugins=(git)
-
 addpath $HOME/.local/bin
+
 
 eval "$(zoxide init zsh)"
 
@@ -54,9 +50,15 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias zb='zig build'
 alias zbr='zig build run'
 alias zbt='zig build test'
 alias lzd=lazydocker
 # include ~/.local/bin in PATH
 [[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
-export LD_LIBRARY_PATH=/usr/lib:/usr/lib:
+#similar to arrow keys
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
+
+alias please=sudo
+eval $(thefuck --alias)

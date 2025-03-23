@@ -16,7 +16,7 @@ theme='style-4'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
-host=`whoami`
+host=`cat /etc/hostname`
 
 # Options
 shutdown=' Shutdown'

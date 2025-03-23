@@ -25,7 +25,6 @@ vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Git Blame Tog
 vim.keymap.set("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", { desc = "Neogen" })
 vim.keymap.set("n", "<Leader>j", "zo", { desc = "fold open" })
 vim.keymap.set("n", "<Leader>k", "zc", { desc = "fold close" })
-vim.keymap.set("n", "<Enter>", "o<Esc>", { desc = "Paragraph Below" })
 
 vim.env.PATH = vim.env.PATH .. ":/home/joao-pol/.local/share/homebrew/bin"
 vim.env.PATH = vim.env.PATH .. ":/snap/bin/"
