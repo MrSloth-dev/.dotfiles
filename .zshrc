@@ -56,9 +56,8 @@ alias zbt='zig build test'
 alias lzd=lazydocker
 # include ~/.local/bin in PATH
 [[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
-#similar to arrow keys
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search
-
-alias please=sudo
-eval $(thefuck --alias)
+export LD_LIBRARY_PATH=/usr/lib:/usr/lib:
+alias pls="sudo pacman -S"
+alias screenKey='screenkey -t 0.5 -s small --no-whitespace --persist &'
+alias recordStart='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i :0 -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac screen.mp4 > /dev/null'
+alias recordStop='kill screenkey ffmpeg'

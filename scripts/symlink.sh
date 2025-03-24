@@ -28,8 +28,6 @@ function symlink {
   cp -sf -r "$dotfile_path" "$link_path"
 }
 
-
-
 if [[ $PC =~ ^(Work|work|WORK)$ ]]; then
 	echo -e "${GREEN}Syslinking @ Work${ENDCOLOR}\n" 
 	symlink "Tmux" "/home/joao-pol/.dotfiles/.tmux.conf.local" "/home/joao-pol/.tmux.conf.local"
@@ -37,6 +35,7 @@ if [[ $PC =~ ^(Work|work|WORK)$ ]]; then
 	symlink "Kitty" "/home/mrsloth/.dotfiles/kitty/" "/home/mrsloth/.config/"
 	symlink "Zshrc" "/home/joao-pol/.dotfiles/.zshrc" "/home/joao-pol/.zshrc"
 	symlink "p10k" "/home/joao-pol/.dotfiles/.p10k.zsh" "/home/joao-pol/.p10k.zsh"
+	symlink "Zmux" "/home/mrsloth/.dotfiles/zmux/" "/home/mrsloth/.config/"
 elif [[ $PC =~ ^(Home|home|HOME)$ ]]; then
 	echo -e "${GREEN}Syslinking @ Home${ENDCOLOR}\n" 
 	symlink "Tmux" "/home/mrsloth/.dotfiles/.tmux.conf.local" "/home/mrsloth/.tmux.conf.local"
@@ -47,6 +46,7 @@ elif [[ $PC =~ ^(Home|home|HOME)$ ]]; then
 	symlink "i3" "/home/mrsloth/.dotfiles/i3/" "/home/mrsloth/.config/"
 	symlink "Rofi" "/home/mrsloth/.dotfiles/rofi/" "/home/mrsloth/.config/"
 	symlink "Kitty" "/home/mrsloth/.dotfiles/kitty/" "/home/mrsloth/.config/"
+	symlink "Zmux" "/home/mrsloth/.dotfiles/zmux/" "/home/mrsloth/.config/"
 else
 	echo -e"${RED}Choose Work or Home${ENDCOLOR}\n"
 fi
