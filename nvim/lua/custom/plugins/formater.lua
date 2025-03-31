@@ -1,6 +1,5 @@
 return {
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-	require("kickstart.plugins.autopairs"),
 	{ "numToStr/Comment.nvim", opts = {} },
 	{
 		"folke/todo-comments.nvim",

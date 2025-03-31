@@ -1,8 +1,12 @@
 -- lazy.nvim
 return {
 	"folke/snacks.nvim",
+	priority = 1000,
+	lazy = false,
 	---@type snacks.Config
 	opts = {
+		indent = {},
+		statuscolumn = {},
 		picker = { layout = { preset = "telescope" } },
 		-- your picker configuration comes here
 		-- or leave it empty to use the default settings

@@ -1,5 +1,5 @@
 return {
-	--[[ {
+	{
 		"julianolf/nvim-dap-lldb",
 		dependencies = {
 			"mfussenegger/nvim-dap",
@@ -59,5 +59,5 @@ return {
 				ui.close()
 			end
 		end,
-	}, ]]
+	},
 }
