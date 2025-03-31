@@ -20,7 +20,7 @@ font pango: CommitMonomrsloth Regular 14
 gaps outer 1
 gaps inner 1
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 8

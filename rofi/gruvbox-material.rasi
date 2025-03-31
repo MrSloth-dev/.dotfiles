@@ -5,7 +5,7 @@
  */
 
 * {
-    bg0: #282828;
+    bg0: #8F8F8F;
     bg1: #32302f;
     grey0: #7c6f64;
     fg0: #d4be98;
@@ -14,7 +14,7 @@
     red: #ea6962;
     orange: #e78a4e;
     green: #a9b665;
-    bgStatusline3: #504945;
+    bgStatusline3: #8F8F8F;
 
     background-color: @bg0;
 }
