@@ -7,7 +7,7 @@ return {
 	opts = {
 		indent = {},
 		statuscolumn = {},
-		picker = { layout = { preset = "telescope" } },
+		picker = { layout = { preset = "default" } },
 		-- your picker configuration comes here
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below

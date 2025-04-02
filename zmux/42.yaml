@@ -28,6 +28,7 @@ sessions:
     windows:
       - name: Editor
         command: cd ~/CommonCore/CPP/
+        command: nvim ~/CommonCore/CPP/
       - name: Terminal
         command: cd ~/CommonCore/CPP/
   pipex:
