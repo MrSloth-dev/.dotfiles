@@ -40,7 +40,7 @@ return {
 			-- "ishan9299/nvim-solarized-lua",
 			-- "jthvai/lavender.nvim",
 			-- "navarasu/onedark.nvim",
-			-- "sainnhe/gruvbox-material",
+			"sainnhe/gruvbox-material",
 			-- "sainnhe/everforest",
 			-- "neanias/everforest-nvim",
 			-- "NTBBloodbath/doom-one.nvim",
