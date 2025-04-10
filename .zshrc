@@ -41,6 +41,7 @@ alias upup=" cd ~/.dotfiles/ && git add . && git commit -m 'update' && git push 
 
 plugins=(git)
 addpath $HOME/.local/bin
+addpath $HOME/.zig
 
 
 eval "$(zoxide init zsh)"
