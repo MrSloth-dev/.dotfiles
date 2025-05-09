@@ -33,3 +33,14 @@ sessions:
         command: cd ~/CommonCore/CPP/
         command: ""
   pipex:
+  inception:
+    root: /home/mrsloth/CommonCore/42.Inception
+    start_index: 1
+    windows:
+
+      - name: code
+        command: ""
+      - name: building
+        command: ""
+      - name: Lazydocker
+        command: ""
