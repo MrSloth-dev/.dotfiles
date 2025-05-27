@@ -53,8 +53,8 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.list = true
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -70,7 +70,7 @@ vim.opt.scrolloff = 8
 vim.opt.hlsearch = true
 
 -- For Obsidian graphics
-vim.opt.conceallevel = 2
+-- vim.opt.conceallevel = 2
 
 -- Because we have Telescope Undo // must check this pos of swapfiles
 vim.opt.swapfile = false

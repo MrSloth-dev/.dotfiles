@@ -13,10 +13,11 @@ mkcdir() {
 #Settings based on user
 if [[ $USER == "joao-pol" ]]; then
 	addpath $HOME/sgoinfre/homebrew/bin
-	addpath /usr/local/bin
+	addpath /usr/.local/bin
 	export MAIL=joao-pol@students.42porto.com
 	export USER=joao-pol
 	export HOMEBREW_NO_AUTO_UPDATE=1
+	addpath $HOME/miniconda3/bin
 elif [[ $USER == "mrsloth" ]]; then
 	alias penv="source .venv/bin/activate"
 	addpath $HOME/.cargo/bin
@@ -62,3 +63,21 @@ alias pls="sudo pacman -S"
 alias screenKey='screenkey -t 0.5 -s small --no-whitespace --persist &'
 alias recordStart='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i :0 -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac screen.mp4 > /dev/null'
 alias recordStop='kill screenkey ffmpeg'
+alias sman='man -k . | fzf | cut -d" " -f1 | xargs man'
+export XDG_CACHE_HOME="$HOME/goinfre/.cache"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/joao-pol/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/joao-pol/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/joao-pol/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/joao-pol/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

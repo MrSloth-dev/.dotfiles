@@ -84,9 +84,7 @@ tmux_conf_24b_colour=auto
 
 tmux_conf_theme=disabled
 
-set -g @plugin 'xamut/tmux-weather'
-set-option -g @tmux-weather-location "Porto"
-set-option -g @tmux-weather-interval 1
+set -g @plugin 'christoomey/vim-tmux-navigator'
 
 set -g @plugin 'z3z1ma/tmux-gruvbox'
 set -g @gruvbox_flavour 'dark'

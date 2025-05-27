@@ -34,12 +34,23 @@ return {
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
+				-- Add C++ and C formatting with clang-format
+				cpp = { "clang-format" },
+				c = { "clang-format" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
 				-- You can use a sub-list to tell conform to run *until* a formatter
 				-- is found.
 				-- javascript = { { "prettierd", "prettier" } },
+			},
+			-- Configure clang-format with custom Google style
+			formatters = {
+				["clang-format"] = {
+					args = {
+						"--style={BasedOnStyle: Google, BreakBeforeBraces: Allman, IndentWidth: 4, UseTab: Never, ColumnLimit: 90, AccessModifierOffset: -4}",
+					},
+				},
 			},
 		},
 	},
