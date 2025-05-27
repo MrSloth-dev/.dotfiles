@@ -18,7 +18,6 @@ if [[ $USER == "joao-pol" ]]; then
 	export MAIL=joao-pol@students.42porto.com
 	export USER=joao-pol
 	export HOMEBREW_NO_AUTO_UPDATE=1
-	export XDG_CACHE_HOME="$HOME/goinfre/.cache"
 	addpath $HOME/miniconda3/bin
 elif [[ $USER == "mrsloth" ]]; then
 	alias penv="source .venv/bin/activate"
