@@ -28,10 +28,8 @@ sessions:
     windows:
       - name: Editor
         command: cd ~/CommonCore/CPP/
-        command: nvim ~/CommonCore/CPP/
       - name: Terminal
         command: cd ~/CommonCore/CPP/
-        command: ""
   pipex:
   inception:
     root: /home/mrsloth/CommonCore/42.Inception
@@ -44,3 +42,13 @@ sessions:
         command: ""
       - name: Lazydocker
         command: ""
+  Transcendence:
+    root: /home/mrsloth/CommonCore/6.Transcendence/ft_transcendence/frontend
+    windows:
+       - name: MainCode
+         command: 
+       - name: Explore
+         command: 
+       - name: Server
+         command: 
+

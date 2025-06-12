@@ -10,6 +10,9 @@ mkcdir() {
 	cd -P $1
 }
 
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
+
 #Settings based on user
 if [[ $USER == "joao-pol" ]]; then
 	addpath $HOME/sgoinfre/homebrew/bin
@@ -23,6 +26,7 @@ elif [[ $USER == "mrsloth" ]]; then
 	addpath $HOME/.cargo/bin
 	addpath $HOME/.zig/build/stage3/bin/
 	addpath $HOME/go/bin
+	addpath $HOME/miniconda3/bin
 	cowsay "Welcome to Zmux"
 fi
 
@@ -69,14 +73,14 @@ export XDG_CACHE_HOME="$HOME/goinfre/.cache"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/joao-pol/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/mrsloth/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/joao-pol/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/joao-pol/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/mrsloth/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/mrsloth/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/joao-pol/miniconda3/bin:$PATH"
+        export PATH="/home/mrsloth/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

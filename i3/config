@@ -209,7 +209,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always picom --fade-in-step=1 --fade-out-step=1 &
+exec_always picom --backend xrender --vsync --fade-in-step=1 --fade-out-step=1
 
 exec_always --no-startup-id xwallpaper --stretch ~/.dotfiles/sloth2.jpeg
 
