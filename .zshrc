@@ -10,6 +10,8 @@ mkcdir() {
 	cd -P $1
 }
 
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
 
 #Settings based on user
 if [[ $USER == "joao-pol" ]]; then
@@ -63,6 +65,22 @@ alias screenKey='screenkey -t 0.5 -s small --no-whitespace --persist &'
 alias recordStart='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i :0 -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac screen.mp4 > /dev/null'
 alias recordStop='kill screenkey ffmpeg'
 alias sman='man -k . | fzf | cut -d" " -f1 | xargs man'
+export XDG_CACHE_HOME="$HOME/goinfre/.cache"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/mrsloth/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/mrsloth/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/mrsloth/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/mrsloth/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
