@@ -216,7 +216,6 @@ exec_always --no-startup-id xwallpaper --stretch ~/.dotfiles/sloth2.jpeg
 exec_always --no-startup-id setxkbmap -layout us,pt -option grp:alt_caps_toggle
 
 exec_always --no-startup-id exec xset r rate 240 70
-exec_always --no-startup-id redsight
 
 #interactive screenshot by pressing printscreen
 bindsym Print exec gnome-screenshot -i 
