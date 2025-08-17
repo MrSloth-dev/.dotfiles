@@ -26,6 +26,15 @@ vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Git Blame Tog
 vim.keymap.set("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", { desc = "Neogen" })
 vim.keymap.set("n", "<Leader>j", "zo", { desc = "fold open" })
 vim.keymap.set("n", "<Leader>k", "zc", { desc = "fold close" })
+-- vim.keymap.set("n", "<Leader>csv", ":CsvViewToggle display_mode=border header_lnum=1 | lua vim.opt_local.wrap:toggle()<CR>", { desc = "Toggle CSV Viewer and line wrap" })
+vim.keymap.set("n", "<Leader>csv", function()
+  -- Execute the plugin's toggle command
+  vim.cmd("CsvViewToggle display_mode=border header_lnum=1")
+
+  -- Toggle the line wrap setting for the current window only.
+  -- This is the Lua equivalent of `:setlocal wrap!`
+  vim.opt_local.wrap = not vim.opt_local.wrap
+end, { desc = "Toggle CSV Viewer and line wrap" })
 
 vim.env.PATH = vim.env.PATH .. ":/home/joao-pol/.local/share/homebrew/bin"
 vim.env.PATH = vim.env.PATH .. ":/snap/bin/"
