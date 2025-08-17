@@ -66,6 +66,8 @@ alias recordStart='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i :0 -
 alias recordStop='kill screenkey ffmpeg'
 alias sman='man -k . | fzf | cut -d" " -f1 | xargs man'
 export XDG_CACHE_HOME="$HOME/goinfre/.cache"
+alias setupscreen='bash ~/.dotfiles/scripts/setupscreen.sh'
+alias vim=nvim
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
