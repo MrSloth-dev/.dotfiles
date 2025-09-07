@@ -5,6 +5,7 @@ GREEN='\e[33m'
 CYAN='\e[36m'
 GREEN='\e[32m'
 ENDCOLOR='\e[0m'
+HOSTNAME=$(cat /etc/hostname)
 
 
 # echo -e "${GREEN}Work or Home?${ENDCOLOR}"
@@ -13,8 +14,12 @@ if [[ $USER == "joao-pol" ]]; then
 	PC="Work"
 	HOME_DIR="/home/joao-pol/"
 	DOT_DIR="/home/joao-pol/.dotfiles"
-elif [[ $USER == "mrsloth" ]]; then
+elif [[ $USER == "mrsloth" || $HOST == "leVelho" ]]; then
 	PC="Home"
+	HOME_DIR="/home/mrsloth/"
+	DOT_DIR="/home/mrsloth/.dotfiles"
+elif [[ $USER == "mrsloth" || $HOST == "SlothPi" ]]; then
+	PC="Pi"
 	HOME_DIR="/home/mrsloth/"
 	DOT_DIR="/home/mrsloth/.dotfiles"
 fi
@@ -47,6 +52,9 @@ elif [[ $PC =~ ^(Home|home|HOME)$ ]]; then
 	symlink "Rofi" "/home/mrsloth/.dotfiles/rofi/" "/home/mrsloth/.config/"
 	symlink "Kitty" "/home/mrsloth/.dotfiles/kitty/" "/home/mrsloth/.config/"
 	symlink "Zmux" "/home/mrsloth/.dotfiles/zmux/" "/home/mrsloth/.config/"
+elif [[ $PC =~ ^(Pi)$ ]]; then
+	echo -e "${GREEN}Syslinking @ Pi${ENDCOLOR}\n" 
+	symlink "Zshrc" "/home/mrsloth/.dotfiles/.zshrc" "/home/mrsloth/.zshrc"
 else
 	echo -e"${RED}Choose Work or Home${ENDCOLOR}\n"
 fi
