@@ -35,20 +35,23 @@ sessions:
     root: /home/mrsloth/CommonCore/42.Inception
     start_index: 1
     windows:
-
       - name: code
-        command: ""
+        command: nvim
       - name: building
         command: ""
       - name: Lazydocker
-        command: ""
+        command: lazydocker
   Transcendence:
-    root: /home/mrsloth/CommonCore/6.Transcendence/ft_transcendence/frontend
+    root: /home/mrsloth/CommonCore/6.Transcendence/ft_transcendence/
     windows:
        - name: MainCode
-         command: 
+         command: nvim
        - name: Explore
          command: 
        - name: Server
-         command: 
+         command: docker compose up
+       - name: lazygit
+         command: lazygit
+       - name: lazydocker
+         command: lazydocker
 
