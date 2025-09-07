@@ -70,7 +70,7 @@ vim.opt.scrolloff = 8
 vim.opt.hlsearch = true
 
 -- For Obsidian graphics
--- vim.opt.conceallevel = 2
+vim.opt.conceallevel = 2
 
 -- Because we have Telescope Undo // must check this pos of swapfiles
 vim.opt.swapfile = false

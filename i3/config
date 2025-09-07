@@ -20,7 +20,15 @@ font pango: CommitMonomrsloth Regular 14
 gaps outer 1
 gaps inner 1
 
-for_window [class="^.*"] border pixel 4
+# Window border colors
+client.focused          #FFA500 #FFA500 #ffffff #FFA500   #FFA500
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# Increase border width for better visibility
+for_window [class="^.*"] border pixel 2
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 8
@@ -58,7 +66,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
 
 # Send the terminal to the scratchpad
 bindsym $mod+Shift+Return move scratchpad
@@ -168,6 +176,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec i3-msg exit
 
+bindsym $mod+Shift+o exec i3lock
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -208,14 +218,16 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 # Decrease brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always picom --backend xrender --vsync --fade-in-step=1 --fade-out-step=1
+exec_always --no-startup-id $HOME/.config/polybar/custom/launch.sh
+exec_always picom --backend xrender --vsync --fade-in-step=1 --fade-out-step=1 --corner-radius 10 --rounded-corners-exclude "class_g = 'Polybar'"
 
 exec_always --no-startup-id xwallpaper --stretch ~/.dotfiles/sloth2.jpeg
 
-exec_always --no-startup-id setxkbmap -layout us,pt -option grp:alt_caps_toggle
+exec_always --no-startup-id setxkbmap -layout us,pt -option grp:alt_space_toggle
 
 exec_always --no-startup-id exec xset r rate 240 70
+
+exec_always --no-startup-id exec killall redshift && redshift
 
 #interactive screenshot by pressing printscreen
 bindsym Print exec gnome-screenshot -i 

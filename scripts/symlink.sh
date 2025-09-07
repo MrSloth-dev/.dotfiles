@@ -10,11 +10,15 @@ HOSTNAME=$(cat /etc/hostname)
 
 # echo -e "${GREEN}Work or Home?${ENDCOLOR}"
 # read PC
-if [[ $USER == "joao-pol" ]]; then
+if [[ $USER == "jab" ]]; then
+	PC="Work"
+	HOME_DIR="/home/jab/"
+	DOT_DIR="/home/jab/.dotfiles"
+elif [[ $USER == "joao-pol" ]]; then
 	PC="Work"
 	HOME_DIR="/home/joao-pol/"
 	DOT_DIR="/home/joao-pol/.dotfiles"
-elif [[ $USER == "mrsloth" || $HOST == "leVelho" ]]; then
+elif [[ $USER == "mrsloth" ]]; then
 	PC="Home"
 	HOME_DIR="/home/mrsloth/"
 	DOT_DIR="/home/mrsloth/.dotfiles"
@@ -35,12 +39,16 @@ function symlink {
 
 if [[ $PC =~ ^(Work|work|WORK)$ ]]; then
 	echo -e "${GREEN}Syslinking @ Work${ENDCOLOR}\n" 
-	symlink "Tmux" "/home/joao-pol/.dotfiles/.tmux.conf.local" "/home/joao-pol/.tmux.conf.local"
-	symlink "Nvim" "/home/joao-pol/.dotfiles/nvim/" "/home/joao-pol/.config/"
-	symlink "Kitty" "/home/mrsloth/.dotfiles/kitty/" "/home/mrsloth/.config/"
-	symlink "Zshrc" "/home/joao-pol/.dotfiles/.zshrc" "/home/joao-pol/.zshrc"
-	symlink "p10k" "/home/joao-pol/.dotfiles/.p10k.zsh" "/home/joao-pol/.p10k.zsh"
-	symlink "Zmux" "/home/mrsloth/.dotfiles/zmux/" "/home/mrsloth/.config/"
+	symlink "Tmux" "/home/jab/.dotfiles/.tmux.conf.local" "/home/jab/.tmux.conf.local"
+	symlink "Nvim" "/home/jab/.dotfiles/nvim/" "/home/jab/.config/"
+	symlink "Kitty" "/home/jab/.dotfiles/kitty/" "/home/jab/.config/"
+	symlink "Ghostty" "/home/jab/.dotfiles/ghostty/" "/home/jab/.config/"
+	symlink "Zshrc" "/home/jab/.dotfiles/.zshrc" "/home/jab/.zshrc"
+	symlink "i3" "/home/jab/.dotfiles/i3/" "/home/jab/.config/"
+	symlink "Rofi" "/home/jab/.dotfiles/rofi/" "/home/jab/.config/"
+	symlink "Polybar" "/home/jab/.dotfiles/polybar/" "/home/jab/.config/"
+	# symlink "p10k" "/home/jab/.dotfiles/.p10k.zsh" "/home/jab/.p10k.zsh"
+	# symlink "Zmux" "/home/jab/.dotfiles/zmux/" "/home/jab/.config/"
 elif [[ $PC =~ ^(Home|home|HOME)$ ]]; then
 	echo -e "${GREEN}Syslinking @ Home${ENDCOLOR}\n" 
 	symlink "Tmux" "/home/mrsloth/.dotfiles/.tmux.conf.local" "/home/mrsloth/.tmux.conf.local"
