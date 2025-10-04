@@ -24,7 +24,7 @@ sudo -v
 sudo apt update && sudo apt upgrade -y
 
 # Install required dependencies
-sudo apt install -y curl wget cmake git clang zsh cowsay python3 i3 i3-wm rofi tmux neofetch gimp btop python3 \
+sudo apt install -y curl wget cmake git clang firefox zsh cowsay python3 i3 i3-wm rofi tmux neofetch gimp btop python3 \
     virtualbox picom redshift unrar unzip fzf xwallpaper \
     build-essential libssl-dev libcurl4-openssl-dev libxml2-dev libxcb-xinerama0-dev \
     libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xrm-dev libxcb-xkb-dev \
