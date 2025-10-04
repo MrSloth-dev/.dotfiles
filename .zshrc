@@ -10,9 +10,6 @@ mkcdir() {
 	cd -P $1
 }
 
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search
-
 #Settings based on user
 if [[ $USER == "joao-pol" ]]; then
 	addpath $HOME/sgoinfre/homebrew/bin

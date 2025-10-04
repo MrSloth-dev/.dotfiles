@@ -56,7 +56,7 @@ fi
 # Use rofi to select Wi-Fi network or action
 chosen_network=$(echo -e "$toggle\n$rescan_option\n$wifi_list" | uniq -u | rofi -dmenu \
     -i -selected-row 1 -p "Wi-Fi" \
-    -theme /home/jab/.config/polybar/custom/scripts/rofi_themes/bluetooth.rasi)
+    -theme /home/$USER/.config/polybar/custom/scripts/rofi_themes/bluetooth.rasi)
 chosen_id=$(echo "${chosen_network:3}" | sed 's/$//' | sed 's/ *$//')
 
 if [[ -z "$chosen_network" ]]; then

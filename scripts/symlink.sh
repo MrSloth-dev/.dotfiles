@@ -10,10 +10,10 @@ HOSTNAME=$(cat /etc/hostname)
 
 # echo -e "${GREEN}Work or Home?${ENDCOLOR}"
 # read PC
-if [[ $USER == "jab" ]]; then
+if [[ $USER == "$USER" ]]; then
 	PC="Work"
-	HOME_DIR="/home/jab/"
-	DOT_DIR="/home/jab/.dotfiles"
+	HOME_DIR="/home/$USER/"
+	DOT_DIR="/home/$USER/.dotfiles"
 elif [[ $USER == "joao-pol" ]]; then
 	PC="Work"
 	HOME_DIR="/home/joao-pol/"
@@ -39,16 +39,16 @@ function symlink {
 
 if [[ $PC =~ ^(Work|work|WORK)$ ]]; then
 	echo -e "${GREEN}Syslinking @ Work${ENDCOLOR}\n" 
-	symlink "Tmux" "/home/jab/.dotfiles/.tmux.conf.local" "/home/jab/.tmux.conf.local"
-	symlink "Nvim" "/home/jab/.dotfiles/nvim/" "/home/jab/.config/"
-	symlink "Kitty" "/home/jab/.dotfiles/kitty/" "/home/jab/.config/"
-	symlink "Ghostty" "/home/jab/.dotfiles/ghostty/" "/home/jab/.config/"
-	symlink "Zshrc" "/home/jab/.dotfiles/.zshrc" "/home/jab/.zshrc"
-	symlink "i3" "/home/jab/.dotfiles/i3/" "/home/jab/.config/"
-	symlink "Rofi" "/home/jab/.dotfiles/rofi/" "/home/jab/.config/"
-	symlink "Polybar" "/home/jab/.dotfiles/polybar/" "/home/jab/.config/"
-	# symlink "p10k" "/home/jab/.dotfiles/.p10k.zsh" "/home/jab/.p10k.zsh"
-	# symlink "Zmux" "/home/jab/.dotfiles/zmux/" "/home/jab/.config/"
+	symlink "Tmux" "/home/$USER/.dotfiles/.tmux.conf.local" "/home/$USER/.tmux.conf.local"
+	symlink "Nvim" "/home/$USER/.dotfiles/nvim/" "/home/$USER/.config/"
+	symlink "Kitty" "/home/$USER/.dotfiles/kitty/" "/home/$USER/.config/"
+	symlink "Ghostty" "/home/$USER/.dotfiles/ghostty/" "/home/$USER/.config/"
+	symlink "Zshrc" "/home/$USER/.dotfiles/.zshrc" "/home/$USER/.zshrc"
+	symlink "i3" "/home/$USER/.dotfiles/i3/" "/home/$USER/.config/"
+	symlink "Rofi" "/home/$USER/.dotfiles/rofi/" "/home/$USER/.config/"
+	symlink "Polybar" "/home/$USER/.dotfiles/polybar/" "/home/$USER/.config/"
+	# symlink "p10k" "/home/$USER/.dotfiles/.p10k.zsh" "/home/$USER/.p10k.zsh"
+	# symlink "Zmux" "/home/$USER/.dotfiles/zmux/" "/home/$USER/.config/"
 elif [[ $PC =~ ^(Home|home|HOME)$ ]]; then
 	echo -e "${GREEN}Syslinking @ Home${ENDCOLOR}\n" 
 	symlink "Tmux" "/home/mrsloth/.dotfiles/.tmux.conf.local" "/home/mrsloth/.tmux.conf.local"

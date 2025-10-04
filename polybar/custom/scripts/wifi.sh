@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get current SSID
-ssid=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
+ssid=$(iwctl station wlan0 show | grep "Connected network" | awk '{print $3}')
 
 # Get signal strength (0-100)
 signal=$(awk 'NR==3 {printf("%.0f\n", $3*10/7)}' /proc/net/wireless)

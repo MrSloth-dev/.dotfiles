@@ -3,7 +3,7 @@
 # Get battery info using acpi
 acpi_output=$(acpi -b)
 
-theme=/home/jab/.config/polybar/custom/scripts/rofi_themes/battery.rasi
+theme=/home/$USER/.config/polybar/custom/scripts/rofi_themes/battery.rasi
 
 # Extract status and percentage
 status=$(echo "$acpi_output" | awk -F', ' '{print $1}' | awk '{print $3}')
@@ -20,11 +20,11 @@ if [[ "$status" == "Discharging" ]]; then
     time_output=" Remaining: ${hours} hours, ${minutes} minutes"
 else
     time_output=""
-    theme=/home/jab/.config/polybar/custom/scripts/rofi_themes/battery_charging.rasi
+    theme=/home/$USER/.config/polybar/custom/scripts/rofi_themes/battery_charging.rasi
 fi
 
 # Build menu options
-options="$(/home/jab/.config/polybar/custom/scripts/battery.sh) $percentage ($status)"
+options="$(/home/$USER/.config/polybar/custom/scripts/battery.sh) $percentage ($status)"
 if [[ -n "$time_output" ]]; then
     options="$options\n$time_output"
 fi

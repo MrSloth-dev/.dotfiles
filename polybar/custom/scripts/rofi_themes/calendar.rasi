@@ -1,4 +1,4 @@
-@theme "/home/jab/.config/rofi/themes/launcher.rasi"
+@theme "/home/$USER/.config/rofi/themes/launcher.rasi"
 
 * {
     font: "FiraCode Nerd Font 12";

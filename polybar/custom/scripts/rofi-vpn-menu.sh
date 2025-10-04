@@ -5,7 +5,7 @@ CONFIG_ACTIVE="$HOME/.config/sing-box/active.json"
 CACHE_FILE="$HOME/.config/sing-box/vpn_cache.json"
 TRIGGER_FILE="$HOME/.config/sing-box/vpn_update_trigger"
 
-theme="/home/jab/.config/polybar/custom/scripts/rofi_themes/vpn.rasi"
+theme="/home/$USER/.config/polybar/custom/scripts/rofi_themes/vpn.rasi"
 
 # Map ISO country codes to flag + name
 declare -A COUNTRY_MAP=(
