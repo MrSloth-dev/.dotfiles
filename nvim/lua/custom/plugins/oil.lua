@@ -1,25 +1,26 @@
 return {
 	{
 		"stevearc/oil.nvim",
-		opts = {},
-		-- Optional dependencies
-		dependencies = { { "echasnovski/mini.icons", opts = {} } },
-		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-		view_options = {
-			show_hidden = false,
-			win_options = {
-				winbar = "%#@attribute.builtin#%{substitute(v:lua.require('oil').get_current_dir(), '^' . $HOME, '~', '')}",
+		opts = {
+			columns = {
+				"permissions",
+				"size",
+				"mtime",
 			},
-			-- is_hidden_file = function(name, bufnr)
-			-- 	return vim.startswith(name, ".") or vim.startswith(name, "e")
-			-- end,
-			-- is_always_hidden = function(name, path)
-			-- 	-- Hide .o files
-			-- 	if name:match("%.o$") then
-			-- 		return true
-			-- 	end
-			-- 	return false
-			-- end,
+			view_options = {
+				show_hidden = true,
+				win_options = {
+					winbar = "%{substitute(v:lua.require('oil').get_current_dir(), '^' .. vim.env.HOME, '~', '')}",
+				},
+				is_hidden_file = function(name, _)
+					return false
+				end,
+				is_always_hidden = function(name, _)
+					-- Optional: Hide specific files like object files
+					return name:match("%.o$") ~= nil
+				end,
+			},
 		},
-	},
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+	}
 }

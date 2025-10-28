@@ -29,7 +29,7 @@ vim.keymap.set("n", "<Leader>k", "zc", { desc = "fold close" })
 -- vim.keymap.set("n", "<Leader>csv", ":CsvViewToggle display_mode=border header_lnum=1 | lua vim.opt_local.wrap:toggle()<CR>", { desc = "Toggle CSV Viewer and line wrap" })
 vim.keymap.set("n", "<Leader>csv", function()
   -- Execute the plugin's toggle command
-  vim.cmd("CsvViewToggle display_mode=border header_lnum=1")
+vim.cmd("CsvViewToggle display_mode=border header_lnum=1")
 
   -- Toggle the line wrap setting for the current window only.
   -- This is the Lua equivalent of `:setlocal wrap!`
@@ -57,3 +57,14 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+-- Open compiler
+vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+
+-- Redo last selected option
+vim.api.nvim_set_keymap('n', '<S-F6>',
+  "<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
+  .. "<cmd>CompilerRedo<cr>",
+  { noremap = true, silent = true })
+
+-- Toggle compiler results
+vim.api.nvim_set_keymap('n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })

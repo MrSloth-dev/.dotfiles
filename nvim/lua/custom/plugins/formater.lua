@@ -37,8 +37,8 @@ return {
 				-- Add C++ and C formatting with clang-format
 				-- cpp = { "clang-format" },
 				c = { "clang-format" },
-				-- Conform can also run multiple formatters sequentially
-				-- python = { "isort", "black" },
+				-- Ruff for Python formatting and import sorting
+				python = { "ruff_organize_imports", "ruff_format" },
 				--
 				-- You can use a sub-list to tell conform to run *until* a formatter
 				-- is found.

@@ -14,5 +14,6 @@ else
     xrandr --auto
     echo "setup complete with single screen"
 fi
+i3 restart
 
 

@@ -182,8 +182,24 @@ return {
 				clangd = {
 					command = { "clangd", "-Wall", "-Werror", "-Wextra", "-std=c++98" },
 				},
+				pyright = {
+					on_new_config = function(config, root_dir)
+						local venv = vim.env.VIRTUAL_ENV
+						if venv then
+							config.settings.python.pythonPath = venv .. "/bin/python3"
+						end
+					end,
+					settings = {
+						python = {
+							analysis = {
+								autoSearchPaths = true,
+								useLibraryCodeForTypes = true,
+							},
+						},
+					},
+				},
+				ruff = {},
 				-- gopls = {},
-				-- pyright = {},
 				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
@@ -204,7 +220,7 @@ return {
 								callSnippet = "Replace",
 							},
 							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-							diagnostics = { disable = { "missing-fields" } },
+							diagnostics = { disable = { "missing-fields" }, globals =  { 'vim'} },
 						},
 					},
 				},

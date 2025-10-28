@@ -1,63 +1,86 @@
 return {
-	{
-		"julianolf/nvim-dap-lldb",
-		dependencies = {
-			"mfussenegger/nvim-dap",
-			"rcarriga/nvim-dap-ui",
-			"theHamsta/nvim-dap-virtual-text",
-			"nvim-neotest/nvim-nio",
-			"williamboman/mason.nvim",
-		},
-		opts = { codelldb_path = "/home/joao-pol/.var/app/io.neovim.nvim/data/nvim/mason/packages/codelldb" },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+	  "nvim-neotest/nvim-nio",
+      "rcarriga/nvim-dap-ui",
+      "mfussenegger/nvim-dap-python",
+      "theHamsta/nvim-dap-virtual-text",
+    },
+    config = function()
+      local dap = require("dap")
+      local dapui = require("dapui")
+      local dap_python = require("dap-python")
 
-		config = function()
-			local dap = require("dap")
-			local ui = require("dapui")
-			require("dapui").setup()
+      require("dapui").setup({})
+      require("nvim-dap-virtual-text").setup({
+        commented = true, -- Show virtual text alongside comment
+      })
 
-			local cfg = {
-				configurations = {
-					c = {
-						{
-							name = "Launch",
-							type = "lldb",
-							request = "launch",
-							cwd = "${workspaceFolder}",
-							program = function()
-								return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-							end,
-							stopOnEntry = false,
-							args = {},
-						},
-					},
-				},
-			}
+      dap_python.setup("python3")
 
-			require("dap-lldb").setup(cfg)
-			vim.keymap.set("n", "<space>b", dap.toggle_breakpoint, { desc = "[DAP] Toggler Breakpoint" })
-			vim.keymap.set("n", "<space>gb", dap.run_to_cursor, { desc = "[DAP] Run To Cursor" })
+      vim.fn.sign_define("DapBreakpoint", {
+        text = "",
+        texthl = "DiagnosticSignError",
+        linehl = "",
+        numhl = "",
+      })
 
-			vim.keymap.set("n", "<space>?", function()
-				require("dapui").eval(nil, { enter = true })
-			end)
-			vim.keymap.set("n", "<F2>", dap.continue)
-			vim.keymap.set("n", "<F3>", dap.step_into)
-			vim.keymap.set("n", "<F4>", dap.step_over)
-			vim.keymap.set("n", "<F5>", dap.step_out)
-			vim.keymap.set("n", "<F6>", dap.step_back)
-			vim.keymap.set("n", "<F9>", dap.restart)
-			dap.listeners.before.attach.dapui_config = function()
-				ui.open()
-			end
-			dap.listeners.before.launch.dapui_config = function()
-				ui.open()
-			end
-			dap.listeners.before.event_terminated.dapui_config = function()
-				ui.close()
-			end
-			dap.listeners.before.event_exited.dapui_config = function()
-				ui.close()
-			end
-		end,
-	},
+      vim.fn.sign_define("DapBreakpointRejected", {
+        text = "", -- or "❌"
+        texthl = "DiagnosticSignError",
+        linehl = "",
+        numhl = "",
+      })
+
+      vim.fn.sign_define("DapStopped", {
+        text = "", -- or "→"
+        texthl = "DiagnosticSignWarn",
+        linehl = "Visual",
+        numhl = "DiagnosticSignWarn",
+      })
+
+      -- Automatically open/close DAP UI
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+
+      local opts = { noremap = true, silent = true }
+
+      -- Toggle breakpoint
+      vim.keymap.set("n", "<leader>db", function()
+        dap.toggle_breakpoint()
+      end, opts)
+
+      -- Continue / Start
+      vim.keymap.set("n", "<leader>dc", function()
+        dap.continue()
+      end, opts)
+
+      -- Step Over
+      vim.keymap.set("n", "<leader>do", function()
+        dap.step_over()
+      end, opts)
+
+      -- Step Into
+      vim.keymap.set("n", "<leader>di", function()
+        dap.step_into()
+      end, opts)
+
+      -- Step Out
+      vim.keymap.set("n", "<leader>dO", function()
+        dap.step_out()
+      end, opts)
+			
+      -- Keymap to terminate debugging
+	  vim.keymap.set("n", "<leader>dq", function()
+	      require("dap").terminate()
+      end, opts)
+
+      -- Toggle DAP UI
+      vim.keymap.set("n", "<leader>du", function()
+        dapui.toggle()
+      end, opts)
+    end,
+  },
 }
