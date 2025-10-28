@@ -27,7 +27,7 @@ dir="$HOME/.config/rofi/powermenu"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi -theme /home/jab/.config/polybar/custom/scripts/rofi_themes/powermenu.rasi"
+rofi_command="rofi -theme /home/$USER/.config/polybar/custom/scripts/rofi_themes/powermenu.rasi"
 
 # Options
 shutdown=" Shutdown"
@@ -111,7 +111,7 @@ case $chosen in
         fi
         ;;
     $windows)
-        sudo /home/jab/.dotfiles/Scripts/reboot_in_windows.sh
+        sudo /home/$USER/.dotfiles/Scripts/reboot_in_windows.sh
         ;;
 esac
 

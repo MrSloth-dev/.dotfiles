@@ -11,9 +11,6 @@ mkcdir() {
 	cd -P $1
 }
 
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search
-
 #Settings based on user
 if [[ $USER == "joao-pol" ]]; then
 	addpath $HOME/sgoinfre/homebrew/bin
@@ -66,7 +63,7 @@ alias lzd=lazydocker
 export LD_LIBRARY_PATH=/usr/lib:/usr/lib:
 export MANPAGER='nvim +Man! '
 alias screenKey='screenkey -t 0.5 -s small --no-whitespace --persist &'
-alias recordStart='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i :0 -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac screen.mp4 > /dev/null'
+alias recordStart='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i :0 -f alsa -i default -c:v libvpx-vp9 -b:v 1M -c:a libopus screen.webm > /dev/null 2>&1'
 alias recordStop='kill screenkey ffmpeg'
 alias sman='man -k . | fzf | cut -d" " -f1 | xargs man'
 alias setupscreen='bash ~/.dotfiles/scripts/setupscreen.sh'

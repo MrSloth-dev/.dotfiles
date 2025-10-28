@@ -9,12 +9,12 @@ fi
 
 # Rofi menu options
 OPTIONS="Open Telegram\nQuit Telegram\n$NOTIFY_OPTION"
-CHOICE=$(echo -e "$OPTIONS" | rofi -dmenu -p "Telegram Menu" -theme /home/jab/.config/polybar/custom/scripts/rofi_themes/telegram.rasi)
+CHOICE=$(echo -e "$OPTIONS" | rofi -dmenu -p "Telegram Menu" -theme /home/$USER/.config/polybar/custom/scripts/rofi_themes/telegram.rasi)
 
 case "$CHOICE" in
     "Open Telegram")
         pkill Telegram 2>/dev/null
-        nohup /home/jab/Apps/Telegram/Telegram >/dev/null 2>&1 &
+        nohup /home/$USER/Apps/Telegram/Telegram >/dev/null 2>&1 &
         ;;
     "Quit Telegram")
         pkill Telegram

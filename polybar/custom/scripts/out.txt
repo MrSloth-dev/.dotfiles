@@ -1,5 +1,5 @@
-polybar|notice:  Parsing config file: /home/jab/.config/polybar/custom/config.ini
-polybar|trace: config_parser: Parsing /home/jab/.config/polybar/custom/config.ini
+polybar|notice:  Parsing config file: /home/$USER/.config/polybar/custom/config.ini
+polybar|trace: config_parser: Parsing /home/$USER/.config/polybar/custom/config.ini
 polybar|trace: config: Inheriting keys from "network-base" in "module/wlan"
 polybar|info:  Created legacy ipc fifo at '/tmp/polybar_mqueue.82260'
 polybar|info:  Opening ipc socket at '/run/user/1000/polybar/ipc.82260.sock'
@@ -68,11 +68,11 @@ polybar|info:  Starting module/bluetooth
 polybar|info:  Starting module/wifi
 polybar|info:  Starting module/battery
 polybar|info:  Starting module/popup-powermenu
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/time.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/time.sh"
 polybar|info:  script_runner: Invoking shell command: "~/.config/polybar/custom/scripts/battery.sh"
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/popup-powermenu.sh"
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/sound.sh"
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/wifi.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/popup-powermenu.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/wifi.sh"
 polybar|trace: command: Waiting for pid 82265 to finish...
 polybar|trace: command: Exited with status 0
 polybar|trace: command: Waiting for pid 82268 to finish...
@@ -135,31 +135,31 @@ polybar|warn:  Dropping unmatched character '' (U+f011) in ' '
 polybar|trace: renderer: flush(1 geom=556x32+0+0, falloff=0)
 polybar|trace: renderer: flush(2 geom=69x32+913+0, falloff=0)
 polybar|trace: renderer: flush(3 geom=61x32+1833+0, falloff=0)
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/sound.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
 polybar|trace: command: Waiting for pid 82316 to finish...
 polybar|trace: command: Exited with status 0
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/sound.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
 polybar|trace: command: Waiting for pid 82346 to finish...
 polybar|trace: command: Exited with status 0
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/sound.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
 polybar|trace: command: Waiting for pid 82383 to finish...
 polybar|trace: command: Exited with status 0
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/sound.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
 polybar|trace: command: Waiting for pid 82424 to finish...
 polybar|trace: command: Exited with status 0
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/popup-powermenu.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/popup-powermenu.sh"
 polybar|info:  script_runner: Invoking shell command: "~/.config/polybar/custom/scripts/battery.sh"
 polybar|trace: command: Waiting for pid 82440 to finish...
 polybar|trace: command: Exited with status 0
 polybar|trace: command: Waiting for pid 82442 to finish...
 polybar|trace: command: Exited with status 0
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/wifi.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/wifi.sh"
 polybar|trace: command: Waiting for pid 82454 to finish...
 polybar|trace: command: Exited with status 0
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/sound.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
 polybar|trace: command: Waiting for pid 82472 to finish...
 polybar|trace: command: Exited with status 0
-polybar|info:  script_runner: Invoking shell command: "/home/jab/.config/polybar/custom/scripts/sound.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
 polybar|trace: command: Waiting for pid 82502 to finish...
 polybar|trace: command: Exited with status 0
 polybar|notice:  Received signal(2): Interrupt

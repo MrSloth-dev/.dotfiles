@@ -39,7 +39,7 @@ MENU=$(echo -e "$CAL\n▶ Next Month\n◀ Previous Month")
 CAL_LINES=$(echo "$CAL" | wc -l)
 
 # Show Rofi with default selection on "Next Month"
-CHOICE=$(echo -e "$MENU" | rofi -dmenu -markup-rows -theme /home/jab/.config/polybar/custom/scripts/rofi_themes/calendar.rasi -p "Calendar" -selected-row "$CAL_LINES")
+CHOICE=$(echo -e "$MENU" | rofi -dmenu -markup-rows -theme /home/$USER/.config/polybar/custom/scripts/rofi_themes/calendar.rasi -p "Calendar" -selected-row "$CAL_LINES")
 
 # Handle selection
 case "$CHOICE" in

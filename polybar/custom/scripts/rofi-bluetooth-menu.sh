@@ -204,7 +204,7 @@ show_menu() {
     esac
 }
 
-rofi_command="rofi -dmenu -theme /home/jab/.config/polybar/custom/scripts/rofi_themes/bluetooth.rasi $* -p Bluetooth"
+rofi_command="rofi -dmenu -theme /home/$USER/.config/polybar/custom/scripts/rofi_themes/bluetooth.rasi $* -p Bluetooth"
 
 case "$1" in
     --status) print_status ;;

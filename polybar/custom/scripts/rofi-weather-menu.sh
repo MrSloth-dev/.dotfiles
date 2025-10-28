@@ -15,7 +15,7 @@ wind_speed=$(echo "$weather" | jq ".wind.speed")
 description=$(echo "$weather" | jq -r ".weather[0].description" | sed 's/.*/\u&/')
 city=$(echo "$weather" | jq -r ".name")
 
-choice=$(rofi -dmenu -theme /home/jab/.config/polybar/custom/scripts/rofi_themes/weather.rasi -p "Weather" -selected-row 7 <<EOF
+choice=$(rofi -dmenu -theme /home/$USER/.config/polybar/custom/scripts/rofi_themes/weather.rasi -p "Weather" -selected-row 7 <<EOF
 󱡵 $city
  Temp: $temp°C
  Feels like: $feels_like°C

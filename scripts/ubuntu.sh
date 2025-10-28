@@ -24,21 +24,18 @@ sudo -v
 sudo apt update && sudo apt upgrade -y
 
 # Install required dependencies
-sudo apt install -y curl wget cmake git zsh neovim python3 i3 i3-wm rofi tmux neofetch gimp btop \
-    virtualbox picom redshift unrar unzip xwallpaper \
+sudo apt install -y curl wget cmake git clang firefox zsh cowsay python3 i3 i3-wm rofi tmux neofetch gimp btop python3 \
+    virtualbox picom redshift unrar unzip fzf xwallpaper \
     build-essential libssl-dev libcurl4-openssl-dev libxml2-dev libxcb-xinerama0-dev \
     libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xrm-dev libxcb-xkb-dev \
     pkg-config xcb libxcb-image0-dev libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev \
-    libnl-genl-3-dev polybar
+    libnl-genl-3-dev polybar ffmpeg flameshot jq llvm ncdu node ripgrep xclip -y
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-# Install Wezterm
-curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
-echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
-sudo apt update
-sudo apt install -y wezterm
+# Install Kitty
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
 # Install Oh My Tmux
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
@@ -58,5 +55,14 @@ unzip JetBrainsMono.zip -d ~/.local/share/fonts/
 fc-cache -fv
 rm JetBrainsMono.zip
 
+
+#Install Cargo
+curl https://sh.rustup.rs -sSf | sh
+cargo install bluetui
+cargo install impala
+cargo install tdf
+
 echo "Installation complete! Please reboot your system to apply all changes."
 kill $KEEP_SUDO_PID
+
+## bluetui

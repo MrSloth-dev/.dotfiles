@@ -220,6 +220,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 exec_always --no-startup-id $HOME/.config/polybar/custom/launch.sh
+
 exec_always picom --backend xrender --vsync --fade-in-step=1 --fade-out-step=1 --corner-radius 10 --rounded-corners-exclude "class_g = 'Polybar'"
 
 exec_always --no-startup-id xwallpaper --stretch ~/.dotfiles/sloth2.jpeg
@@ -231,6 +232,4 @@ exec_always --no-startup-id exec xset r rate 240 70
 exec_always --no-startup-id exec killall redshift && redshift
 
 #interactive screenshot by pressing printscreen
-bindsym Print exec gnome-screenshot -i 
-#crop-area screenshot by pressing Mod + printscreen
-bindsym $mod+Print exec gnome-screenshot -a
+bindsym Print exec flameshot gui
