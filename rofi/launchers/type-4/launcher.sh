@@ -3,7 +3,7 @@
 ## Author : Aditya Shakya (adi1090x)
 ## Github : @adi1090x
 #
-## Rofi   : Launcher (Modi Drun, Run, File Browser, Window)
+## Rofi   : Launcher (Modi Drun, Run, Web Search, Window)
 #
 ## Available Styles
 #
@@ -15,5 +15,6 @@ theme='style-1'
 
 ## Run
 rofi \
+    -modi "drun,run,web:$HOME/.config/rofi/scripts/rofi-web-search.sh" \
     -show drun \
     -theme ${dir}/${theme}.rasi

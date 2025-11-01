@@ -16,5 +16,6 @@ theme='style-1'
 
 ## Run
 rofi \
+    -modi "drun,run,web:$HOME/.dotfiles/rofi/scripts/rofi-web-search.sh" \
     -show drun \
     -theme ${dir}/${theme}.rasi

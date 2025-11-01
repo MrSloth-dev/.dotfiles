@@ -66,7 +66,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec ghostty
+bindsym $mod+Return exec kitty
 
 # Send the terminal to the scratchpad
 bindsym $mod+Shift+Return move scratchpad
