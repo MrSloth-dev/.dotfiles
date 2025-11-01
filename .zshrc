@@ -30,6 +30,7 @@ elif [[ $USER == "mrsloth" ]]; then
 	alias penv="source .venv/bin/activate"
 	addpath $HOME/.cargo/bin
 	addpath $HOME/go/bin
+	addpath $HOME/.bin/nvim/bin
 	cowsay "Welcome to Zmux"
 fi
 
