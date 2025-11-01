@@ -1,0 +1,217 @@
+polybar|notice:  Parsing config file: /home/$USER/.config/polybar/custom/config.ini
+polybar|trace: config_parser: Parsing /home/$USER/.config/polybar/custom/config.ini
+polybar|trace: config: Inheriting keys from "network-base" in "module/wlan"
+polybar|info:  Created legacy ipc fifo at '/tmp/polybar_mqueue.82260'
+polybar|info:  Opening ipc socket at '/run/user/1000/polybar/ipc.82260.sock'
+polybar|notice:  Listening for IPC messages (PID: 82260)
+polybar|info:  Loaded monitor eDP-1 (1920x1200+0+0)
+polybar|info:  Configured DPI = 96x96
+polybar|info:  Bar geometry: 1920x45+0+0; Borders: 13,13,0,13
+polybar|trace: bar: Attach X event sink
+polybar|trace: bar: Attach signal receiver
+polybar|trace: controller: Setup user-defined modules
+polybar|notice:  Loading module 'xworkspaces' of type 'internal/xworkspaces'
+polybar|notice:  Loading module 'sep' of type 'custom/text'
+polybar|notice:  Loading module 'xwindow' of type 'internal/xwindow'
+polybar|notice:  Loading module 'date' of type 'custom/script'
+polybar|notice:  Loading module 'sep' of type 'custom/text'
+polybar|notice:  Loading module 'sound' of type 'custom/script'
+polybar|notice:  Loading module 'bluetooth' of type 'custom/text'
+polybar|notice:  Loading module 'wifi' of type 'custom/script'
+polybar|notice:  Loading module 'battery' of type 'custom/script'
+polybar|notice:  Loading module 'popup-powermenu' of type 'custom/script'
+polybar|notice:  Loaded 10 modules
+polybar|info:  Starting application
+polybar|trace: controller: Main thread id = 1
+polybar|info:  Entering event loop (thread-id=1)
+polybar|trace: bar: Create renderer
+polybar|trace: renderer: Get TrueColor visual
+polybar|info:  renderer: Using 32-bit TrueColor visual: 0x84
+polybar|trace: renderer: Allocate colormap
+polybar|trace: renderer: Allocate output window
+polybar|trace: renderer: Allocate window pixmaps
+polybar|trace: renderer: Allocate graphic contexts
+polybar|trace: renderer: Allocate alignment blocks
+polybar|trace: renderer: Allocate cairo components
+polybar|trace: renderer: Load fonts
+polybar|notice:  Loaded font "Iosevka Nerd Font:size=12" (name=Noto Sans, offset=2, file=/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Iosevka Nerd Font:size=14" (name=Noto Sans, offset=3, file=/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Iosevka Nerd Font:size=18" (name=Noto Sans, offset=3, file=/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Fira Code Nerd Font Mono:size=20" (name=Noto Sans, offset=3, file=/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Weather Icons:size=12" (name=Noto Sans, offset=2, file=/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf)
+polybar|trace: Activate root background manager
+polybar|trace: background_manager: root pixmap (0x1200000:24) 1920x1200+0+0
+polybar|trace: background_manager: Allocating pixmap
+polybar|trace: background_manager: Allocating graphics context
+polybar|trace: background_manager: Allocating cairo surface
+polybar|trace: background_manager: Copying from root pixmap (0x1200000:24) 1920x45+0+0
+polybar|info:  Bar window: 0x2600002
+polybar|trace: bar: Reconfigure window
+polybar|trace: bar: Set window WM_NAME
+polybar|trace: bar: Set window _NET_WM_WINDOW_TYPE
+polybar|trace: bar: Set window _NET_WM_STATE
+polybar|trace: bar: Set window _NET_WM_DESKTOP
+polybar|trace: bar: Set window _NET_WM_PID
+polybar|trace: bar: Map window
+polybar|trace: background_manager: update_geometry
+polybar|trace: background_manager: root pixmap (0x1200000:24) 1920x1200+0+0
+polybar|trace: background_manager: Copying from root pixmap (0x1200000:24) 1920x45+0+0
+polybar|trace: bar: Draw empty bar
+polybar|trace: bar: Setup tray manager
+polybar|info:  Starting module/xworkspaces
+polybar|info:  Starting module/sep
+polybar|info:  Starting module/xwindow
+polybar|info:  Starting module/date
+polybar|info:  Starting module/sep
+polybar|info:  Starting module/sound
+polybar|info:  Starting module/bluetooth
+polybar|info:  Starting module/wifi
+polybar|info:  Starting module/battery
+polybar|info:  Starting module/popup-powermenu
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/time.sh"
+polybar|info:  script_runner: Invoking shell command: "~/.config/polybar/custom/scripts/battery.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/popup-powermenu.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/wifi.sh"
+polybar|trace: command: Waiting for pid 82265 to finish...
+polybar|trace: command: Exited with status 0
+polybar|trace: command: Waiting for pid 82268 to finish...
+polybar|trace: command: Exited with status 0
+polybar|trace: bar: Received expose event
+polybar|trace: background_manager: update_geometry
+polybar|trace: background_manager: root pixmap (0x1200000:24) 1920x1200+0+0
+polybar|trace: background_manager: Copying from root pixmap (0x1200000:24) 1920x45+0+45
+polybar|trace: background_manager: update_geometry
+polybar|trace: background_manager: root pixmap (0x1200000:24) 1920x1200+0+0
+polybar|trace: command: Waiting for pid 82267 to finish...
+polybar|trace: background_manager: Copying from root pixmap (0x1200000:24) 1920x45+0+45
+polybar|trace: command: Exited with status 0
+polybar|info:  module/xworkspaces: Rebuilding cache
+polybar|info:  module/sep: Rebuilding cache
+polybar|info:  module/xwindow: Rebuilding cache
+polybar|info:  module/date: Rebuilding cache
+polybar|info:  module/sep: Rebuilding cache
+polybar|info:  module/sound: Rebuilding cache
+polybar|info:  module/bluetooth: Rebuilding cache
+polybar|info:  module/wifi: Rebuilding cache
+polybar|info:  module/battery: Rebuilding cache
+polybar|info:  module/popup-powermenu: Rebuilding cache
+polybar|trace: bar: Force update
+polybar|info:  Redrawing bar window
+polybar|warn:  Dropping unmatched character '' (U+f294) in ''
+polybar|warn:  Dropping unmatched character '' (U+f242) in ' '
+polybar|warn:  Dropping unmatched character '' (U+f011) in ' '
+polybar|trace: renderer: flush(1 geom=294x32+0+0, falloff=0)
+polybar|trace: renderer: flush(2 geom=69x32+913+0, falloff=0)
+polybar|trace: renderer: flush(3 geom=45x32+1849+0, falloff=0)
+polybar|info:  module/xwindow: Rebuilding cache
+polybar|info:  Redrawing bar window
+polybar|warn:  Dropping unmatched character '' (U+f294) in ''
+polybar|warn:  Dropping unmatched character '' (U+f242) in ' '
+polybar|warn:  Dropping unmatched character '' (U+f011) in ' '
+polybar|trace: renderer: flush(1 geom=556x32+0+0, falloff=0)
+polybar|trace: renderer: flush(2 geom=69x32+913+0, falloff=0)
+polybar|trace: renderer: flush(3 geom=45x32+1849+0, falloff=0)
+polybar|trace: command: Waiting for pid 82272 to finish...
+polybar|trace: command: Exited with status 0
+polybar|info:  module/sound: Rebuilding cache
+polybar|info:  Redrawing bar window
+polybar|warn:  Dropping unmatched character '' (U+f028) in ''
+polybar|warn:  Dropping unmatched character '' (U+f294) in ''
+polybar|warn:  Dropping unmatched character '' (U+f242) in ' '
+polybar|warn:  Dropping unmatched character '' (U+f011) in ' '
+polybar|trace: renderer: flush(1 geom=556x32+0+0, falloff=0)
+polybar|trace: renderer: flush(2 geom=69x32+913+0, falloff=0)
+polybar|trace: renderer: flush(3 geom=53x32+1841+0, falloff=0)
+polybar|trace: command: Waiting for pid 82275 to finish...
+polybar|trace: command: Exited with status 0
+polybar|info:  module/wifi: Rebuilding cache
+polybar|info:  Redrawing bar window
+polybar|warn:  Dropping unmatched character '' (U+f028) in ''
+polybar|warn:  Dropping unmatched character '' (U+f294) in ''
+polybar|warn:  Dropping unmatched character '󰤟' (U+f091f) in '󰤟'
+polybar|warn:  Dropping unmatched character '' (U+f242) in ' '
+polybar|warn:  Dropping unmatched character '' (U+f011) in ' '
+polybar|trace: renderer: flush(1 geom=556x32+0+0, falloff=0)
+polybar|trace: renderer: flush(2 geom=69x32+913+0, falloff=0)
+polybar|trace: renderer: flush(3 geom=61x32+1833+0, falloff=0)
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
+polybar|trace: command: Waiting for pid 82316 to finish...
+polybar|trace: command: Exited with status 0
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
+polybar|trace: command: Waiting for pid 82346 to finish...
+polybar|trace: command: Exited with status 0
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
+polybar|trace: command: Waiting for pid 82383 to finish...
+polybar|trace: command: Exited with status 0
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
+polybar|trace: command: Waiting for pid 82424 to finish...
+polybar|trace: command: Exited with status 0
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/popup-powermenu.sh"
+polybar|info:  script_runner: Invoking shell command: "~/.config/polybar/custom/scripts/battery.sh"
+polybar|trace: command: Waiting for pid 82440 to finish...
+polybar|trace: command: Exited with status 0
+polybar|trace: command: Waiting for pid 82442 to finish...
+polybar|trace: command: Exited with status 0
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/wifi.sh"
+polybar|trace: command: Waiting for pid 82454 to finish...
+polybar|trace: command: Exited with status 0
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
+polybar|trace: command: Waiting for pid 82472 to finish...
+polybar|trace: command: Exited with status 0
+polybar|info:  script_runner: Invoking shell command: "/home/$USER/.config/polybar/custom/scripts/sound.sh"
+polybar|trace: command: Waiting for pid 82502 to finish...
+polybar|trace: command: Exited with status 0
+polybar|notice:  Received signal(2): Interrupt
+polybar|info:  Eventloop finished
+polybar|notice:  Termination signal received, shutting down...
+polybar|trace: controller: Detach signal receiver
+polybar|trace: controller: Stop modules
+polybar|info:  module/xworkspaces: Stopping
+polybar|trace: module/xworkspaces: Release sleep lock
+polybar|info:  Deconstruction of module/xworkspaces took 0 ms.
+polybar|info:  module/sep: Stopping
+polybar|trace: module/sep: Release sleep lock
+polybar|info:  Deconstruction of module/sep took 0 ms.
+polybar|info:  module/xwindow: Stopping
+polybar|trace: module/xwindow: Release sleep lock
+polybar|info:  Deconstruction of module/xwindow took 0 ms.
+polybar|trace: module/date: Release sleep lock
+polybar|info:  module/date: Stopping
+polybar|trace: module/date: Release sleep lock
+polybar|info:  Deconstruction of module/date took 0 ms.
+polybar|info:  module/sep: Stopping
+polybar|trace: module/sep: Release sleep lock
+polybar|info:  Deconstruction of module/sep took 0 ms.
+polybar|trace: module/sound: Release sleep lock
+polybar|info:  module/sound: Stopping
+polybar|trace: module/sound: Release sleep lock
+polybar|info:  Deconstruction of module/sound took 0 ms.
+polybar|info:  module/bluetooth: Stopping
+polybar|trace: module/bluetooth: Release sleep lock
+polybar|info:  Deconstruction of module/bluetooth took 0 ms.
+polybar|trace: module/wifi: Release sleep lock
+polybar|info:  module/wifi: Stopping
+polybar|trace: module/wifi: Release sleep lock
+polybar|info:  Deconstruction of module/wifi took 0 ms.
+polybar|trace: module/battery: Release sleep lock
+polybar|info:  module/battery: Stopping
+polybar|trace: module/battery: Release sleep lock
+polybar|info:  Deconstruction of module/battery took 0 ms.
+polybar|trace: module/popup-powermenu: Release sleep lock
+polybar|info:  module/popup-powermenu: Stopping
+polybar|trace: module/popup-powermenu: Release sleep lock
+polybar|info:  Deconstruction of module/popup-powermenu took 0 ms.
+polybar|trace: module/sep: Deconstructing
+polybar|trace: module/sound: Deconstructing
+polybar|trace: module/bluetooth: Deconstructing
+polybar|trace: module/wifi: Deconstructing
+polybar|trace: module/battery: Deconstructing
+polybar|trace: module/popup-powermenu: Deconstructing
+polybar|trace: module/date: Deconstructing
+polybar|trace: module/xworkspaces: Deconstructing
+polybar|trace: module/sep: Deconstructing
+polybar|trace: module/xwindow: Deconstructing
+polybar|trace: ipc: Removing named pipe at: /tmp/polybar_mqueue.82260
+polybar|info:  Waiting for spawned processes to end
+polybar|info:  Reached end of application...
