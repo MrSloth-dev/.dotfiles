@@ -6,5 +6,5 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bar
-polybar -q main -c "/home/jab/.config/polybar/custom/config.ini" &
-polybar -q secondary -c "/home/jab/.config/polybar/custom/config.ini" &
+polybar -q main -c "/home/$USER/.config/polybar/custom/config.ini" &
+polybar -q secondary -c "/home/$USER/.config/polybar/custom/config.ini" &
