@@ -47,6 +47,7 @@ if [[ $PC =~ ^(Work|work|WORK)$ ]]; then
 	symlink "i3" "/home/$USER/.dotfiles/i3/" "/home/$USER/.config/"
 	symlink "Rofi" "/home/$USER/.dotfiles/rofi/" "/home/$USER/.config/"
 	symlink "Polybar" "/home/$USER/.dotfiles/polybar/" "/home/$USER/.config/"
+	symlink "better-commits" "/home/$USER/.dotfiles/.better-commits.json" "/home/$USER/.better-commits.json"
 	# symlink "p10k" "/home/$USER/.dotfiles/.p10k.zsh" "/home/$USER/.p10k.zsh"
 	# symlink "Zmux" "/home/$USER/.dotfiles/zmux/" "/home/$USER/.config/"
 elif [[ $PC =~ ^(Home|home|HOME)$ ]]; then
