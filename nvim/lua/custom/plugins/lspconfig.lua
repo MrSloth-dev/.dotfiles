@@ -183,7 +183,7 @@ return {
 					command = { "clangd", "-Wall", "-Werror", "-Wextra", "-std=c++98" },
 				},
 				ruff = {},
-				ty = {},
+				-- ty = {},
 				-- gopls = {},
 				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
