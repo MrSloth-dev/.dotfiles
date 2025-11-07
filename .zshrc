@@ -11,6 +11,15 @@ mkcdir() {
 	cd -P $1
 }
 
+coverage_test() {
+	if [[ -n $1 ]]; then
+		docker exec api bash -c "coverage run --source='.' manage.py test $1" &&
+			docker exec api bash -c "coverage html" && rm -fr htmlcov && docker cp api:/home/app/htmlcov . && firefox htmlcov/index.html
+	else
+		echo "Which app?"
+	fi
+	}
+
 #Settings based on user
 if [[ $USER == "joao-pol" ]]; then
 	addpath $HOME/sgoinfre/homebrew/bin
