@@ -38,7 +38,14 @@ return {
 				-- cpp = { "clang-format" },
 				c = { "clang-format" },
 				-- Ruff for Python formatting and import sorting
-				python = { "ruff_organize_imports", "ruff_format" },
+				python = {
+					-- To fix auto-fixable lint errors.
+					"ruff_fix",
+					-- To run the Ruff formatter.
+					"ruff_format",
+					-- To organize the imports.
+					"ruff_organize_imports",
+				},
 				--
 				-- You can use a sub-list to tell conform to run *until* a formatter
 				-- is found.
