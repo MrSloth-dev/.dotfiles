@@ -5,7 +5,7 @@ if [[ ! $(command xrandr) ]]; then
     exit 1
 fi
 run_xrandr_dual() {
-    xrandr --output eDP-1 --mode 1920x1200 --primary --pos 1920x0 --output HDMI-1 --mode 1920x1080 --pos 0x0 --auto &> /dev/null
+    xrandr --output eDP-1 --mode 1920x1200 --primary --pos 1920x0 --output DP-1 --mode 1920x1080 --pos 0x0 --auto &> /dev/null
 }
 
 if run_xrandr_dual; then
