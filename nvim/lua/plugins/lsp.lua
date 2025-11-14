@@ -16,6 +16,9 @@ return {
 			},
 		},
 		config = function()
+			-- Import server configurations from language-specific files
+			local servers = require("lsp")
+
 			--  This function gets run when an LSP attaches to a particular buffer.
 			--    That is to say, every time a new file is opened that is associated with
 			--    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -169,47 +172,12 @@ return {
 			--  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-			-- Enable the following language servers
-			--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-			--
-			--  Add any additional override configuration in the following tables. Available keys are:
-			--  - cmd (table): Override the default command used to start the server
-			--  - filetypes (table): Override the default list of associated filetypes for the server
-			--  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-			--  - settings (table): Override the default settings passed when initializing the server.
-			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-			local servers = {
-				clangd = {
-					command = { "clangd", "-Wall", "-Werror", "-Wextra", "-std=c++98" },
-				},
-				ruff = {},
-				-- ty = {},
-				-- gopls = {},
-				-- rust_analyzer = {},
-				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-				--
-				-- Some languages (like typescript) have entire language plugins that can be useful:
-				--    https://github.com/pmizio/typescript-tools.nvim
-				--
-				-- But for many setups, the LSP (`ts_ls`) will work just fine
-				-- ts_ls = {},
-				--
-
-				lua_ls = {
-					-- cmd = { ... },
-					-- filetypes = { ... },
-					-- capabilities = {},
-					settings = {
-						Lua = {
-							completion = {
-								callSnippet = "Replace",
-							},
-							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-							diagnostics = { disable = { "missing-fields" }, globals =  { 'vim'} },
-						},
-					},
-				},
-			}
+			-- Server configurations are now organized by language in lua/lsp/servers/
+			-- To add a new server, edit the appropriate language file:
+			--   - lua/lsp/servers/lua.lua (Lua servers)
+			--   - lua/lsp/servers/cpp.lua (C/C++ servers)
+			--   - lua/lsp/servers/python.lua (Python servers)
+			-- Or create a new file for a different language
 
 			-- Ensure the servers and tools above are installed
 			--
