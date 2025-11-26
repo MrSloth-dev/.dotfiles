@@ -154,15 +154,6 @@ return {
 				virtual_text = {
 					source = "if_many",
 					spacing = 2,
-					format = function(diagnostic)
-						local diagnostic_message = {
-							[vim.diagnostic.severity.ERROR] = diagnostic.message,
-							[vim.diagnostic.severity.WARN] = diagnostic.message,
-							[vim.diagnostic.severity.INFO] = diagnostic.message,
-							[vim.diagnostic.severity.HINT] = diagnostic.message,
-						}
-						return diagnostic_message[diagnostic.severity]
-					end,
 				},
 			})
 
@@ -172,26 +163,8 @@ return {
 			--  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-			-- Server configurations are now organized by language in lua/lsp/servers/
-			-- To add a new server, edit the appropriate language file:
-			--   - lua/lsp/servers/lua.lua (Lua servers)
-			--   - lua/lsp/servers/cpp.lua (C/C++ servers)
-			--   - lua/lsp/servers/python.lua (Python servers)
-			-- Or create a new file for a different language
-
-			-- Ensure the servers and tools above are installed
-			--
-			-- To check the current status of installed tools and/or manually install
-			-- other tools, you can run
-			--    :Mason
-			--
-			-- You can press `g?` for help in this menu.
-			--
-			-- `mason` had to be setup earlier: to configure its options see the
-			-- `dependencies` table for `nvim-lspconfig` above.
-			--
-			-- You can add other tools here that you want Mason to install
-			-- for you, so that they are available from within Neovim.
+			-- Server configurations are organized by language in lua/lsp/servers/
+			-- Run :Mason to check installation status or manually install tools
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code

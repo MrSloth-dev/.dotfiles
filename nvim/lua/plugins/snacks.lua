@@ -7,10 +7,51 @@ return {
 	-- opts = {
 	-- 	indent = {},
 	-- 	statuscolumn = {},
-	-- 	picker = { layout = { preset = "telescope" } },
-	-- 	-- your picker configuration comes here
-	-- 	-- or leave it empty to use the default settings
-	-- 	-- refer to the configuration section below
+	-- 	picker = {
+	-- 		layout = {
+	-- 			preset = "telescope"
+	-- 		},
+	-- 		---@class snacks.picker.icons
+	-- 		icons = {
+	-- 			files = {
+	-- 				enabled = true, -- show file icons
+	-- 				dir = "󰉋 ",
+	-- 				dir_open = "󰝰 ",
+	-- 				file = "󰈔 "
+	-- 			},
+	-- 			keymaps = {
+	-- 				nowait = "󰓅 "
+	-- 			},
+	-- 			tree = {
+	-- 				vertical = "│ ",
+	-- 				middle   = "├╴",
+	-- 				last     = "└╴",
+	-- 			},
+	-- 			undo = {
+	-- 				saved   = " ",
+	-- 			},
+	-- 			ui = {
+	-- 				live        = "󰐰 ",
+	-- 				hidden      = "h",
+	-- 				ignored     = "i",
+	-- 				follow      = "f",
+	-- 				selected    = "● ",
+	-- 				unselected  = "○ ",
+	-- 				-- selected = " ",
+	-- 			},
+	-- 			formatters = {
+	-- 				file = {
+	-- 					format = function(item, ctx)
+	-- 						local text = ctx.default(item, ctx)
+	-- 						if ctx.selected then
+	-- 							return "> " .. text .. " <"
+	-- 						end
+	-- 						return "  " .. text .. "  "
+	-- 					end,
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
 	-- },
 	-- keys = {
 	-- 	-- Top Pickers & Explorer
@@ -122,7 +163,13 @@ return {
 	-- 		end,
 	-- 		desc = "Undo History",
 	-- 	},
-	-- 	{ "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
+	-- 	{
+	-- 		"<leader>uC",
+	-- 		function()
+	-- 			Snacks.picker.colorschemes()
+	-- 		end,
+	-- 		desc = "Colorschemes",
+	-- 	},
 	-- 	-- LSP
 	-- 	{
 	-- 		"gd",
@@ -174,6 +221,5 @@ return {
 	-- 		end,
 	-- 		desc = "LSP Workspace Symbols",
 	-- 	},
-	-- 	  },
-	--
+	-- },
 }
