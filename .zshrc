@@ -10,7 +10,6 @@ mkcdir() {
 	mkdir -p $1 && 
 	cd -P $1
 }
-
 coverage_test() {
 	if [[ -n $1 ]]; then
 		docker exec api bash -c "coverage run --source='.' manage.py test $1" &&
@@ -19,6 +18,13 @@ coverage_test() {
 		echo "Which app?"
 	fi
 	}
+
+fh() {
+	local selected=$(history | cut -c7- | grep -vE '^#'| awk '!seen[$0]' | fzf --tac --tiebreak=index)
+	if [ -n "$selected" ]; then
+		eval "$selected"
+	fi
+}
 
 #Settings based on user
 if [[ $USER == "joao-pol" ]]; then
@@ -49,6 +55,8 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSHRC="$HOME/.zshrc"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export EDITOR="nvim"
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
 alias so="source $ZSHRC"
 ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 alias tk="~/.dotfiles/scripts/tmux_kill.sh"
