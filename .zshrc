@@ -19,12 +19,21 @@ coverage_test() {
 	fi
 	}
 
-fh() {
-	local selected=$(history | cut -c7- | grep -vE '^#'| awk '!seen[$0]' | fzf --tac --tiebreak=index)
-	if [ -n "$selected" ]; then
-		eval "$selected"
-	fi
-}
+  fh() {
+      local selected=$(history | cut -c7- | grep -vE '^#'| awk '!seen[$0]++' | fzf --tac --tiebreak=index --expect=esc)
+      local key=$(echo "$selected" | head -1)
+      local cmd=$(echo "$selected" | tail -n +2)
+
+      if [ -n "$cmd" ]; then
+          if [ "$key" = "esc" ]; then
+              print -s "$cmd"
+              print -z "$cmd"
+          else
+              eval "$cmd"
+              print -s "$cmd"
+          fi
+      fi
+  }
 
 #Settings based on user
 if [[ $USER == "joao-pol" ]]; then
