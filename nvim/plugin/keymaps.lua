@@ -36,8 +36,6 @@ vim.cmd("CsvViewToggle display_mode=border header_lnum=1")
   vim.opt_local.wrap = not vim.opt_local.wrap
 end, { desc = "Toggle CSV Viewer and line wrap" })
 
-vim.env.PATH = vim.env.PATH .. ":/home/joao-pol/.local/share/homebrew/bin"
-vim.env.PATH = vim.env.PATH .. ":/snap/bin/"
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -57,14 +55,3 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
--- Open compiler
-vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
-
--- Redo last selected option
-vim.api.nvim_set_keymap('n', '<S-F6>',
-  "<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
-  .. "<cmd>CompilerRedo<cr>",
-  { noremap = true, silent = true })
-
--- Toggle compiler results
-vim.api.nvim_set_keymap('n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })

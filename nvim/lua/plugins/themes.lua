@@ -16,19 +16,27 @@ return {
 				-- 	operators = false,
 				-- 	folds = true,
 				-- },
-				-- strikethrough = true,
-				invert_selection = false,
+				strikethrough = true,
+				invert_selection = true,
 				-- invert_signs = false,
 				-- invert_tabline = false,
 				-- invert_intend_guides = false,
-				-- inverse = true, -- invert background for search, diffs, statuslines and errors
-				contrast = "hard", -- can be "hard", "soft" or empty string
+				inverse = true, -- invert background for search, diffs, statuslines and errors
+				contrast = "soft", -- can be "hard", "soft" or empty string
 				-- palette_overrides = {},
-				-- overrides = {},
+				overrides = {
+					Pmenu = { link = "Normal" },
+					-- Brighter Telescope selection
+					TelescopeSelection = { bg = "#504945", fg = "#ebdbb2", bold = true },
+					TelescopeSelectionCaret = { bg = "#504945", fg = "#fe8019", bold = true },
+					-- Brighter Snacks picker selection
+					SnacksPickerListCursorLine = { bg = "#504945", fg = "#ebdbb2", bold = true },
+					SnacksPickerMatch = { fg = "#fe8019", bold = true },
+				},
 				dim_inactive = true,
-				transparent_mode = true,
-				-- vim.cmd("colorscheme gruvbox"),
+				transparent_mode = false,
 			})
+			vim.cmd("colorscheme gruvbox")
 		end,
 	},
 }
