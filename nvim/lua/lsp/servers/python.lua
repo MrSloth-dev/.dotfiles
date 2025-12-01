@@ -1,19 +1,51 @@
 -- Python Language Server Configuration
 return {
-	ruff = {},
-	-- Other Python servers you might want to add:
-	-- pyright = {},
+	-- Ruff: Fast linter and formatter
+	ruff = {
+		init_options = {
+			settings = {
+				-- Configuration is read from ruff.toml/pyproject.toml
+				-- These settings only apply if no config file is found
+				configuration = nil, -- Use ruff.toml if present
+				organizeImports = true,
+				fixAll = true,
+			},
+		},
+	},
+
+	-- Pyright: Type checking and intellisense
 	pyright = {
 		settings = {
-			-- Disable type checking and diagnostics
-			disableOrganizeImports = true,
-		},
-		python = {
-			analysis = {
-				-- Disable all diagnostics from Pyright
-				diagnosticMode = "off",
-				-- Or use "openFilesOnly" if you want some type hints
-				typeCheckingMode = "off",
+			pyright = {
+				-- Let Ruff handle imports
+				disableOrganizeImports = true,
+			},
+			python = {
+				analysis = {
+					-- Type checking mode: "off", "basic", "standard", "strict"
+					typeCheckingMode = "basic",
+					-- Only check open files for better performance
+					diagnosticMode = "openFilesOnly",
+					-- Auto-import completions
+					autoImportCompletions = true,
+					-- Auto search paths
+					autoSearchPaths = true,
+					-- Use library code for types
+					useLibraryCodeForTypes = true,
+					-- Inlay hints
+					inlayHints = {
+						variableTypes = true,
+						functionReturnTypes = true,
+						parameterTypes = true,
+					},
+					-- Diagnostics severity overrides
+					diagnosticSeverityOverrides = {
+						reportUnusedImport = "information",
+						reportUnusedVariable = "information",
+						reportMissingTypeStubs = "none",
+						reportOptionalMemberAccess = "warning",
+					},
+				},
 			},
 		},
 	},
