@@ -69,11 +69,11 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec kitty
 
 # Send the terminal to the scratchpad
-bindsym $mod+Shift+Return move scratchpad
+bindsym $mod+Shift+minus move scratchpad
 
 # Show the scratchpad terminal
 bindsym $mod+minus scratchpad show
-bindsym $mod+shift+minus  move workspace current
+bindsym $mod+shift+u  move workspace number $ws1
 
 # kill focused window
 bindsym $mod+q kill
@@ -115,7 +115,7 @@ bindsym $mod+Shift+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+F11 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
