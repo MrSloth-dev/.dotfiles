@@ -6,7 +6,7 @@ return {
 			settings = {
 				-- Configuration is read from ruff.toml/pyproject.toml
 				-- These settings only apply if no config file is found
-				configuration = nil, -- Use ruff.toml if present
+				configuration = "~/ruff.toml", -- Use ruff.toml if present
 				organizeImports = true,
 				fixAll = true,
 			},
