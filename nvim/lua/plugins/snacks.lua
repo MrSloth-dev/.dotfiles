@@ -7,7 +7,14 @@ return {
 	opts = {
 		indent = {},
 		statuscolumn = {},
+		gh = {},
 		picker = {
+			sources = {
+				gh_issue = {
+
+				},
+				gh_pr = {},
+			},
 			layout = {
 				preset = "telescope"
 			},
@@ -55,8 +62,13 @@ return {
 	},
 	keys = {
 		-- Top Pickers & Explorer
-		-- { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+		-- { "<leader><space>", function() Snacks.picker. { "<leader>gi", function() Snacks.picker.gh_issue() end, desc = "GitHub Issues (open)" },
+		{ "<leader>gi", function() Snacks.picker.gh_issue() end, desc = "GitHub Issues (open)" },
+		{ "<leader>gI", function() Snacks.picker.gh_issue({ state = "all" }) end, desc = "GitHub Issues (all)" },
+		{ "<leader>gp", function() Snacks.picker.gh_pr() end, desc = "GitHub Pull Requests (open)" },
+		{ "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end, desc = "GitHub Pull Requests (all)" },
 		{
+
 			"<leader><space>",
 			function()
 				Snacks.picker.buffers()
