@@ -28,12 +28,12 @@ vim.keymap.set("n", "<Leader>j", "zo", { desc = "fold open" })
 vim.keymap.set("n", "<Leader>k", "zc", { desc = "fold close" })
 -- vim.keymap.set("n", "<Leader>csv", ":CsvViewToggle display_mode=border header_lnum=1 | lua vim.opt_local.wrap:toggle()<CR>", { desc = "Toggle CSV Viewer and line wrap" })
 vim.keymap.set("n", "<Leader>csv", function()
-  -- Execute the plugin's toggle command
-vim.cmd("CsvViewToggle display_mode=border header_lnum=1")
-
-  -- Toggle the line wrap setting for the current window only.
-  -- This is the Lua equivalent of `:setlocal wrap!`
-  vim.opt_local.wrap = not vim.opt_local.wrap
+  if vim.fn.expand("%:e") ~= "csv" then
+    vim.notify("Current buffer doesn't have .csv extension", vim.log.levels.ERROR)
+    return
+  end
+  vim.cmd("CsvViewToggle display_mode=border header_lnum=1")
+  vim.opt_local.wrap = not vim.opt_local.wrap:get()
 end, { desc = "Toggle CSV Viewer and line wrap" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier

@@ -3,7 +3,7 @@
   # Resolution configuration
   EDEP_1_RES="1920x1200"
   DP_1_RES="2560x1440"
-  HDMI_1_RES="1680x1050"
+  HDMI_1_RES="2560x1440"
 
   # Calculate positions based on resolutions
   DP_1_WIDTH=2560
