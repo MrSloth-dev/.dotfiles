@@ -176,7 +176,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec i3-msg exit
 
-bindsym $mod+Shift+o exec i3lock
+bindsym $mod+Shift+o exec betterlockscreen -l dimblur
 bindsym $mod+Shift+p exec flameshot gui
 
 # resize window (you can also use the mouse for that)
