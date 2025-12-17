@@ -12,15 +12,15 @@ mkcdir() {
 }
 coverage_test() {
 	if [[ -n $1 ]]; then
-		docker exec api bash -c "coverage run --source='.' manage.py test $1" &&
-			docker exec api bash -c "coverage html" && rm -fr htmlcov && docker cp api:/home/app/htmlcov . && firefox htmlcov/index.html
+		docker exec forms-api bash -c "coverage run --source='.' manage.py test $1" &&
+			docker exec forms-api bash -c "coverage html" && rm -fr htmlcov && docker cp forms-api:/home/app/htmlcov . && firefox htmlcov/index.html
 	else
 		echo "Which app?"
 	fi
 	}
 
   fh() {
-      local selected=$(history | cut -c7- | grep -vE '^#'| awk '!seen[$0]++' | fzf --tac --tiebreak=index --expect=esc)
+      local selected=$(history | awk '{$1=""; sub(/^ /, ""); print}' | grep -vE '^#' | awk '!seen[$0]++' | fzf --tac --tiebreak=index --expect=esc)
       local key=$(echo "$selected" | head -1)
       local cmd=$(echo "$selected" | tail -n +2)
 
