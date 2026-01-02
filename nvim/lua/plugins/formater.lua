@@ -25,8 +25,8 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				-- Add C++ and C formatting with clang-format
-				-- cpp = { "clang-format" },
 				c = { "clang-format" },
+				cpp = { "clang-format" },
 				-- Ruff for Python formatting and import sorting
 				python = {
 					-- To fix auto-fixable lint errors.
@@ -42,13 +42,13 @@ return {
 				-- javascript = { { "prettierd", "prettier" } },
 			},
 			-- Configure clang-format with custom Google style
-			-- formatters = {
-			-- 	["clang-format"] = {
-			-- 		args = {
-			-- 			"--style={BasedOnStyle: Google, BreakBeforeBraces: Allman, IndentWidth: 4, UseTab: Never, ColumnLimit: 90, AccessModifierOffset: -4}",
-			-- 		},
-			-- 	},
-			-- },
+			formatters = {
+				["clang-format"] = {
+					args = {
+						"--style={BasedOnStyle: Microsoft, IndentWidth: 4, UseTab: Always, ColumnLimit: 90}",
+					},
+				},
+			},
 		},
 	},
 }

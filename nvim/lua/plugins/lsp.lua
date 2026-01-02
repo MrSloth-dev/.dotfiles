@@ -165,6 +165,9 @@ return {
 			-- Server configurations are organized by language in lua/lsp/servers/
 			-- Run :Mason to check installation status or manually install tools
 			local ensure_installed = vim.tbl_keys(servers or {})
+			local ensure_installed = vim.tbl_filter(function(name)
+				return name ~= "arduino_language_server"
+			end, vim.tbl_keys(servers or {}))
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
 			})
@@ -184,6 +187,12 @@ return {
 					end,
 				},
 			})
+			if servers.arduino_language_server then
+				local arduino_config = servers.arduino_language_server
+				arduino_config.capabilities = capabilities
+				vim.lsp.config.arduino_language_server = arduino_config
+				vim.lsp.enable('arduino_language_server')
+			end
 		end,
 	},
 }

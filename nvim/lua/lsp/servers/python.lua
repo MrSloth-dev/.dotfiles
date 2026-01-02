@@ -12,41 +12,6 @@ return {
 			},
 		},
 	},
+	ty = {}
 
-	-- Pyright: Type checking and intellisense
-	pyright = {
-		settings = {
-			pyright = {
-				-- Let Ruff handle imports
-				disableOrganizeImports = true,
-			},
-			python = {
-				analysis = {
-					-- Type checking mode: "off", "basic", "standard", "strict"
-					typeCheckingMode = "basic",
-					-- Only check open files for better performance
-					diagnosticMode = "openFilesOnly",
-					-- Auto-import completions
-					autoImportCompletions = true,
-					-- Auto search paths
-					autoSearchPaths = true,
-					-- Use library code for types
-					useLibraryCodeForTypes = true,
-					-- Inlay hints
-					inlayHints = {
-						variableTypes = true,
-						functionReturnTypes = true,
-						parameterTypes = true,
-					},
-					-- Diagnostics severity overrides
-					diagnosticSeverityOverrides = {
-						reportUnusedImport = "information",
-						reportUnusedVariable = "information",
-						reportMissingTypeStubs = "none",
-						reportOptionalMemberAccess = "warning",
-					},
-				},
-			},
-		},
-	},
 }
