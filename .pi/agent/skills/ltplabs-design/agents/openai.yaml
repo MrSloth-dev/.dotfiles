@@ -1,0 +1,4 @@
+interface:
+  display_name: "LTPLABS Design System"
+  short_description: "Strict LTPLABS design-system workflow"
+  default_prompt: "Use $ltplabs-design to follow the curated LTPLABS design-system docs, reuse existing modified components, and only create a new component after the user explicitly says \"a teresa deixa\" or gives equivalent clear approval."

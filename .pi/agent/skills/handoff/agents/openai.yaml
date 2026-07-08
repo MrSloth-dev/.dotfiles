@@ -1,0 +1,4 @@
+interface:
+  display_name: "Handoff"
+  short_description: "Write or update a handoff doc"
+  default_prompt: "Use $handoff to create a handoff document so the next agent can continue this work."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "LTP Wiki Maintainer"
+  short_description: "Maintain and query the LTP Obsidian vault wiki"
+  default_prompt: "Ingest, query, or lint my LTP wiki"

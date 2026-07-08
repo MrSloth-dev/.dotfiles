@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pragmatic Review"
+  short_description: "Pragmatic senior engineer code review"
+  default_prompt: "Review this code as a pragmatic senior engineer"

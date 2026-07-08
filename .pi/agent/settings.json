@@ -1,0 +1,28 @@
+{
+  "lastChangelogVersion": "0.80.3",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-flash",
+  "defaultThinkingLevel": "xhigh",
+  "skills": [
+    "/home/jbarbosa/.pi/agent/skills"
+  ],
+  "prompts": [
+    "/home/jbarbosa/.pi/agent/prompts"
+  ],
+  "theme": "dark",
+  "packages": [
+    "npm:pi-markdown-preview",
+    "npm:@gotgenes/pi-permission-system",
+    "npm:pi-zentui"
+  ],
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "quietStartup": true,
+  "defaultProjectTrust": "ask",
+  "treeFilterMode": "default",
+  "enableSkillCommands": true,
+  "transport": "auto",
+  "collapseChangelog": false,
+  "doubleEscapeAction": "tree"
+}
