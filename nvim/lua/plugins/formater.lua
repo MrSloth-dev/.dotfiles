@@ -36,6 +36,10 @@ return {
 					-- To organize the imports.
 					"ruff_organize_imports",
 				},
+				go = {
+					"gofumpt",
+					"goimports",
+				}
 				--
 				-- You can use a sub-list to tell conform to run *until* a formatter
 				-- is found.

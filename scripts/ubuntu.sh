@@ -49,17 +49,17 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 rm lazygit lazygit.tar.gz
 
-# Install JetBrains Mono Nerd Font
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
-unzip JetBrainsMono.zip -d ~/.local/share/fonts/
+# Install Iosevka Mono Nerd Font
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IosevkaTerm.zip
+unzip IosevkaTerm.zip -d ~/.local/share/fonts/
 fc-cache -fv
-rm JetBrainsMono.zip
+rm IosevkaTerm.zip
 
 
 #Install Cargo
-curl https://sh.rustup.rs -sSf | sh
-cargo install bluetui
-cargo install impala
+curl https://sh.rustup.rs -sSf | sh && \
+cargo install bluetui && \
+cargo install impala && \
 cargo install tdf
 
 echo "Installation complete! Please reboot your system to apply all changes."

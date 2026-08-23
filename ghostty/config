@@ -1,4 +1,4 @@
-theme = GruvboxDark
+theme = Gruvbox Material Dark
 gtk-titlebar = false
 shell-integration = zsh
 shell-integration-features = no-sudo,title

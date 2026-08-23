@@ -85,6 +85,7 @@ tmux_conf_24b_colour=auto
 tmux_conf_theme=disabled
 
 set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'MrSloth-dev/Sidekick.tmux'
 
 set -g @plugin 'z3z1ma/tmux-gruvbox'
 set -g @gruvbox_flavour 'dark'

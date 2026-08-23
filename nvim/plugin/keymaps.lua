@@ -26,6 +26,9 @@ vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Git Blame Tog
 vim.keymap.set("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", { desc = "Neogen" })
 vim.keymap.set("n", "<Leader>j", "zo", { desc = "fold open" })
 vim.keymap.set("n", "<Leader>k", "zc", { desc = "fold close" })
+
+
+vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm<cr>", {desc = "Toggle Terminal"}) 
 -- vim.keymap.set("n", "<Leader>csv", ":CsvViewToggle display_mode=border header_lnum=1 | lua vim.opt_local.wrap:toggle()<CR>", { desc = "Toggle CSV Viewer and line wrap" })
 vim.keymap.set("n", "<Leader>csv", function()
   if vim.fn.expand("%:e") ~= "csv" then

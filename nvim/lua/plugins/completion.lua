@@ -5,7 +5,7 @@ return {
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 		"folke/lazydev.nvim",
-		"giuxtaposition/blink-cmp-copilot",
+		-- "giuxtaposition/blink-cmp-copilot",
 	},
 	--- @module 'blink.cmp'
 	--- @type blink.cmp.Config
@@ -35,9 +35,9 @@ return {
 			},
 		},
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer", "copilot" },
+			default = { "lsp", "path", "snippets", "buffer"--[[ , "copilot"  ]]},
 			providers = {
-				copilot = {
+				--[[ copilot = {
 					name = "copilot",
 					module = "blink-cmp-copilot",
 					score_offset = 100,
@@ -51,7 +51,7 @@ return {
 						end
 						return items
 					end,
-				},
+				}, ]]
 			},
 		},
 		signature = {

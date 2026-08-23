@@ -97,6 +97,7 @@ alias setupscreen='bash ~/.dotfiles/scripts/setupscreen.sh'
 alias vim=nvim
 alias python=python3
 alias venv='source .venv/bin/activate'
+alias cr="cargo run"
 
 
 bindkey "^P" up-line-or-search
@@ -105,10 +106,20 @@ bindkey "^N" down-line-or-search
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias ls=eza
 
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+# Added by codebase-memory-mcp install
+export PATH="/home/mrsloth/.local/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# opencode
+export PATH=/home/mrsloth/.opencode/bin:$PATH
+
+# Pi
+export PATH="/home/mrsloth/.local/share/pi-node/node-v22.23.2-linux-x64/bin:$PATH"
+
+# bun completions
+[ -s "/home/mrsloth/.bun/_bun" ] && source "/home/mrsloth/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

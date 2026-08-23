@@ -8,6 +8,9 @@ return {
 		indent = {},
 		statuscolumn = {},
 		gh = {},
+		lazygit = {},
+		image = {},
+		terminal = {},
 		picker = {
 			sources = {
 				gh_issue = {

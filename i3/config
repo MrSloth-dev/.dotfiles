@@ -66,8 +66,9 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
 
+bindsym $mod+shift+b exec "flatpak run app.zen_browser.zen"
 # Send the terminal to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 

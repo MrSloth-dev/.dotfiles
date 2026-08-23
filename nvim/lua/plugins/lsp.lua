@@ -17,6 +17,10 @@ return {
 		},
 		config = function()
 			-- Import server configurations from language-specific files
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+
+			vim.lsp.handlers["textDocument/signatureHelp"] =
+			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 			local servers = require("lsp")
 
 			--  This function gets run when an LSP attaches to a particular buffer.
