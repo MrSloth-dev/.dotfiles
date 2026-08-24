@@ -12,6 +12,7 @@ return {
 			},
 		},
 	},
-	ty = {}
+	ty = {},
+	-- pyright = {}
 
 }

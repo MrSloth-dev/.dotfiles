@@ -7,7 +7,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open location list (buffer diagnostics)" })
 
 --Custom Keymaps---
 vim.keymap.set("v", "<A-j>", ":m +1 '> +1<CR>gv=gv", { desc = "Swap selection with line below" })
@@ -26,9 +26,6 @@ vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Git Blame Tog
 vim.keymap.set("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", { desc = "Neogen" })
 vim.keymap.set("n", "<Leader>j", "zo", { desc = "fold open" })
 vim.keymap.set("n", "<Leader>k", "zc", { desc = "fold close" })
-
-
-vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm<cr>", {desc = "Toggle Terminal"}) 
 -- vim.keymap.set("n", "<Leader>csv", ":CsvViewToggle display_mode=border header_lnum=1 | lua vim.opt_local.wrap:toggle()<CR>", { desc = "Toggle CSV Viewer and line wrap" })
 vim.keymap.set("n", "<Leader>csv", function()
   if vim.fn.expand("%:e") ~= "csv" then
