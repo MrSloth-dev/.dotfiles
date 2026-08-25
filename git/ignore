@@ -1,0 +1,89 @@
+# AI assistant files
+.claude/
+AGENTS*.md
+CLAUDE*.md
+HANDOFF.md
+CONTEXT.md
+
+# C / C++
+*.a
+*.lib
+*.lo
+*.la
+*.slo
+*.d
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.gch
+*.pch
+*.out
+*.i
+*.ii
+*.s
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+Testing/
+
+# Compiled output
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.py[cod]
+__pycache__/
+*.egg-info/
+build/
+dist/
+target/
+
+# Dependencies
+node_modules/
+vendor/
+.venv/
+venv/
+
+# Logs and caches
+*.log
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.eslintcache
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*~
+.project
+.settings/
+
+# Test coverage
+coverage/
+.coverage
+htmlcov/
+.nyc_output/
+
+# Package manager files
+.Python
+pip-log.txt
+npm-debug.log*
+yarn-error.log*
