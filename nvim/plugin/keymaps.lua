@@ -10,10 +10,6 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagn
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open location list (buffer diagnostics)" })
 
 --Custom Keymaps---
-vim.keymap.set("v", "<A-j>", ":m +1 '> +1<CR>gv=gv", { desc = "Swap selection with line below" })
-vim.keymap.set("v", "<A-k>", ":m -2 '< -2<CR>gv=gv", { desc = "Swap selection with line above" })
-vim.keymap.set("n", "<A-k>", ":m -2 <CR>", { desc = "Swap with line above" })
-vim.keymap.set("n", "<A-j>", ":m +1 <CR>", { desc = "Swap with line below" })
 vim.keymap.set("i", "kj", "<Esc>", { desc = "Exit to Normal Mode" })
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit to Normal Mode" })
 vim.keymap.set("n", "j", "gj", { desc = "Move Down", silent = true })

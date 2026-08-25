@@ -34,6 +34,7 @@ hl.unbind("SUPER + F")
 o.bind("SUPER + Q", "Close window", hl.dsp.window.close())
 
 o.bind("F11", "Full screen", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
+o.bind("F9", "Keybindings", "omarchy-menu-keybindings")
 
 -- Unbind existing SUPER+J (was: Toggle window split), SUPER+K (was: Keybindings),
 -- SUPER+L (was: Toggle workspace layout) in favor of vim-style window focus

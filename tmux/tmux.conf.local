@@ -1,0 +1,261 @@
+# : << EOF
+# https://github.com/gpakosz/.tmux
+# (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
+#         without any warranty.
+#         Copyright 2012— Gregory Pakosz (@gpakosz).
+
+
+# -- bindings ------------------------------------------------------------------
+
+# preserve tmux stock bindings,
+# while adding bindings that don't conflict with these stock bindings
+# /!\ this disables some of Oh my tmux! bindings described in README.md
+#   - true
+#   - false (default)
+tmux_conf_preserve_stock_bindings=false
+
+
+# -- session creation ----------------------------------------------------------
+
+# prompt for session name when creating a new session, possible values are:
+#   - true
+#   - false (default)
+#   - disabled (do not modify new-session bindings)
+tmux_conf_new_session_prompt=false
+
+# new session retains current path, possible values are:
+#   - true
+#   - false (default)
+#   - disabled (do not modify new-session bindings)
+tmux_conf_new_session_retain_current_path=false
+
+
+# -- windows & pane creation ---------------------------------------------------
+
+# new window retains current path, possible values are:
+#   - true
+#   - false (default)
+#   - disabled (do not modify new-window bindings)
+tmux_conf_new_window_retain_current_path=false
+
+# new window tries to reconnect ssh sessions, possible values are:
+#   - true
+#   - false (default)
+#   - disabled (do not modify new-window bindings)
+tmux_conf_new_window_reconnect_ssh=false
+
+# new pane retains current path, possible values are:
+#   - true (default)
+#   - false
+#   - disabled (do not modify split-window bindings)
+tmux_conf_new_pane_retain_current_path=true
+
+# new pane tries to reconnect ssh sessions, possible values are:
+#   - true
+#   - false (default)
+#   - disabled (do not modify split-window bindings)
+tmux_conf_new_pane_reconnect_ssh=false
+
+
+# -- display -------------------------------------------------------------------
+
+# RGB 24-bit colour support, possible values are:
+#   - true
+#   - false
+#   - auto (default)
+#
+# automatic detection relies on the COLORTERM environment variable being defined
+# to 'truecolor' or '24bit' or '$ tput colors' answering '16777216'
+# see https://github.com/termstandard/colors
+tmux_conf_24b_colour=auto
+
+
+# -- theming -------------------------------------------------------------------
+
+# # enable or disable theming:
+# #   - enabled (default)
+# #   - disabled
+# # when disabled, all tmux_conf_theme_xxx variables are ignored except:
+# #   - tmux_conf_theme_pairing
+# #   - tmux_conf_theme_prefix
+# #   - tmux_conf_theme_mouse
+# #   - tmux_conf_theme_root
+# #   - tmux_conf_theme_synchronized
+
+tmux_conf_theme=disabled
+
+set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'MrSloth-dev/Sidekick.tmux'
+
+set -g @plugin 'z3z1ma/tmux-gruvbox'
+set -g @gruvbox_flavour 'dark'
+set -g @gruvbox_window_left_separator "█"
+set -g @gruvbox_window_right_separator ""
+set -g @gruvbox_window_number_position "right"
+set -g @gruvbox_window_middle_separator ""
+
+set -g @gruvbox_window_default_fill "number"
+set -g @gruvbox_window_default_text "#W"
+
+set -g @gruvbox_window_current_fill "number"
+set -g @gruvbox_window_current_text "#W"
+set -g @gruvbox_status_modules_right "session date_time weather"
+set -g @gruvbox_status_left_separator  ""
+set -g @gruvbox_status_right_separator ""
+set -g @gruvbox_status_right_separator_inverse "no"
+set -g @gruvbox_status_fill "all"
+set -g @gruvbox_date_time_text "%d-%m-%Y %H:%M"
+set -g @gruvbox_status_connect_separator "yes"
+
+# Catpuccin
+# set -g @plugin 'catppuccin/tmux#latest'
+# set -g @catppuccin_flavour 'mocha'
+# set -g @catppuccin_window_left_separator "█"
+# set -g @catppuccin_window_right_separator ""
+# set -g @catppuccin_window_number_position "right"
+# set -g @catppuccin_window_middle_separator ""
+#
+# set -g @catppuccin_window_default_fill "number"
+# set -g @catppuccin_window_default_text "#W"
+#
+# set -g @catppuccin_window_current_fill "number"
+# set -g @catppuccin_window_current_text "#W"
+# set -g @catppuccin_status_modules_right "pomodoro_status session date_time weather"
+# set -g @catppuccin_status_left_separator  ""
+# set -g @catppuccin_status_right_separator ""
+# set -g @catppuccin_status_right_separator_inverse "no"
+# set -g @catppuccin_status_fill "all"
+# set -g @catppuccin_date_time_text "%d-%m-%Y %H:%M"
+# set -g @catppuccin_status_connect_separator "yes"
+
+# ##theming_end
+# -- clipboard -----------------------------------------------------------------
+
+# in copy mode, copying selection also copies to the OS clipboard
+#   - true
+#   - false (default)
+#   - disabled
+# on Linux, this requires xsel, xclip or wl-copy
+tmux_conf_copy_to_os_clipboard=true
+
+
+# -- urlscan -------------------------------------------------------------------
+
+# options passed to urlscan
+tmux_conf_urlscan_options="--compact --dedupe"
+
+
+# -- user customizations -------------------------------------------------------
+
+# this is the place to override or undo settings
+
+# increase history size
+#set -g history-limit 10000
+set -g detach-on-destroy off
+# start with mouse mode enabled
+set -g mouse on
+
+# force Vi mode
+#   really you should export VISUAL or EDITOR environment variable, see manual
+#set -g status-keys vi
+#set -g mode-keys vi
+
+# replace C-b by C-a instead of using both prefixes
+# set -gu prefix2
+unbind C-a
+# unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+
+# if you don't want Oh my tmux! to alter a binding, use #!important
+# bind c new-window -c '#{pane_current_path}' #!important
+
+# Move status line to top if in Work
+# run-shell 'if [ "$(whoami)" = "joao-pol" ]]; then set -g status-position top; else set -g status-position bottom; fi'
+set -g status-position bottom
+# Conditional logic to bind keys or execute commands based on the user
+
+
+# -- tpm -----------------------------------------------------------------------
+
+# while I don't use tpm myself, many people requested official support so here
+# is a seamless integration that automatically installs plugins in parallel
+
+# whenever a plugin introduces a variable to be used in 'status-left' or
+# 'status-right', you can use it in 'tmux_conf_theme_status_left' and
+# 'tmux_conf_theme_status_right' variables.
+
+# by default, launching tmux will update tpm and all plugins
+#   - true (default)
+#   - false
+tmux_conf_update_plugins_on_launch=false
+
+# by default, reloading the configuration will update tpm and all plugins
+#   - true (default)
+#   - false
+tmux_conf_update_plugins_on_reload=true
+
+# by default, reloading the configuration will uninstall tpm and plugins when no
+# plugins are enabled
+#   - true (default)
+#   - false
+tmux_conf_uninstall_plugins_on_reload=true
+
+# /!\ the tpm bindings differ slightly from upstream:
+#   - installing plugins: <prefix> + I
+#   - uninstalling plugins: <prefix> + Alt + u
+#   - updating plugins: <prefix> + u
+
+# /!\ do not add set -g @plugin 'tmux-plugins/tpm'
+# /!\ do not add run '~/.tmux/plugins/tpm/tpm'
+
+# to enable a plugin, use the 'set -g @plugin' syntax:
+# visit https://github.com/tmux-plugins for available plugins
+#set -g @plugin 'tmux-plugins/tmux-cpu'
+#set -g @plugin 'tmux-plugins/tmux-copycat'
+#set -g @plugin 'tmux-plugins/tmux-resurrect'
+#set -g @plugin 'tmux-plugins/tmux-continuum'
+#set -g @plugin 'christoomey/vim-tmux-navigator'
+#set -g @continuum-restore 'on'
+
+
+
+# -- custom variables ----------------------------------------------------------
+
+# to define a custom #{foo} variable, define a POSIX shell function between the
+# '# EOF' and the '# "$@"' lines. Please note that the opening brace { character
+# must be on the same line as the function name otherwise the parse won't detect
+# it.
+#
+# then, use #{foo} in e.g. the 'tmux_conf_theme_status_left' or the
+# 'tmux_conf_theme_status_right' variables.
+
+# ------------------------------------------------------------------------------
+
+# # /!\ do not remove the following line
+# EOF
+#
+# # /!\ do not "uncomment" the functions: the leading "# " characters are needed
+#
+# weather() {                                         # see https://github.com/chubin/wttr.in#one-line-output
+#   curl -s 'wttr.in/Porto?format=1' || printf '\n' # /!\ make sure curl is installed
+#   sleep 30                                         # sleep for 15 minutes, throttle network requests whatever the value of status-interval
+# }
+#
+# online() {
+#   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔' || printf '✘'
+# }
+#
+# wan_ip_v4() {
+#   curl -f -s -m 2 -4 ifconfig.me
+#   sleep 300                                         # sleep for 5 minutes, throttle network requests whatever the value of status-interval
+# }
+#
+# wan_ip_v6() {
+#   curl -f -s -m 2 -6 ifconfig.me
+#   sleep 300                                         # sleep for 5 minutes, throttle network requests whatever the value of status-interval
+# }
+#
+# "$@"
+# # /!\ do not remove the previous line
+# #     do not write below this line

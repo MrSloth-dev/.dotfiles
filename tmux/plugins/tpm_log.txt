@@ -1,0 +1,9 @@
+[2026-08-24 23:53:44.354]	List of discovered tpm plugins: christoomey/vim-tmux-navigator MrSloth-dev/Sidekick.tmux z3z1ma/tmux-gruvbox
+[2026-08-24 23:53:44.366]	Invoking /home/mrsloth/.config/tmux/plugins/tpm/bin/install_plugins
+[2026-08-24 23:53:44.404]	Installing "vim-tmux-navigator"
+[2026-08-24 23:53:44.416]	Installing "Sidekick.tmux"
+[2026-08-24 23:53:44.427]	Installing "tmux-gruvbox"
+[2026-08-24 23:53:45.256]	  "vim-tmux-navigator" download success
+[2026-08-24 23:53:45.488]	  "tmux-gruvbox" download success
+[2026-08-24 23:53:45.644]	  "Sidekick.tmux" download success
+[2026-08-24 23:53:45.724]	Done.
