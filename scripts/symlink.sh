@@ -10,22 +10,10 @@ HOSTNAME=$(cat /etc/hostname)
 
 # echo -e "${GREEN}Work or Home?${ENDCOLOR}"
 # read PC
-if [[ $USER == "$USER" ]]; then
-	PC="Work"
+if [[ $HOSTNAME == "Levelho" ]]; then
+	PC="Home"
 	HOME_DIR="/home/$USER/"
 	DOT_DIR="/home/$USER/.dotfiles"
-elif [[ $USER == "joao-pol" ]]; then
-	PC="Work"
-	HOME_DIR="/home/joao-pol/"
-	DOT_DIR="/home/joao-pol/.dotfiles"
-elif [[ $USER == "mrsloth" ]]; then
-	PC="Home"
-	HOME_DIR="/home/mrsloth/"
-	DOT_DIR="/home/mrsloth/.dotfiles"
-elif [[ $USER == "mrsloth" || $HOST == "SlothPi" ]]; then
-	PC="Pi"
-	HOME_DIR="/home/mrsloth/"
-	DOT_DIR="/home/mrsloth/.dotfiles"
 fi
 
 # Generic Function to symlink
@@ -34,11 +22,11 @@ function symlink {
   dotfile_path="$2"
   link_path="$3"
   echo -e "${CYAN}Symlinking $name to $link_path${ENDCOLOR}"
-  cp -sf -r "$dotfile_path" "$link_path"
+  ln -sfn "$dotfile_path" "$link_path"
 }
 
 if [[ $PC =~ ^(Work|work|WORK)$ ]]; then
-	echo -e "${GREEN}Syslinking @ Work${ENDCOLOR}\n" 
+	echo -e "${GREEN}Syslinking @ Work${ENDCOLOR}\n"
 	symlink "Tmux" "/home/$USER/.dotfiles/.tmux.conf.local" "/home/$USER/.tmux.conf.local"
 	symlink "Nvim" "/home/$USER/.dotfiles/nvim/" "/home/$USER/.config/"
 	symlink "Kitty" "/home/$USER/.dotfiles/kitty/" "/home/$USER/.config/"
@@ -51,16 +39,17 @@ if [[ $PC =~ ^(Work|work|WORK)$ ]]; then
 	# symlink "p10k" "/home/$USER/.dotfiles/.p10k.zsh" "/home/$USER/.p10k.zsh"
 	# symlink "Zmux" "/home/$USER/.dotfiles/zmux/" "/home/$USER/.config/"
 elif [[ $PC =~ ^(Home|home|HOME)$ ]]; then
-	echo -e "${GREEN}Syslinking @ Home${ENDCOLOR}\n" 
-	symlink "Tmux" "/home/mrsloth/.dotfiles/.tmux.conf.local" "/home/mrsloth/.tmux.conf.local"
-	symlink "Nvim" "/home/mrsloth/.dotfiles/nvim/" "/home/mrsloth/.config/"
-	symlink "Zshrc" "/home/mrsloth/.dotfiles/.zshrc" "/home/mrsloth/.zshrc"
-	symlink "p10k" "/home/mrsloth/.dotfiles/.p10k.zsh" "/home/mrsloth/.p10k.zsh"
-	symlink "Polybar" "/home/mrsloth/.dotfiles/polybar/" "/home/mrsloth/.config/"
-	symlink "i3" "/home/mrsloth/.dotfiles/i3/" "/home/mrsloth/.config/"
-	symlink "Rofi" "/home/mrsloth/.dotfiles/rofi/" "/home/mrsloth/.config/"
-	symlink "Kitty" "/home/mrsloth/.dotfiles/kitty/" "/home/mrsloth/.config/"
-	symlink "Zmux" "/home/mrsloth/.dotfiles/zmux/" "/home/mrsloth/.config/"
+	echo -e "${GREEN}Syslinking @ Home${ENDCOLOR}\n"
+	symlink "Fontconfig" "$DOT_DIR/fontconfig/" "$HOME_DIR.config/"
+	symlink "Git" "$DOT_DIR/git/" "$HOME_DIR.config/"
+	symlink "Hypr" "$DOT_DIR/hypr/" "$HOME_DIR.config/"
+	symlink "Nvim" "$DOT_DIR/nvim/" "$HOME_DIR.config/"
+	symlink "Kitty" "$DOT_DIR/kitty/" "$HOME_DIR.config/"
+	symlink "Omarchy" "$DOT_DIR/omarchy/" "$HOME_DIR.config/"
+	symlink "Opencode" "$DOT_DIR/opencode/" "$HOME_DIR.config/"
+	symlink "Tmux" "$DOT_DIR/tmux/" "$HOME_DIR.config/"
+	symlink "Ruff" "$DOT_DIR/ruff.toml" "$HOME_DIR.config/ruff.toml"
+	symlink "Starship" "$DOT_DIR/starship.toml" "$HOME_DIR.config/starship.toml"
 elif [[ $PC =~ ^(Pi)$ ]]; then
 	echo -e "${GREEN}Syslinking @ Pi${ENDCOLOR}\n" 
 	symlink "Zshrc" "/home/mrsloth/.dotfiles/.zshrc" "/home/mrsloth/.zshrc"
