@@ -27,7 +27,7 @@
 	enabled = true           # Record and reuse conflict resolutions
 	autoupdate = true        # Apply stored conflict resolutions automatically
 [user]
-	name = Mr. Sloth
+	name = MrSloth
 	email = joao.a.barbosa@proton.me
 [core]
-	excludesfile = /home/mrsloth/.config/git/ignore
+	excludesfile = $HOME/.config/git/ignore
