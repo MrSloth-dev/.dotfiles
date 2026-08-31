@@ -30,4 +30,4 @@
 	name = MrSloth
 	email = joao.a.barbosa@proton.me
 [core]
-	excludesfile = $HOME/.config/git/ignore
+	excludesfile = ~/.config/git/ignore
