@@ -46,9 +46,3 @@ o.bind("SUPER + H", "Focus on left window", hl.dsp.focus({ direction = "l" }))
 o.bind("SUPER + J", "Focus on below window", hl.dsp.focus({ direction = "d" }))
 o.bind("SUPER + K", "Focus on above window", hl.dsp.focus({ direction = "u" }))
 o.bind("SUPER + L", "Focus on right window", hl.dsp.focus({ direction = "r" }))
-
--- Swap terminal bindings: SUPER+RETURN opens tmux, SUPER+ALT+RETURN opens a plain terminal
-hl.unbind("SUPER + RETURN")
-hl.unbind("SUPER + ALT + RETURN")
-o.bind("SUPER + RETURN", "Tmux", { omarchy = "terminal-tmux" })
-o.bind("SUPER + ALT + RETURN", "Terminal", { omarchy = "terminal" })
